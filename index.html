@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="cs" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Autoškola</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Použijeme moderní Outfit pro nadpisy a Inter pro texty -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* =========================================
+           ULTRA MODERNÍ DESIGN SYSTEM 2026
+           ========================================= */
+        :root {
+            /* Výchozí barva - elektrická modrá */
+            --custom-primary: #2563eb;
+            --custom-primary-rgb: 37, 99, 235;
+            --custom-primary-hover: #1d4ed8;
+            
+            /* Tvary a písmo */
+            --custom-radius: 24px;
+            --custom-font-heading: 'Outfit', sans-serif;
+            --custom-font-body: 'Inter', sans-serif;
+            
+            /* Stíny - plynulé a měkké */
+            --custom-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            --custom-shadow-hover: 0 30px 60px rgba(0,0,0,0.12);
+            
+            --bs-primary: var(--custom-primary);
+            --bs-primary-rgb: var(--custom-primary-rgb);
+            --bs-body-font-family: var(--custom-font-body);
+        }
+
+        [data-bs-theme="dark"] {
+            --custom-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            --custom-shadow-hover: 0 30px 60px rgba(0,0,0,0.6);
+            --bs-body-bg: #0f1115;
+            --bs-body-bg-rgb: 15, 17, 21;
+        }
+
+        body {
+            font-family: var(--bs-body-font-family);
+            background-color: var(--bs-body-bg);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3 {
+            font-family: var(--custom-font-heading);
+            letter-spacing: -0.03em;
+        }
+
+        /* =========================================
+           KOMPONENTY
+           ========================================= */
+        
+        /* Glassmorphism Navbar */
+        .navbar-glass {
+            background: rgba(var(--bs-body-bg-rgb), 0.7) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+        }
+
+        /* Hero Sekce - Obrovská a čistá */
+        .hero-section {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(var(--custom-primary-rgb), 0.15) 0%, rgba(var(--bs-body-bg-rgb), 0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--bs-primary) 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-pill {
+            border-radius: 50rem;
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            font-family: var(--custom-font-heading);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-primary-custom {
+            background-color: var(--bs-primary);
+            color: white;
+            border: none;
+            box-shadow: 0 10px 20px rgba(var(--custom-primary-rgb), 0.3);
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(var(--custom-primary-rgb), 0.4);
+            color: white;
+            background-color: var(--custom-primary-hover);
+        }
+
+        /* Bento Box Layout pro služby */
+        .bento-card {
+            background-color: var(--bs-body-bg);
+            border: 1px solid rgba(128, 128, 128, 0.1);
+            border-radius: var(--custom-radius);
+            padding: 2.5rem;
+            height: 100%;
+            transition: all 0.4s ease;
+            box-shadow: var(--custom-shadow);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(var(--custom-primary-rgb), 0.5);
+            box-shadow: var(--custom-shadow-hover);
+        }
+
+        .bento-card.primary {
+            background: linear-gradient(135deg, var(--bs-primary) 0%, #1e40af 100%);
+            color: white;
+            border: none;
+        }
+        
+        .bento-card.dark {
+            background-color: #111827;
+            color: white;
+            border: none;
+        }
+
+        .bento-icon {
+            font-size: 2.5rem;
+            margin-bottom: auto;
+            padding-bottom: 2rem;
+            color: var(--bs-primary);
+        }
+        .bento-card.primary .bento-icon, .bento-card.dark .bento-icon {
+            color: white;
+            opacity: 0.9;
+        }
+
+        /* Kompaktní a výrazná časová osa */
+        .timeline-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .timeline-point {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: var(--bs-body-bg);
+            border-radius: var(--custom-radius);
+            border: 1px solid rgba(128, 128, 128, 0.1);
+            flex: 1;
+            min-width: 220px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--custom-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        .timeline-point:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--custom-shadow-hover);
+            border-color: rgba(var(--custom-primary-rgb), 0.5);
+        }
+        .timeline-year {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            background: var(--bs-primary);
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 20px rgba(var(--custom-primary-rgb), 0.3);
+            transition: background-color 0.4s ease;
+        }
+        .timeline-point::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: var(--bs-primary);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .timeline-point:hover::before {
+            opacity: 1;
+        }
+
+        /* Obrazové výplně pro karty */
+        .bg-image-overlay {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            border-radius: inherit;
+        }
+        .bg-image-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+            border-radius: inherit;
+        }
+        .z-1-relative {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Konfigurátor tlačítko */
+        .btn-configurator {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1050;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: var(--bs-body-bg);
+            border: 1px solid rgba(128, 128, 128, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-configurator:hover {
+            transform: scale(1.1) rotate(45deg);
+            background: var(--bs-primary);
+            color: white !important;
+            border-color: var(--bs-primary);
+        }
+        
+        .form-control-minimal {
+            background: rgba(128, 128, 128, 0.05);
+            border: 1px solid rgba(128, 128, 128, 0.1);
+            border-radius: 16px;
+            padding: 1rem 1.5rem;
+            transition: all 0.3s;
+        }
+        .form-control-minimal:focus {
+            background: rgba(var(--bs-body-bg-rgb), 1);
+            border-color: var(--bs-primary);
+            box-shadow: 0 0 0 4px rgba(var(--custom-primary-rgb), 0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==============================================
+         NÁSTROJ PRO PREZENTACI (KONFIGURÁTOR VZHLEDU)
+         ============================================== -->
+    <button class="btn-configurator text-body" type="button" data-bs-toggle="offcanvas" data-bs-target="#customizerOffcanvas" title="Otevřít design panel">
+        <i class="bi bi-sliders fs-4"></i>
+    </button>
+
+    <div class="offcanvas offcanvas-end border-start-0 shadow-lg" tabindex="-1" id="customizerOffcanvas" style="width: 380px;">
+        <div class="offcanvas-header border-bottom border-opacity-10">
+            <h5 class="offcanvas-title fw-bold font-heading">
+                Design Panel
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p class="text-muted small mb-4">Upravte si vizuální identitu webu na jedno kliknutí.</p>
+
+            <!-- Téma -->
+            <div class="mb-4">
+                <label class="form-label fw-bold small text-uppercase tracking-wider">Režim zobrazení</label>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-secondary w-50 btn-pill py-2 theme-btn active" data-theme="light">
+                        <i class="bi bi-sun me-1"></i> Světlý
+                    </button>
+                    <button class="btn btn-outline-secondary w-50 btn-pill py-2 theme-btn" data-theme="dark">
+                        <i class="bi bi-moon-stars me-1"></i> Tmavý
+                    </button>
+                </div>
+            </div>
+
+            <!-- Barva -->
+            <div class="mb-4">
+                <label class="form-label fw-bold small text-uppercase tracking-wider">Akcentní barva</label>
+                <div class="d-flex gap-2 mb-3">
+                    <button class="btn p-3 rounded-circle border-0 color-preset" style="background-color: #2563eb;" data-color="#2563eb" data-rgb="37, 99, 235"></button>
+                    <button class="btn p-3 rounded-circle border-0 color-preset" style="background-color: #f43f5e;" data-color="#f43f5e" data-rgb="244, 63, 94"></button>
+                    <button class="btn p-3 rounded-circle border-0 color-preset" style="background-color: #10b981;" data-color="#10b981" data-rgb="16, 185, 129"></button>
+                    <button class="btn p-3 rounded-circle border-0 color-preset" style="background-color: #8b5cf6;" data-color="#8b5cf6" data-rgb="139, 92, 246"></button>
+                    <button class="btn p-3 rounded-circle border-0 color-preset" style="background-color: #0f172a;" data-color="#0f172a" data-rgb="15, 23, 42"></button>
+                </div>
+                <input type="color" class="form-control form-control-color w-100 bg-transparent border-0 p-0" id="customColorPicker" value="#2563eb" style="height: 40px; border-radius: 12px; overflow: hidden;">
+            </div>
+
+            <!-- Tvar -->
+            <div class="mb-4">
+                <label class="form-label fw-bold small text-uppercase tracking-wider">Zakřivení prvků</label>
+                <input type="range" class="form-range" id="radiusRange" min="0" max="40" value="24">
+                <div class="d-flex justify-content-between text-muted small">
+                    <span>Ostré</span>
+                    <span>Kulaté</span>
+                </div>
+            </div>
+
+            <hr class="opacity-10">
+            <div class="alert bg-primary bg-opacity-10 text-primary border-0 rounded-4 small mt-4">
+                Tento kontrolní panel je pouze nástroj pro prezentaci. Ve finální verzi se napevno nastaví váš výběr.
+            </div>
+        </div>
+    </div>
+    <!-- Konec konfigurátoru -->
+
+    <!-- ==============================================
+         NAVIGACE
+         ============================================== -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-glass py-3">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center fw-bolder fs-4" href="#">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;">
+                    <i class="bi bi-car-front-fill fs-5"></i>
+                </div>
+                <span class="font-heading">Autoškola<span class="text-primary">Název</span></span>
+            </a>
+            
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <i class="bi bi-list fs-1"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-medium gap-lg-4">
+                    <li class="nav-item"><a class="nav-link" href="#sluzby">Služby</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#o-nas">Příběh</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dokumenty">Dokumenty</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-4">
+                    <a href="tel:+420123456789" class="text-decoration-none text-body fw-bold d-none d-xl-block">
+                        +420 XXX XXX XXX
+                    </a>
+                    <a href="#kontakt" class="btn btn-primary-custom btn-pill">Zavolejte nám</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==============================================
+         HERO SEKCE (Ultra-čistý přístup)
+         ============================================== -->
+    <section class="hero-section overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="container position-relative z-1">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <div class="d-inline-flex align-items-center gap-2 px-4 py-2 rounded-pill mb-4" style="background: rgba(var(--custom-primary-rgb), 0.1); border: 1px solid rgba(var(--custom-primary-rgb), 0.2);">
+                        <span class="badge bg-primary rounded-pill">Nové</span>
+                        <span class="text-primary fw-medium small">Přihlašování online spuštěno</span>
+                    </div>
+                    
+                    <h1 class="display-2 fw-bolder mb-4 lh-1">
+                        Získejte řidičák <br>
+                        <span class="text-gradient">bez zbytečného stresu.</span>
+                    </h1>
+                    
+                    <p class="lead text-muted mb-5" style="font-size: 1.25rem;">
+                        Komplexní výuka řízení s individuálním přístupem. Od první jízdy až po úspěšnou zkoušku vás provedou zkušení profesionálové.
+                    </p>
+                    
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#dokumenty" class="btn btn-primary-custom btn-pill btn-lg">Začít s výcvikem</a>
+                        <a href="#sluzby" class="btn btn-outline-secondary btn-pill btn-lg border-opacity-25 bg-body">Prozkoumat nabídku</a>
+                    </div>
+                </div>
+                <!-- Přidán obrázek do Hero sekce -->
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1000&q=80" alt="Žák v autoškole" class="img-fluid" style="border-radius: var(--custom-radius); box-shadow: var(--custom-shadow-hover); transform: rotate(2deg); transition: transform 0.5s; width: 100%; height: 500px; object-fit: cover;">
+                        
+                        <!-- Plovoucí dekorativní element (Badge) -->
+                        <div class="position-absolute bg-body p-3 shadow-lg" style="bottom: -20px; left: -20px; border-radius: 20px; z-index: 2; border: 1px solid rgba(128,128,128,0.1);">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle">
+                                    <i class="bi bi-star-fill fs-3"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold fs-4 text-body">25+ let</div>
+                                    <div class="small text-muted">Zkušeností na trhu</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         SLUŽBY (Bento Box Layout)
+         ============================================== -->
+    <section id="sluzby" class="py-5 my-5">
+        <div class="container">
+            <div class="row mb-5 align-items-end">
+                <div class="col-md-7">
+                    <h2 class="display-4 fw-bolder mb-3">Naše služby</h2>
+                    <p class="text-muted fs-5 mb-0">Vyberte si to správné pro vás. Nabízíme kompletní portfolio výcviků a školení.</p>
+                </div>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="row g-4">
+                <!-- Velká karta (Hlavní služba s obrázkem na pozadí) -->
+                <div class="col-lg-8">
+                    <div class="bento-card primary h-100 p-5 border-0">
+                        <!-- Fotka přes celý bento box -->
+                        <div class="bg-image-overlay" style="background-image: url('https://images.unsplash.com/photo-1600320254374-ce2d293c324e?auto=format&fit=crop&w=1200&q=80');"></div>
+                        
+                        <div class="z-1-relative d-flex flex-column h-100">
+                            <i class="bi bi-car-front bento-icon text-white drop-shadow"></i>
+                            <div class="mt-auto">
+                                <h3 class="display-6 fw-bold mb-3 text-white">Osobní automobil</h3>
+                                <p class="fs-5 text-white opacity-75 mb-0 max-w-75">Náš nejoblíbenější kurz. Získejte řidičský průkaz skupiny B ve špičkových, moderních vozech s naprosto klidným instruktorem.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Střední karta (Motocykly) -->
+                <div class="col-lg-4">
+                    <div class="bento-card dark h-100 p-5">
+                        <i class="bi bi-bicycle bento-icon"></i>
+                        <div>
+                            <h3 class="h2 fw-bold mb-3">Motocykl</h3>
+                            <p class="opacity-75 mb-0">Výcvik pro všechny skupiny motocyklů. Naučíme vás ovládat stroj s absolutní jistotou.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tři menší karty -->
+                <div class="col-md-4">
+                    <div class="bento-card">
+                        <i class="bi bi-truck bento-icon"></i>
+                        <h4 class="fw-bold mt-4 mb-2">Přívěs (B+E)</h4>
+                        <p class="text-muted small mb-0">Rozšiřte své možnosti s oprávněním pro přípojná vozidla. Pro karavany i práci.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="bento-card">
+                        <i class="bi bi-briefcase bento-icon"></i>
+                        <h4 class="fw-bold mt-4 mb-2">Školení referentů</h4>
+                        <p class="text-muted small mb-0">Pravidelná zákonná školení řidičů pro firmy, efektivně a srozumitelně.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="bento-card">
+                        <i class="bi bi-arrow-repeat bento-icon"></i>
+                        <h4 class="fw-bold mt-4 mb-2">Kondiční jízdy</h4>
+                        <p class="text-muted small mb-0">Dlouho jste neřídili? Během pár hodin vám vrátíme stoprocentní sebevědomí.</p>
+                    </div>
+                </div>
+
+                <!-- Dvě poloviční karty pro zbytek -->
+                <div class="col-md-6">
+                    <div class="bento-card flex-row align-items-center gap-4 p-4">
+                        <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle">
+                            <i class="bi bi-lightning-charge fs-2"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-1">Rychlokurzy</h4>
+                            <p class="text-muted small mb-0">Zrychlený proces výuky pro časově vytížené.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="bento-card flex-row align-items-center gap-4 p-4">
+                        <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle">
+                            <i class="bi bi-person-check fs-2"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-1">Individuální výcvik & Profesní</h4>
+                            <p class="text-muted small mb-0">VIP přístup a prodlužování profesních průkazů.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         MILNÍKY (Kompaktní & Výrazné)
+         ============================================== -->
+    <section id="o-nas" class="py-5 my-5 bg-body-tertiary">
+        <div class="container py-4">
+            <div class="text-center mb-5 pb-3">
+                <h2 class="display-4 fw-bolder">Naše cesta</h2>
+                <p class="text-muted fs-5 max-w-75 mx-auto">Budujeme důvěru za volantem už více než čtvrt století. Desítky let zkušeností shrnuté do klíčových momentů.</p>
+            </div>
+
+            <div class="timeline-wrapper">
+                <!-- Rok 1 -->
+                <div class="timeline-point">
+                    <div class="timeline-year">1987</div>
+                    <h4 class="fw-bold mb-2">Založení</h4>
+                    <p class="text-muted small mb-0">Úplné začátky naší autoškoly a první úspěšní absolventi.</p>
+                </div>
+                <!-- Rok 2 -->
+                <div class="timeline-point">
+                    <div class="timeline-year">2000</div>
+                    <h4 class="fw-bold mb-2">Nový vozový park</h4>
+                    <p class="text-muted small mb-0">Kompletní modernizace vozidel pro maximální bezpečí a komfort.</p>
+                </div>
+                <!-- Rok 3 -->
+                <div class="timeline-point">
+                    <div class="timeline-year">2003</div>
+                    <h4 class="fw-bold mb-2">Moderní učebny</h4>
+                    <p class="text-muted small mb-0">Otevření multimediálních prostor pro interaktivní výuku teorie.</p>
+                </div>
+                <!-- Rok 4 -->
+                <div class="timeline-point">
+                    <div class="timeline-year">2005</div>
+                    <h4 class="fw-bold mb-2">Profi sekce</h4>
+                    <p class="text-muted small mb-0">Zavedení komplexního profesního školení pro firemní sektor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         DOKUMENTY (Plně integrovaný Call to action)
+         ============================================== -->
+    <section id="dokumenty" class="py-5 my-5">
+        <div class="container">
+            <div class="bento-card p-5 text-center overflow-hidden position-relative border-0">
+                <!-- Fotka přes celou sekci Dokumenty -->
+                <div class="bg-image-overlay" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1500&q=80');"></div>
+                
+                <div class="position-relative z-1 py-4 z-1-relative text-white">
+                    <h2 class="display-4 fw-bolder mb-4">Vše potřebné pro start</h2>
+                    <p class="fs-5 opacity-75 mb-5 max-w-75 mx-auto">
+                        Připravte si dokumenty v klidu domova. <br class="d-none d-md-block">
+                        <strong class="text-white">Upozornění: Přihlášku tiskněte oboustranně na jeden list papíru.</strong>
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                        <button class="btn btn-light btn-pill btn-lg text-primary fw-bold px-5">
+                            <i class="bi bi-file-pdf me-2"></i> Stáhnout přihlášku
+                        </button>
+                        <button class="btn border border-white text-white btn-pill btn-lg fw-bold px-5 hover-bg-white hover-text-primary transition-all" style="backdrop-filter: blur(5px); background: rgba(255,255,255,0.1);">
+                            <i class="bi bi-laptop me-2"></i> Vyplnit online
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         KONTAKT (Plovoucí Layout)
+         ============================================== -->
+    <section id="kontakt" class="py-5 my-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                
+                <!-- Kontaktní info vlevo -->
+                <div class="col-lg-5">
+                    <h2 class="display-5 fw-bolder mb-4">Jsme tu pro vás. <br><span class="text-primary">Zavolejte nám.</span></h2>
+                    <p class="text-muted fs-5 mb-5">(Preferujeme komunikaci po telefonu, vyřešíme vše rychleji.)</p>
+                    
+                    <div class="d-flex flex-column gap-4">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-body-tertiary p-3 rounded-circle text-primary">
+                                <i class="bi bi-telephone-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <div class="text-muted small">Hlavní kontakt</div>
+                                <a href="tel:+420123456789" class="text-decoration-none text-body fw-bold fs-4">+420 XXX XXX XXX</a>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-body-tertiary p-3 rounded-circle text-primary">
+                                <i class="bi bi-phone-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <div class="text-muted small">Alternativní kontakt</div>
+                                <a href="tel:+420987654321" class="text-decoration-none text-body fw-bold fs-4">+420 YYY YYY YYY</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-body-tertiary p-3 rounded-circle text-primary">
+                                <i class="bi bi-envelope-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <div class="text-muted small">E-mail</div>
+                                <a href="mailto:info@autoskola.cz" class="text-decoration-none text-body fw-bold fs-5">vas-email@seznam.cz</a>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center gap-3 mt-2">
+                            <div class="bg-body-tertiary p-3 rounded-circle text-primary">
+                                <i class="bi bi-geo-alt-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <div class="text-muted small">Adresa</div>
+                                <span class="text-body fw-bold fs-5">xxx 12, Náměšť nad Oslavou</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulář vpravo v minimalistické kartě -->
+                <div class="col-lg-7">
+                    <div class="bento-card p-4 p-md-5">
+                        <h3 class="fw-bold mb-4">Nebo nám zanechte zprávu</h3>
+                        <form onsubmit="event.preventDefault(); const btn = this.querySelector('button'); const originalText = btn.innerHTML; btn.innerHTML = '<i class=\'bi bi-check2-circle me-2\'></i> Odesláno!'; btn.style.backgroundColor = '#10b981'; setTimeout(() => {btn.innerHTML = originalText; btn.style.backgroundColor = '';}, 3000);">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold text-muted ps-2">Jméno</label>
+                                    <input type="text" class="form-control-minimal w-100" placeholder="Jan Novák">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold text-muted ps-2">E-mail</label>
+                                    <input type="email" class="form-control-minimal w-100" placeholder="jan@email.cz">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold text-muted ps-2">Zpráva</label>
+                                    <textarea class="form-control-minimal w-100" rows="4" placeholder="Dobrý den, chtěl bych se zeptat..."></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button class="btn btn-primary-custom btn-pill w-100 py-3 fs-5">Odeslat zprávu</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         PATIČKA (Čistá a moderní)
+         ============================================== -->
+    <footer class="py-5 border-top border-opacity-10 mt-5">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+                <div class="d-flex align-items-center gap-2 fs-4 fw-bold">
+                    <i class="bi bi-car-front-fill text-primary"></i>
+                    <span>Autoškola Název</span>
+                </div>
+                
+                <div class="text-muted small">
+                    &copy; 2026 Všechna práva vyhrazena.
+                </div>
+                
+                <a href="#" class="btn btn-light rounded-circle d-flex align-items-center justify-content-center border" style="width: 45px; height: 45px;">
+                    <i class="bi bi-facebook fs-5 text-primary"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <!-- ==============================================
+         LOGIKA KONFIGURÁTORU
+         ============================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const root = document.documentElement;
+            
+            // Pomocná fce pro RGB
+            function hexToRgb(hex) {
+                const bigint = parseInt(hex.slice(1), 16);
+                const r = (bigint >> 16) & 255;
+                const g = (bigint >> 8) & 255;
+                const b = bigint & 255;
+                return `${r}, ${g}, ${b}`;
+            }
+
+            // 1. Změna barvy
+            const colorPicker = document.getElementById('customColorPicker');
+            const colorPresets = document.querySelectorAll('.color-preset');
+
+            const applyColor = (hexCode) => {
+                root.style.setProperty('--custom-primary', hexCode);
+                root.style.setProperty('--custom-primary-rgb', hexToRgb(hexCode));
+                // Pro ukázku ztmavení pro hover
+                root.style.setProperty('--custom-primary-hover', hexCode); 
+                colorPicker.value = hexCode;
+            };
+
+            colorPicker.addEventListener('input', (e) => applyColor(e.target.value));
+            colorPresets.forEach(preset => {
+                preset.addEventListener('click', (e) => applyColor(e.target.dataset.color));
+            });
+
+            // 2. Tmavý / Světlý režim
+            const themeBtns = document.querySelectorAll('.theme-btn');
+            themeBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const theme = btn.dataset.theme;
+                    root.setAttribute('data-bs-theme', theme);
+                    
+                    // Zvýraznění aktivního tlačítka
+                    themeBtns.forEach(b => b.classList.remove('active', 'btn-secondary', 'text-white'));
+                    btn.classList.add('active');
+                });
+            });
+
+            // 3. Zaoblení rohů (Tvarování)
+            const radiusRange = document.getElementById('radiusRange');
+            radiusRange.addEventListener('input', (e) => {
+                root.style.setProperty('--custom-radius', `${e.target.value}px`);
+                // Tlačítka (pilulky) necháváme extra kulaté, modifikujeme jen karty a inputy
+            });
+        });
+    </script>
+</body>
+</html>
