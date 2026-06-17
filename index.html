@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="cs" data-bs-theme="light" data-design-style="modern">
+<html lang="cs" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Autoškola</title>
 
-    <!-- Google Fonts: Inter (Texty), Outfit (Moderní nadpisy), Playfair Display (Elegantní nadpisy) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Použijeme moderní Outfit pro nadpisy a Inter pro texty -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -17,32 +18,32 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
+        /* =========================================
+           ULTRA MODERNÍ DESIGN SYSTEM 2026
+           ========================================= */
         :root {
             /* Výchozí barva - elektrická modrá */
             --custom-primary: #2563eb;
             --custom-primary-rgb: 37, 99, 235;
             --custom-primary-hover: #1d4ed8;
             
-            /* Tvary a písmo (Základní "Moderní" styl) */
+            /* Tvary a písmo */
             --custom-radius: 24px;
             --custom-font-heading: 'Outfit', sans-serif;
             --custom-font-body: 'Inter', sans-serif;
             
-            /* Stíny */
+            /* Stíny - plynulé a měkké */
             --custom-shadow: 0 20px 40px rgba(0,0,0,0.06);
             --custom-shadow-hover: 0 30px 60px rgba(0,0,0,0.12);
-            --custom-border: 1px solid rgba(128, 128, 128, 0.1);
             
             --bs-primary: var(--custom-primary);
             --bs-primary-rgb: var(--custom-primary-rgb);
             --bs-body-font-family: var(--custom-font-body);
         }
 
-        /* Tmavý režim (Základ) */
         [data-bs-theme="dark"] {
             --custom-shadow: 0 20px 40px rgba(0,0,0,0.4);
             --custom-shadow-hover: 0 30px 60px rgba(0,0,0,0.6);
-            --custom-border: 1px solid rgba(255, 255, 255, 0.1);
             --bs-body-bg: #0f1115;
             --bs-body-bg-rgb: 15, 17, 21;
         }
@@ -54,20 +55,24 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display-5 {
+        h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3 {
             font-family: var(--custom-font-heading);
-            transition: font-family 0.3s ease;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
         }
 
+        /* =========================================
+           KOMPONENTY
+           ========================================= */
+        
+        /* Glassmorphism Navbar */
         .navbar-glass {
             background: rgba(var(--bs-body-bg-rgb), 0.7) !important;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: var(--custom-border);
-            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.1);
         }
 
+        /* Hero Sekce - Obrovská a čistá */
         .hero-section {
             min-height: 90vh;
             display: flex;
@@ -89,37 +94,46 @@
             pointer-events: none;
         }
 
+        .text-gradient {
+            background: linear-gradient(135deg, var(--bs-primary) 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .btn-pill {
-            border-radius: var(--custom-radius);
+            border-radius: 50rem;
             padding: 1rem 2.5rem;
             font-weight: 600;
             font-family: var(--custom-font-heading);
             letter-spacing: 0.5px;
+            text-transform: uppercase;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .btn-primary-custom {
             background-color: var(--bs-primary);
             color: white;
-            border: var(--custom-border);
-            box-shadow: var(--custom-shadow);
+            border: none;
+            box-shadow: 0 10px 20px rgba(var(--custom-primary-rgb), 0.3);
         }
 
         .btn-primary-custom:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--custom-shadow-hover);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(var(--custom-primary-rgb), 0.4);
             color: white;
             background-color: var(--custom-primary-hover);
         }
 
+        /* Bento Box Layout pro služby */
         .bento-card {
             background-color: var(--bs-body-bg);
-            border: var(--custom-border);
+            border: 1px solid rgba(128, 128, 128, 0.1);
             border-radius: var(--custom-radius);
             padding: 2.5rem;
             height: 100%;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             box-shadow: var(--custom-shadow);
             position: relative;
             overflow: hidden;
@@ -129,17 +143,20 @@
 
         .bento-card:hover {
             transform: translateY(-5px);
+            border-color: rgba(var(--custom-primary-rgb), 0.5);
             box-shadow: var(--custom-shadow-hover);
         }
 
         .bento-card.primary {
             background: linear-gradient(135deg, var(--bs-primary) 0%, #1e40af 100%);
             color: white;
+            border: none;
         }
         
         .bento-card.dark {
             background-color: #111827;
             color: white;
+            border: none;
         }
 
         .bento-icon {
@@ -148,192 +165,155 @@
             padding-bottom: 2rem;
             color: var(--bs-primary);
         }
+        .bento-card.primary .bento-icon, .bento-card.dark .bento-icon {
+            color: white;
+            opacity: 0.9;
+        }
 
-        .timeline-wrapper { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+        /* Kompaktní a výrazná časová osa */
+        .timeline-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
         .timeline-point {
-            text-align: center; padding: 2rem;
+            text-align: center;
+            padding: 2.5rem 2rem;
             background: var(--bs-body-bg);
             border-radius: var(--custom-radius);
-            border: var(--custom-border);
+            border: 1px solid rgba(128, 128, 128, 0.1);
+            flex: 1;
+            min-width: 220px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: var(--custom-shadow);
-            flex: 1; min-width: 200px;
-            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         .timeline-point:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             box-shadow: var(--custom-shadow-hover);
+            border-color: rgba(var(--custom-primary-rgb), 0.5);
         }
         .timeline-year {
-            font-size: 2rem; font-weight: 900;
-            color: white; background: var(--bs-primary);
-            display: inline-block; padding: 0.5rem 1.5rem;
-            border-radius: var(--custom-radius);
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            background: var(--bs-primary);
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 20px rgba(var(--custom-primary-rgb), 0.3);
+            transition: background-color 0.4s ease;
+        }
+        .timeline-point::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: var(--bs-primary);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .timeline-point:hover::before {
+            opacity: 1;
         }
 
+        /* Obrazové výplně pro karty */
         .bg-image-overlay {
-            position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 0;
-            transition: transform 0.5s ease;
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            border-radius: inherit;
         }
-        .bento-card:hover .bg-image-overlay { transform: scale(1.05); }
         .bg-image-overlay::after {
-            content: ''; position: absolute; inset: 0;
+            content: '';
+            position: absolute;
+            inset: 0;
             background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+            border-radius: inherit;
         }
-        .z-1-relative { position: relative; z-index: 1; }
-
-        html[data-design-style="elegant"] {
-            /* Patkové písmo, nulové zakřivení, odstranění stínů, zjemnění barev */
-            --custom-font-heading: 'Playfair Display', serif;
-            --custom-radius: 0px;
-            --custom-shadow: none;
-            --custom-shadow-hover: 0 10px 30px rgba(0,0,0,0.08);
-            --custom-border: 1px solid rgba(128, 128, 128, 0.4);
-        }
-        html[data-design-style="elegant"][data-bs-theme="dark"] {
-            --custom-shadow-hover: 0 10px 30px rgba(255,255,255,0.05);
-        }
-        html[data-design-style="elegant"] .bento-card.primary {
-            background: var(--bs-primary); /* Žádný gradient, čistá barva */
-        }
-        html[data-design-style="elegant"] .btn-pill {
-            text-transform: uppercase; letter-spacing: 2px; font-weight: 400; border-radius: 0;
-        }
-        html[data-design-style="elegant"] .timeline-year {
-            border-radius: 0; background: transparent; color: var(--bs-primary);
-            border: 1px solid var(--bs-primary); font-family: 'Playfair Display', serif;
-        }
-        html[data-design-style="elegant"] h1, html[data-design-style="elegant"] h2 {
-            font-weight: 400; letter-spacing: 0;
+        .z-1-relative {
+            position: relative;
+            z-index: 1;
         }
 
-        html[data-design-style="brutalist"] {
-            /* Tlusté ohraničení, tvrdé stíny, vysoký kontrast, žádné radiusy */
-            --custom-font-heading: 'Outfit', sans-serif;
-            --custom-radius: 0px;
-            --custom-shadow: 6px 6px 0px #0f172a;
-            --custom-shadow-hover: 10px 10px 0px #0f172a;
-            --custom-border: 3px solid #0f172a;
-        }
-        /* Přizpůsobení Brutalismu pro tmavý režim */
-        html[data-design-style="brutalist"][data-bs-theme="dark"] {
-            --custom-shadow: 6px 6px 0px #ffffff;
-            --custom-shadow-hover: 10px 10px 0px #ffffff;
-            --custom-border: 3px solid #ffffff;
-        }
-        html[data-design-style="brutalist"] .btn-primary-custom,
-        html[data-design-style="brutalist"] .btn-outline-secondary,
-        html[data-design-style="brutalist"] .form-control-minimal,
-        html[data-design-style="brutalist"] .timeline-year {
-            border: var(--custom-border);
-            border-radius: 0;
-            box-shadow: var(--custom-shadow);
-        }
-        html[data-design-style="brutalist"] .btn-primary-custom:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: var(--custom-shadow-hover);
-        }
-        html[data-design-style="brutalist"] .bento-card {
-            border-radius: 0;
-        }
-        html[data-design-style="brutalist"] .bento-card.primary {
-            background: var(--bs-primary); 
-            border: var(--custom-border);
-        }
-        html[data-design-style="brutalist"] .bg-image-overlay { display: none; } /* V brutalismu vypneme fotky na pozadí karet pro větší surovost */
-        html[data-design-style="brutalist"] .bento-card.primary * { color: white !important; position: relative; z-index: 2; }
-        
+        /* Konfigurátor tlačítko */
         .btn-configurator {
-            position: fixed; bottom: 30px; right: 30px; z-index: 1050; width: 60px; height: 60px;
-            border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            background: var(--bs-body-bg); border: 1px solid rgba(128, 128, 128, 0.2);
-            display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1050;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: var(--bs-body-bg);
+            border: 1px solid rgba(128, 128, 128, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .btn-configurator:hover {
-            transform: scale(1.1) rotate(45deg); background: var(--bs-primary); color: white !important;
+            transform: scale(1.1) rotate(45deg);
+            background: var(--bs-primary);
+            color: white !important;
+            border-color: var(--bs-primary);
         }
         
         .form-control-minimal {
-            background: rgba(128, 128, 128, 0.05); border: var(--custom-border);
-            border-radius: var(--custom-radius); padding: 1rem 1.5rem; transition: all 0.3s;
+            background: rgba(128, 128, 128, 0.05);
+            border: 1px solid rgba(128, 128, 128, 0.1);
+            border-radius: 16px;
+            padding: 1rem 1.5rem;
+            transition: all 0.3s;
         }
         .form-control-minimal:focus {
-            background: rgba(var(--bs-body-bg-rgb), 1); outline: none; box-shadow: var(--custom-shadow);
-        }
-
-        /* Aktivní stav pro výběr stylu v konfigurátoru */
-        .style-btn.active {
-            border-color: var(--bs-primary) !important;
-            background-color: rgba(var(--custom-primary-rgb), 0.1) !important;
+            background: rgba(var(--bs-body-bg-rgb), 1);
+            border-color: var(--bs-primary);
+            box-shadow: 0 0 0 4px rgba(var(--custom-primary-rgb), 0.15);
         }
     </style>
 </head>
 <body>
 
     <!-- ==============================================
-         KONFIGURÁTOR VZHLEDU (Design Engine)
+         NÁSTROJ PRO PREZENTACI (KONFIGURÁTOR VZHLEDU)
          ============================================== -->
     <button class="btn-configurator text-body" type="button" data-bs-toggle="offcanvas" data-bs-target="#customizerOffcanvas" title="Otevřít design panel">
-        <i class="bi bi-palette fs-4"></i>
+        <i class="bi bi-sliders fs-4"></i>
     </button>
 
     <div class="offcanvas offcanvas-end border-start-0 shadow-lg" tabindex="-1" id="customizerOffcanvas" style="width: 380px;">
         <div class="offcanvas-header border-bottom border-opacity-10">
             <h5 class="offcanvas-title fw-bold font-heading">
-                Design Engine
+                Design Panel
             </h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
-            <p class="text-muted small mb-4">Vyberte si celkový styl a sledujte, jak se web od základů promění.</p>
-
-            <!-- CELKOVÝ STYL (Nová sekce!) -->
-            <div class="mb-5">
-                <label class="form-label fw-bold small text-uppercase tracking-wider text-primary">Celkový vizuální styl</label>
-                <div class="d-flex flex-column gap-2">
-                    <button class="btn btn-outline-secondary border-opacity-50 text-start py-3 style-btn active" data-style="modern">
-                        <div class="fw-bold mb-1">🌟 Moderní (Výchozí)</div>
-                        <div class="small text-muted" style="font-size: 0.75rem;">Měkké stíny, plovoucí prvky, čistota</div>
-                    </button>
-                    <button class="btn btn-outline-secondary border-opacity-50 text-start py-3 style-btn" data-style="elegant">
-                        <div class="fw-bold mb-1" style="font-family: 'Playfair Display', serif;">🏛️ Elegantní</div>
-                        <div class="small text-muted" style="font-size: 0.75rem;">Patkové písmo, tenké linky, luxus</div>
-                    </button>
-                    <button class="btn btn-outline-secondary border-opacity-50 text-start py-3 style-btn" data-style="brutalist">
-                        <div class="fw-bold mb-1" style="font-family: 'Outfit', sans-serif;">💥 Neo-Brutalismus</div>
-                        <div class="small text-muted" style="font-size: 0.75rem;">Ostré obrysy, tvrdé stíny, retro-tech</div>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Téma -->
-            <div class="mb-4">
-                <label class="form-label fw-bold small text-uppercase tracking-wider">Režim zobrazení</label>
-                <div class="d-flex gap-2">
-                    <button class="btn btn-outline-secondary border-opacity-50 w-50 btn-pill py-2 theme-btn active" data-theme="light">
-                        <i class="bi bi-sun me-1"></i> Světlý
-                    </button>
-                    <button class="btn btn-outline-secondary border-opacity-50 w-50 btn-pill py-2 theme-btn" data-theme="dark">
-                        <i class="bi bi-moon-stars me-1"></i> Tmavý
-                    </button>
-                </div>
-            </div>
+            <p class="text-muted small mb-4">Upravte si vizuální identitu webu na jedno kliknutí.</p>
 
             <!-- Barva -->
             <div class="mb-4">
                 <label class="form-label fw-bold small text-uppercase tracking-wider">Akcentní barva</label>
                 <div class="d-flex gap-2 mb-3">
                     <button class="btn p-3 rounded-circle border-0 color-preset" style="background-color: #2563eb;" data-color="#2563eb" data-rgb="37, 99, 235"></button>
-                    <button class="btn p-3 rounded-circle border-0 color-preset" style="background-color: #10b981;" data-color="#10b981" data-rgb="16, 185, 129"></button>
                     <button class="btn p-3 rounded-circle border-0 color-preset" style="background-color: #f43f5e;" data-color="#f43f5e" data-rgb="244, 63, 94"></button>
-                    <button class="btn p-3 rounded-circle border-0 color-preset" style="background-color: #000000;" data-color="#000000" data-rgb="0, 0, 0"></button>
+                    <button class="btn p-3 rounded-circle border-0 color-preset" style="background-color: #10b981;" data-color="#10b981" data-rgb="16, 185, 129"></button>
+                    <button class="btn p-3 rounded-circle border-0 color-preset" style="background-color: #8b5cf6;" data-color="#8b5cf6" data-rgb="139, 92, 246"></button>
+                    <button class="btn p-3 rounded-circle border-0 color-preset" style="background-color: #0f172a;" data-color="#0f172a" data-rgb="15, 23, 42"></button>
                 </div>
-                <input type="color" class="form-control form-control-color w-100 bg-transparent border-0 p-0" id="customColorPicker" value="#2563eb" style="height: 40px; border-radius: 8px; overflow: hidden;">
+                <input type="color" class="form-control form-control-color w-100 bg-transparent border-0 p-0" id="customColorPicker" value="#2563eb" style="height: 40px; border-radius: 12px; overflow: hidden;">
             </div>
 
-            <!-- Tvar (Zachováno pro ruční doladění) -->
-            <div class="mb-4" id="radiusControlGroup">
-                <label class="form-label fw-bold small text-uppercase tracking-wider">Zakřivení prvků (Moderní styl)</label>
+            <!-- Tvar -->
+            <div class="mb-4">
+                <label class="form-label fw-bold small text-uppercase tracking-wider">Zakřivení prvků</label>
                 <input type="range" class="form-range" id="radiusRange" min="0" max="40" value="24">
                 <div class="d-flex justify-content-between text-muted small">
                     <span>Ostré</span>
@@ -342,8 +322,8 @@
             </div>
 
             <hr class="opacity-10">
-            <div class="alert bg-primary bg-opacity-10 text-primary border-0 rounded-3 small mt-4">
-                Kliknutím na styly nahoře se kompletně promění písmo, ohraničení, tvary i stínování celého webu.
+            <div class="alert bg-primary bg-opacity-10 text-primary border-0 rounded-4 small mt-4">
+                Tento kontrolní panel je pouze nástroj pro prezentaci. Ve finální verzi se napevno nastaví váš výběr.
             </div>
         </div>
     </div>
@@ -354,15 +334,16 @@
          ============================================== -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-glass py-3">
         <div class="container">
+            <!-- Logo -->
             <a class="navbar-brand d-flex align-items-center fw-bolder fs-4" href="#">
-                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2 bento-card d-flex align-items-center" style="width: 45px; height: 45px; padding: 0;">
-                    <i class="bi bi-car-front-fill fs-5 m-0 p-0 text-white"></i>
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;">
+                    <i class="bi bi-car-front-fill fs-5"></i>
                 </div>
                 <span class="font-heading">Autoškola<span class="text-primary">Název</span></span>
             </a>
             
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-                <i class="bi bi-list fs-1 text-body"></i>
+                <i class="bi bi-list fs-1"></i>
             </button>
             
             <div class="collapse navbar-collapse" id="mainNav">
@@ -372,6 +353,11 @@
                     <li class="nav-item"><a class="nav-link" href="#dokumenty">Dokumenty</a></li>
                 </ul>
                 <div class="d-flex align-items-center gap-4">
+                    <!-- Nenápadný přepínač tmavého režimu v menu -->
+                    <button id="navThemeToggle" class="btn btn-link text-body p-0 fs-5 text-decoration-none" title="Přepnout tmavý režim">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    
                     <a href="tel:+420123456789" class="text-decoration-none text-body fw-bold d-none d-xl-block">
                         +420 XXX XXX XXX
                     </a>
@@ -382,40 +368,39 @@
     </nav>
 
     <!-- ==============================================
-         HERO SEKCE
+         HERO SEKCE (Full Background přístup)
          ============================================== -->
-    <section class="hero-section">
-        <div class="hero-glow"></div>
-        <div class="container position-relative z-1">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 text-center text-lg-start">
-                    <div class="d-inline-flex align-items-center gap-2 px-4 py-2 rounded-pill mb-4 bento-card d-inline-flex" style="padding: 0.5rem 1.5rem !important;">
-                        <span class="badge bg-primary rounded-pill p-2">Nové</span>
-                        <span class="fw-medium small">Přihlašování online spuštěno</span>
-                    </div>
-                    
-                    <h1 class="display-2 fw-bolder mb-4 lh-1">
-                        Získejte řidičák <br>
-                        <span class="text-primary">bez stresu.</span>
-                    </h1>
-                    
-                    <p class="lead text-muted mb-5" style="font-size: 1.25rem;">
-                        Komplexní výuka řízení s individuálním přístupem. Od první jízdy až po úspěšnou zkoušku vás provedou zkušení profesionálové.
-                    </p>
-                    
-                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
-                        <a href="#dokumenty" class="btn btn-primary-custom btn-pill btn-lg">Začít s výcvikem</a>
-                        <a href="#sluzby" class="btn btn-outline-secondary btn-pill btn-lg">Naše nabídka</a>
-                    </div>
-                </div>
-                
-                <!-- Unsplash foto -->
-                <div class="col-lg-6 d-none d-lg-block">
-                    <div class="position-relative bento-card p-0 h-100 w-100" style="min-height: 500px;">
-                        <div class="bg-image-overlay" style="background-image: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1000&q=80');"></div>
-                    </div>
-                </div>
+    <section class="hero-section overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; min-height: 100vh;">
+        <!-- Tmavý překryv pro skvělou čitelnost textu -->
+        <div class="position-absolute w-100 h-100 top-0 start-0" style="background: rgba(0,0,0,0.65); z-index: 0;"></div>
+        
+        <div class="container position-relative z-1 d-flex flex-column align-items-center text-center h-100 justify-content-center" style="padding-top: 5vh;">
+            
+            <div class="d-inline-flex align-items-center gap-2 px-4 py-2 rounded-pill mb-4" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+                <span class="badge bg-primary rounded-pill">Nové</span>
+                <span class="text-white fw-medium small">Přihlašování online spuštěno</span>
             </div>
+            
+            <h1 class="display-2 fw-bolder mb-4 lh-1 text-white">
+                Získejte řidičák <br>
+                bez zbytečného stresu.
+            </h1>
+            
+            <p class="lead text-white opacity-75 mb-5 mx-auto" style="max-width: 650px; font-size: 1.25rem;">
+                Komplexní výuka řízení s individuálním přístupem. Od první jízdy až po úspěšnou zkoušku vás provedou zkušení profesionálové.
+            </p>
+            
+            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-5">
+                <a href="#dokumenty" class="btn btn-primary-custom btn-pill btn-lg">Začít s výcvikem</a>
+                <a href="#sluzby" class="btn border border-white text-white btn-pill btn-lg transition-all" style="backdrop-filter: blur(5px); background: rgba(255,255,255,0.05);">Prozkoumat nabídku</a>
+            </div>
+
+            <!-- Box se zkušenostmi - naskládaný pod texty a bez hvězdičky -->
+            <div class="mt-2 p-3 px-5 rounded-4 d-inline-block" style="background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
+                <div class="fw-bold fs-3 text-white">25+ let</div>
+                <div class="small text-white opacity-75 text-uppercase tracking-wider">Zkušeností na trhu</div>
+            </div>
+
         </div>
     </section>
 
@@ -431,39 +416,41 @@
                 </div>
             </div>
 
+            <!-- Bento Grid -->
             <div class="row g-4">
-                <!-- Velká karta s fotkou -->
+                <!-- Velká karta (Hlavní služba s obrázkem na pozadí) -->
                 <div class="col-lg-8">
-                    <div class="bento-card primary h-100 p-5">
+                    <div class="bento-card primary h-100 p-5 border-0">
+                        <!-- Fotka přes celý bento box -->
                         <div class="bg-image-overlay" style="background-image: url('https://images.unsplash.com/photo-1600320254374-ce2d293c324e?auto=format&fit=crop&w=1200&q=80');"></div>
+                        
                         <div class="z-1-relative d-flex flex-column h-100">
-                            <i class="bi bi-car-front bento-icon text-white"></i>
+                            <i class="bi bi-car-front bento-icon text-white drop-shadow"></i>
                             <div class="mt-auto">
                                 <h3 class="display-6 fw-bold mb-3 text-white">Osobní automobil</h3>
-                                <p class="fs-5 text-white opacity-75 mb-0 max-w-75">Náš nejoblíbenější kurz. Získejte řidičský průkaz skupiny B ve špičkových vozech.</p>
+                                <p class="fs-5 text-white opacity-75 mb-0 max-w-75">Náš nejoblíbenější kurz. Získejte řidičský průkaz skupiny B ve špičkových, moderních vozech s naprosto klidným instruktorem.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Střední karta (Motocykly) -->
                 <div class="col-lg-4">
                     <div class="bento-card dark h-100 p-5">
-                        <div class="bg-image-overlay" style="background-image: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80'); opacity: 0.5;"></div>
-                        <div class="z-1-relative d-flex flex-column h-100">
-                            <i class="bi bi-bicycle bento-icon text-white"></i>
-                            <div class="mt-auto">
-                                <h3 class="h2 fw-bold mb-3 text-white">Motocykl</h3>
-                                <p class="text-white opacity-75 mb-0">Výcvik pro všechny skupiny motocyklů. S absolutní jistotou.</p>
-                            </div>
+                        <i class="bi bi-bicycle bento-icon"></i>
+                        <div>
+                            <h3 class="h2 fw-bold mb-3">Motocykl</h3>
+                            <p class="opacity-75 mb-0">Výcvik pro všechny skupiny motocyklů. Naučíme vás ovládat stroj s absolutní jistotou.</p>
                         </div>
                     </div>
                 </div>
 
+                <!-- Tři menší karty -->
                 <div class="col-md-4">
                     <div class="bento-card">
                         <i class="bi bi-truck bento-icon"></i>
                         <h4 class="fw-bold mt-4 mb-2">Přívěs (B+E)</h4>
-                        <p class="text-muted small mb-0">Rozšiřte své možnosti pro přípojná vozidla.</p>
+                        <p class="text-muted small mb-0">Rozšiřte své možnosti s oprávněním pro přípojná vozidla. Pro karavany i práci.</p>
                     </div>
                 </div>
 
@@ -471,7 +458,7 @@
                     <div class="bento-card">
                         <i class="bi bi-briefcase bento-icon"></i>
                         <h4 class="fw-bold mt-4 mb-2">Školení referentů</h4>
-                        <p class="text-muted small mb-0">Pravidelná zákonná školení řidičů pro firmy.</p>
+                        <p class="text-muted small mb-0">Pravidelná zákonná školení řidičů pro firmy, efektivně a srozumitelně.</p>
                     </div>
                 </div>
 
@@ -479,7 +466,32 @@
                     <div class="bento-card">
                         <i class="bi bi-arrow-repeat bento-icon"></i>
                         <h4 class="fw-bold mt-4 mb-2">Kondiční jízdy</h4>
-                        <p class="text-muted small mb-0">Dlouho jste neřídili? Vrátíme vám sebevědomí.</p>
+                        <p class="text-muted small mb-0">Dlouho jste neřídili? Během pár hodin vám vrátíme stoprocentní sebevědomí.</p>
+                    </div>
+                </div>
+
+                <!-- Dvě poloviční karty pro zbytek -->
+                <div class="col-md-6">
+                    <div class="bento-card flex-row align-items-center gap-4 p-4">
+                        <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle">
+                            <i class="bi bi-lightning-charge fs-2"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-1">Rychlokurzy</h4>
+                            <p class="text-muted small mb-0">Zrychlený proces výuky pro časově vytížené.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="bento-card flex-row align-items-center gap-4 p-4">
+                        <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle">
+                            <i class="bi bi-person-check fs-2"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-1">Individuální výcvik & Profesní</h4>
+                            <p class="text-muted small mb-0">VIP přístup a prodlužování profesních průkazů.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -487,59 +499,64 @@
     </section>
 
     <!-- ==============================================
-         MILNÍKY
+         MILNÍKY (Kompaktní & Výrazné)
          ============================================== -->
-    <section id="o-nas" class="py-5 my-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Naše cesta</h2>
-                <p class="text-muted fs-5">Desítky let zkušeností za volantem.</p>
+    <section id="o-nas" class="py-5 my-5 bg-body-tertiary">
+        <div class="container py-4">
+            <div class="text-center mb-5 pb-3">
+                <h2 class="display-4 fw-bolder">Naše cesta</h2>
+                <p class="text-muted fs-5 max-w-75 mx-auto">Budujeme důvěru za volantem už více než čtvrt století. Desítky let zkušeností shrnuté do klíčových momentů.</p>
             </div>
 
             <div class="timeline-wrapper">
+                <!-- Rok 1 -->
                 <div class="timeline-point">
                     <div class="timeline-year">1987</div>
-                    <h4 class="fw-bold mt-3 mb-1">Založení</h4>
-                    <p class="text-muted small mb-0">První žáci a úspěchy.</p>
+                    <h4 class="fw-bold mb-2">Založení</h4>
+                    <p class="text-muted small mb-0">Úplné začátky naší autoškoly a první úspěšní absolventi.</p>
                 </div>
+                <!-- Rok 2 -->
                 <div class="timeline-point">
                     <div class="timeline-year">2000</div>
-                    <h4 class="fw-bold mt-3 mb-1">Rozšíření</h4>
-                    <p class="text-muted small mb-0">Nový vozový park.</p>
+                    <h4 class="fw-bold mb-2">Nový vozový park</h4>
+                    <p class="text-muted small mb-0">Kompletní modernizace vozidel pro maximální bezpečí a komfort.</p>
                 </div>
+                <!-- Rok 3 -->
                 <div class="timeline-point">
                     <div class="timeline-year">2003</div>
-                    <h4 class="fw-bold mt-3 mb-1">Modernizace</h4>
-                    <p class="text-muted small mb-0">Otevření špičkových učeben.</p>
+                    <h4 class="fw-bold mb-2">Moderní učebny</h4>
+                    <p class="text-muted small mb-0">Otevření multimediálních prostor pro interaktivní výuku teorie.</p>
                 </div>
+                <!-- Rok 4 -->
                 <div class="timeline-point">
                     <div class="timeline-year">2005</div>
-                    <h4 class="fw-bold mt-3 mb-1">Profi sekce</h4>
-                    <p class="text-muted small mb-0">Profesní školení.</p>
+                    <h4 class="fw-bold mb-2">Profi sekce</h4>
+                    <p class="text-muted small mb-0">Zavedení komplexního profesního školení pro firemní sektor.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==============================================
-         DOKUMENTY
+         DOKUMENTY (Plně integrovaný Call to action)
          ============================================== -->
     <section id="dokumenty" class="py-5 my-5">
         <div class="container">
-            <div class="bento-card primary p-5 text-center overflow-hidden position-relative">
-                <div class="bg-image-overlay" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1500&q=80'); opacity: 0.3;"></div>
+            <div class="bento-card p-5 text-center overflow-hidden position-relative border-0">
+                <!-- Fotka přes celou sekci Dokumenty -->
+                <div class="bg-image-overlay" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1500&q=80');"></div>
                 
-                <div class="position-relative z-1 py-4 text-white">
+                <div class="position-relative z-1 py-4 z-1-relative text-white">
                     <h2 class="display-4 fw-bolder mb-4">Vše potřebné pro start</h2>
                     <p class="fs-5 opacity-75 mb-5 max-w-75 mx-auto">
                         Připravte si dokumenty v klidu domova. <br class="d-none d-md-block">
-                        <strong>Upozornění: Přihlášku tiskněte oboustranně na jeden list papíru.</strong>
+                        <strong class="text-white">Upozornění: Přihlášku tiskněte oboustranně na jeden list papíru.</strong>
                     </p>
                     <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
                         <button class="btn btn-light btn-pill btn-lg text-primary fw-bold px-5">
                             <i class="bi bi-file-pdf me-2"></i> Stáhnout přihlášku
                         </button>
-                        <button class="btn border border-white text-white btn-pill btn-lg fw-bold px-5" style="background: transparent;">
+                        <button class="btn border border-white text-white btn-pill btn-lg fw-bold px-5 hover-bg-white hover-text-primary transition-all" style="backdrop-filter: blur(5px); background: rgba(255,255,255,0.1);">
                             <i class="bi bi-laptop me-2"></i> Vyplnit online
                         </button>
                     </div>
@@ -549,20 +566,21 @@
     </section>
 
     <!-- ==============================================
-         KONTAKT
+         KONTAKT (Plovoucí Layout)
          ============================================== -->
     <section id="kontakt" class="py-5 my-5">
         <div class="container">
             <div class="row g-5 align-items-center">
                 
+                <!-- Kontaktní info vlevo -->
                 <div class="col-lg-5">
                     <h2 class="display-5 fw-bolder mb-4">Jsme tu pro vás. <br><span class="text-primary">Zavolejte nám.</span></h2>
-                    <p class="text-muted fs-5 mb-5">(Preferujeme komunikaci po telefonu)</p>
+                    <p class="text-muted fs-5 mb-5">(Preferujeme komunikaci po telefonu, vyřešíme vše rychleji.)</p>
                     
                     <div class="d-flex flex-column gap-4">
                         <div class="d-flex align-items-center gap-3">
-                            <div class="bg-body-tertiary p-3 rounded-circle text-primary bento-card p-3 m-0" style="width: auto; height: auto;">
-                                <i class="bi bi-telephone-fill fs-4 m-0"></i>
+                            <div class="bg-body-tertiary p-3 rounded-circle text-primary">
+                                <i class="bi bi-telephone-fill fs-4"></i>
                             </div>
                             <div>
                                 <div class="text-muted small">Hlavní kontakt</div>
@@ -571,8 +589,18 @@
                         </div>
                         
                         <div class="d-flex align-items-center gap-3">
-                            <div class="bg-body-tertiary p-3 rounded-circle text-primary bento-card p-3 m-0" style="width: auto; height: auto;">
-                                <i class="bi bi-envelope-fill fs-4 m-0"></i>
+                            <div class="bg-body-tertiary p-3 rounded-circle text-primary">
+                                <i class="bi bi-phone-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <div class="text-muted small">Alternativní kontakt</div>
+                                <a href="tel:+420987654321" class="text-decoration-none text-body fw-bold fs-4">+420 YYY YYY YYY</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-body-tertiary p-3 rounded-circle text-primary">
+                                <i class="bi bi-envelope-fill fs-4"></i>
                             </div>
                             <div>
                                 <div class="text-muted small">E-mail</div>
@@ -581,8 +609,8 @@
                         </div>
                         
                         <div class="d-flex align-items-center gap-3 mt-2">
-                            <div class="bg-body-tertiary p-3 rounded-circle text-primary bento-card p-3 m-0" style="width: auto; height: auto;">
-                                <i class="bi bi-geo-alt-fill fs-4 m-0"></i>
+                            <div class="bg-body-tertiary p-3 rounded-circle text-primary">
+                                <i class="bi bi-geo-alt-fill fs-4"></i>
                             </div>
                             <div>
                                 <div class="text-muted small">Adresa</div>
@@ -592,9 +620,10 @@
                     </div>
                 </div>
 
+                <!-- Formulář vpravo v minimalistické kartě -->
                 <div class="col-lg-7">
                     <div class="bento-card p-4 p-md-5">
-                        <h3 class="fw-bold mb-4">Zanechte zprávu</h3>
+                        <h3 class="fw-bold mb-4">Nebo nám zanechte zprávu</h3>
                         <form onsubmit="event.preventDefault(); const btn = this.querySelector('button'); const originalText = btn.innerHTML; btn.innerHTML = '<i class=\'bi bi-check2-circle me-2\'></i> Odesláno!'; btn.style.backgroundColor = '#10b981'; setTimeout(() => {btn.innerHTML = originalText; btn.style.backgroundColor = '';}, 3000);">
                             <div class="row g-4">
                                 <div class="col-md-6">
@@ -607,7 +636,7 @@
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label small fw-bold text-muted ps-2">Zpráva</label>
-                                    <textarea class="form-control-minimal w-100" rows="4" placeholder="Vaše zpráva..."></textarea>
+                                    <textarea class="form-control-minimal w-100" rows="4" placeholder="Dobrý den, chtěl bych se zeptat..."></textarea>
                                 </div>
                                 <div class="col-12 mt-4">
                                     <button class="btn btn-primary-custom btn-pill w-100 py-3 fs-5">Odeslat zprávu</button>
@@ -622,12 +651,12 @@
     </section>
 
     <!-- ==============================================
-         PATIČKA
+         PATIČKA (Čistá a moderní)
          ============================================== -->
     <footer class="py-5 border-top border-opacity-10 mt-5">
         <div class="container">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
-                <div class="d-flex align-items-center gap-2 fs-4 fw-bold font-heading">
+                <div class="d-flex align-items-center gap-2 fs-4 fw-bold">
                     <i class="bi bi-car-front-fill text-primary"></i>
                     <span>Autoškola Název</span>
                 </div>
@@ -636,19 +665,24 @@
                     &copy; 2026 Všechna práva vyhrazena.
                 </div>
                 
-                <a href="#" class="btn btn-outline-secondary d-flex align-items-center justify-content-center p-2 bento-card m-0" style="width: 45px; height: 45px;">
-                    <i class="bi bi-facebook fs-5 text-primary m-0"></i>
+                <a href="#" class="btn btn-light rounded-circle d-flex align-items-center justify-content-center border" style="width: 45px; height: 45px;">
+                    <i class="bi bi-facebook fs-5 text-primary"></i>
                 </a>
             </div>
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
+    <!-- ==============================================
+         LOGIKA KONFIGURÁTORU
+         ============================================== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const root = document.documentElement;
             
+            // Pomocná fce pro RGB
             function hexToRgb(hex) {
                 const bigint = parseInt(hex.slice(1), 16);
                 const r = (bigint >> 16) & 255;
@@ -657,51 +691,14 @@
                 return `${r}, ${g}, ${b}`;
             }
 
-            // 1. STYLY (Moderní, Elegantní, Brutalismus)
-            const styleBtns = document.querySelectorAll('.style-btn');
-            const radiusControlGroup = document.getElementById('radiusControlGroup');
-            const radiusRange = document.getElementById('radiusRange');
-
-            styleBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const style = btn.dataset.style;
-                    root.setAttribute('data-design-style', style);
-                    
-                    // Změna aktivního tlačítka
-                    styleBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-
-                    // Úprava posuvníku zaoblení dle stylu
-                    if(style === 'elegant' || style === 'brutalist') {
-                        radiusRange.value = 0;
-                        root.style.setProperty('--custom-radius', '0px');
-                        radiusControlGroup.style.opacity = '0.3'; // Vizuální deaktivace
-                    } else {
-                        radiusRange.value = 24;
-                        root.style.setProperty('--custom-radius', '24px');
-                        radiusControlGroup.style.opacity = '1';
-                    }
-                });
-            });
-
-            // 2. Téma (Světlý/Tmavý)
-            const themeBtns = document.querySelectorAll('.theme-btn');
-            themeBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const theme = btn.dataset.theme;
-                    root.setAttribute('data-bs-theme', theme);
-                    themeBtns.forEach(b => b.classList.remove('active', 'border-primary', 'bg-primary', 'text-white'));
-                    btn.classList.add('active');
-                });
-            });
-
-            // 3. Barvy
+            // 1. Změna barvy
             const colorPicker = document.getElementById('customColorPicker');
             const colorPresets = document.querySelectorAll('.color-preset');
 
             const applyColor = (hexCode) => {
                 root.style.setProperty('--custom-primary', hexCode);
                 root.style.setProperty('--custom-primary-rgb', hexToRgb(hexCode));
+                // Pro ukázku ztmavení pro hover
                 root.style.setProperty('--custom-primary-hover', hexCode); 
                 colorPicker.value = hexCode;
             };
@@ -711,14 +708,26 @@
                 preset.addEventListener('click', (e) => applyColor(e.target.dataset.color));
             });
 
-            // 4. Zaoblení
-            radiusRange.addEventListener('input', (e) => {
-                // Pokud ručně hýbe, aplikujeme to
-                root.style.setProperty('--custom-radius', `${e.target.value}px`);
-                // Pokud hýbe ručně v jiném stylu, přepneme zpět na Moderní, aby se to aplikovalo všude správně
-                if (root.getAttribute('data-design-style') !== 'modern' && e.target.value > 0) {
-                     document.querySelector('[data-style="modern"]').click();
+            // 2. Tmavý / Světlý režim v horním menu
+            const navThemeToggle = document.getElementById('navThemeToggle');
+            const themeIcon = navThemeToggle.querySelector('i');
+
+            navThemeToggle.addEventListener('click', () => {
+                const isDark = root.getAttribute('data-bs-theme') === 'dark';
+                root.setAttribute('data-bs-theme', isDark ? 'light' : 'dark');
+                
+                if (!isDark) {
+                    themeIcon.classList.replace('bi-moon-stars', 'bi-sun');
+                } else {
+                    themeIcon.classList.replace('bi-sun', 'bi-moon-stars');
                 }
+            });
+
+            // 3. Zaoblení rohů (Tvarování)
+            const radiusRange = document.getElementById('radiusRange');
+            radiusRange.addEventListener('input', (e) => {
+                root.style.setProperty('--custom-radius', `${e.target.value}px`);
+                // Tlačítka (pilulky) necháváme extra kulaté, modifikujeme jen karty a inputy
             });
         });
     </script>
