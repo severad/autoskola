@@ -892,7 +892,7 @@
         }
 
         /* ==========================================================================
-           VOZOVÝ PARK (AUTA)
+           VOZOVÝ PARK
            ========================================================================== */
         .fleet-section {
             padding-top: 90px;
@@ -968,6 +968,7 @@
             margin-right: 0;
         }
 
+        /* TŘÍDA PRO KARTU (Auta i Vlek) */
         .car-card {
             background-color: var(--bg-alt);
             border-top-left-radius: var(--border-radius-md);
@@ -1009,6 +1010,9 @@
             border-bottom-width: 3px;
             border-bottom-style: solid;
             border-bottom-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .car-card img {
@@ -1255,141 +1259,6 @@
             margin-left: auto;
             margin-right: auto;
             color: var(--text-light);
-        }
-
-        /* ==========================================================================
-           PŘÍVĚSNÝ VOZÍK (VERTIKÁLNÍ KARTA - STEJNÝ STYL JAKO AUTA)
-           ========================================================================== */
-        .trailer-single-wrapper {
-            display: flex;
-            justify-content: center;
-            margin-top: 60px;
-            margin-bottom: 80px;
-            margin-left: 0;
-            margin-right: 0;
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        .trailer-single-card {
-            background-color: var(--bg-alt);
-            border-top-left-radius: var(--border-radius-md);
-            border-top-right-radius: var(--border-radius-md);
-            border-bottom-right-radius: var(--border-radius-md);
-            border-bottom-left-radius: var(--border-radius-md);
-            overflow: hidden;
-            box-shadow: var(--box-shadow-md);
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            border-top-width: var(--border-width);
-            border-right-width: var(--border-width);
-            border-bottom-width: var(--border-width);
-            border-left-width: var(--border-width);
-            border-top-style: var(--border-style);
-            border-right-style: var(--border-style);
-            border-bottom-style: var(--border-style);
-            border-left-style: var(--border-style);
-            border-top-color: var(--border-color);
-            border-right-color: var(--border-color);
-            border-bottom-color: var(--border-color);
-            border-left-color: var(--border-color);
-            transition-property: transform, box-shadow;
-            transition-duration: var(--transition-speed);
-            transition-timing-function: ease-in-out;
-            max-width: 700px;
-            width: 100%;
-        }
-
-        .trailer-single-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--box-shadow-lg);
-        }
-
-        .trailer-single-img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            overflow: hidden;
-            border-bottom-width: 4px;
-            border-bottom-style: solid;
-            border-bottom-color: var(--primary-color);
-            background-color: #f1f5f9;
-        }
-
-        .trailer-single-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Krásně rozprostře širokou fotku */
-            display: block;
-            transition-property: transform;
-            transition-duration: 0.6s;
-            transition-timing-function: ease;
-        }
-
-        .trailer-single-card:hover .trailer-single-img img {
-            transform: scale(1.03);
-        }
-
-        .trailer-single-body {
-            padding-top: 35px;
-            padding-bottom: 35px;
-            padding-left: 35px;
-            padding-right: 35px;
-        }
-
-        .trailer-single-body h3 {
-            font-size: 1.6rem;
-            margin-top: 0;
-            margin-bottom: 15px;
-            margin-left: 0;
-            margin-right: 0;
-            border-bottom-width: 2px;
-            border-bottom-style: solid;
-            border-bottom-color: var(--bg-highlight);
-            padding-bottom: 15px;
-        }
-
-        .trailer-single-body p {
-            font-size: 1.05rem;
-            margin-top: 0;
-            margin-bottom: 25px;
-            margin-left: 0;
-            margin-right: 0;
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        .trailer-single-body ul {
-            list-style-type: none;
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 0;
-            padding-right: 0;
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
-        }
-
-        .trailer-single-body ul li {
-            font-size: 1.05rem;
-            color: var(--text-light);
-            padding-left: 25px;
-            position: relative;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-
-        .trailer-single-body ul li::before {
-            content: "•";
-            color: var(--secondary-color);
-            font-size: 1.8rem;
-            position: absolute;
-            left: 0;
-            top: -7px;
         }
 
         /* ==========================================================================
@@ -1762,7 +1631,7 @@
         }
 
         /* ==========================================================================
-           PATIČKA (OPRAVENO VYCENTROVÁNÍ)
+           PATIČKA (PLNĚ VYCENTROVANÁ PRO VŠECHNA ZAŘÍZENÍ)
            ========================================================================== */
         footer {
             background-color: #111827;
@@ -1788,14 +1657,15 @@
             margin-bottom: 50px;
             margin-left: 0;
             margin-right: 0;
-            justify-items: center; /* Zajišťuje centrování sloupců v gridu */
-            text-align: center; /* Zajišťuje centrování textu */
+            justify-items: center; /* Centruje samotné bloky sloupců */
+            text-align: center; /* Centruje text uvnitř sloupců */
         }
 
         .footer-col {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Zajišťuje centrování obsahu v flexboxu */
+            align-items: center; /* Drží prvky na středu pod sebou */
+            width: 100%;
         }
 
         .footer-col h4 {
@@ -1807,6 +1677,7 @@
             text-transform: uppercase;
             font-size: 0.95rem;
             letter-spacing: 1px;
+            text-align: center;
         }
 
         .footer-col p {
@@ -1816,6 +1687,7 @@
             margin-right: 0;
             color: #9ca3af;
             font-size: 0.95rem;
+            text-align: center;
         }
 
         .footer-col a {
@@ -1824,6 +1696,7 @@
             transition-property: color;
             transition-duration: 0.2s;
             transition-timing-function: ease-in-out;
+            display: inline-block;
         }
 
         .footer-col a:hover {
@@ -2103,13 +1976,6 @@
                 right: 20px;
                 bottom: 90px;
             }
-            
-            .trailer-single-body {
-                padding: 25px;
-            }
-            .trailer-single-img {
-                height: 250px;
-            }
         }
         
         @media (max-width: 550px) {
@@ -2137,10 +2003,6 @@
             }
             .l17-box {
                 padding: 20px;
-            }
-            .footer-col {
-                align-items: center;
-                text-align: center;
             }
         }
     </style>
@@ -2328,7 +2190,7 @@
     </section>
 
     <!-- =======================================================================
-         3. VOZOVÝ PARK (AUTA)
+         3. VOZOVÝ PARK, L17 A PŘÍVĚSNÝ VOZÍK
          ======================================================================= -->
     <section 
         id="vozy" 
@@ -2440,27 +2302,28 @@
 
             </div>
 
-            <!-- OPRAVA: PŘÍVĚSNÝ VOZÍK (VERTIKÁLNÍ KARTA STEJNÁ JAKO AUTA) -->
-            <div class="trailer-single-wrapper">
-                <div class="trailer-single-card">
-                    <div class="trailer-single-img">
+            <!-- OPRAVA: PŘÍVĚSNÝ VOZÍK (STEJNÁ VELIKOST KARTY JAKO U AUT) -->
+            <div style="display: flex; justify-content: center; margin-top: -10px; margin-bottom: 60px;">
+                <div class="car-card" style="max-width: 285px; width: 100%;">
+                    <div class="car-img-wrapper" style="background-color: var(--bg-highlight);">
                         <img 
                             src="autoskola-namest-vlek-2.jpg" 
                             alt="Výcvik s přívěsným vozíkem B96 a B+E"
+                            style="object-fit: contain;"
                             onerror="this.src='https://images.unsplash.com/photo-1596766779410-b962768564e5?q=80&w=800&auto=format&fit=crop'"
                         >
                     </div>
-                    <div class="trailer-single-body">
+                    <div class="car-card-body">
+                        <span class="tag-auto" style="background-color: var(--secondary-color); color: var(--black);">
+                            B96 / B+E
+                        </span>
                         <h3>
-                            Výcvik s přívěsným vozíkem (B96 / B+E)
+                            Přívěsný vozík
                         </h3>
-                        <p>
-                            Potřebujete tahat těžší přívěsy, karavany, lodě nebo vozíky na koně? Rozšiřte si u nás své řidičské oprávnění! Zajišťujeme výcvik pro rozšířenou skupinu B96 i plnohodnotnou skupinu B+E.
-                        </p>
                         <ul>
-                            <li>Praktický nácvik couvání a složitějšího manévrování</li>
-                            <li>Jízda s moderním, stabilním a bezpečným vozíkem</li>
-                            <li>Kompletní příprava na bezpečné ovládání celé soupravy</li>
+                            <li>Těžší přívěsy a karavany</li>
+                            <li>Nácvik bezpečného couvání</li>
+                            <li>Ovládání celé soupravy</li>
                         </ul>
                     </div>
                 </div>
@@ -2782,6 +2645,7 @@
                         onerror="this.src='https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=crop'"
                     >
                 </div>
+                <!-- Fotka z nového zadání bezpečně uložena v galerii -->
                 <div class="gallery-item">
                     <img 
                         src="autoskola-namest-galerie-1.jpg" 
@@ -2792,13 +2656,13 @@
                 <div class="gallery-item">
                     <img 
                         src="autoskola-namest-motorka.jpg" 
-                        alt="Praktická výuka řízení" 
+                        alt="vesta" 
                     >
                 </div>
                 <div class="gallery-item">
                     <img 
                         src="auto-skola-namest.jpg" 
-                        alt="Prebirani vozu" 
+                        alt="prebirani-automobilu" 
                     >
                 </div>
             </div>
@@ -2806,7 +2670,7 @@
     </section>
 
     <!-- =======================================================================
-         PATIČKA (OPRAVENO VYCENTROVÁNÍ)
+         PATIČKA (Krásně vycentrovaná pro všechna zařízení)
          ======================================================================= -->
     <footer>
         <div class="container footer-grid">
