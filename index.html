@@ -710,19 +710,26 @@
 
         .car-card-body ul li {
             font-size: 0.95rem;
+            line-height: 1.5;
             color: var(--text-light);
-            padding-left: 22px;
+            padding-left: 20px;
             position: relative;
             margin-bottom: 8px;
         }
 
+        /* Odrážka je vykreslená kolečkem (ne textovým znakem "•"),
+           takže její pozice nezávisí na použitém fontu daného tématu.
+           Výpočet: střed prvního řádku = polovina výšky řádku (0.75em)
+           mínus polovina velikosti kolečka (3.5px) => vždy přesně na střed. */
         .car-card-body ul li::before {
-            content: "•";
-            color: var(--primary-color);
-            font-size: 1.5rem;
+            content: "";
             position: absolute;
             left: 0;
-            top: -5px;
+            top: calc(0.75em - 3.5px);
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
         }
 
         .tag-auto {
@@ -1290,26 +1297,52 @@
             display: none;
             flex-direction: column;
             justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 1010;
-        }
-
-    .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
             width: 32px;
             height: 22px;
             background: transparent;
             border: none;
             padding: 0; /* Zabrání vytékání způsobenému výchozím odsazením prohlížeče */
             cursor: pointer;
+            position: relative;
             z-index: 1010;
             flex-shrink: 0; /* Zabrání deformaci, pokud je text loga moc široký */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* CHYBĚJÍCÍ STYLY ČÁREK – bez nich bylo tlačítko neviditelné */
+        .hamburger-line {
+            display: block;
+            width: 100%;
+            height: 3px;
+            border-radius: 3px;
+            background-color: var(--primary-color);
+            transform-origin: center center;
+            transition: transform var(--transition-speed) ease-in-out,
+                        opacity var(--transition-speed) ease-in-out,
+                        background-color var(--transition-speed) ease-in-out;
+        }
+
+        /* Tmavý překryv pod vysunutým menu */
+        .nav-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.45);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--transition-speed) ease-in-out,
+                        visibility var(--transition-speed) ease-in-out;
+            z-index: 1004;
+        }
+
+        .nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Zamezí posouvání stránky pod otevřeným menu */
+        body.menu-open {
+            overflow: hidden;
         }
 
         /* ==========================================================================
@@ -1372,13 +1405,30 @@
 
             /* Animace hamburger ikony do křížku */
             .hamburger.active .hamburger-line:nth-child(1) {
-                transform: translateY(9px) rotate(45deg);
+                transform: translateY(9.5px) rotate(45deg);
             }
             .hamburger.active .hamburger-line:nth-child(2) {
                 opacity: 0;
+                transform: scaleX(0);
             }
             .hamburger.active .hamburger-line:nth-child(3) {
-                transform: translateY(-9px) rotate(-45deg);
+                transform: translateY(-9.5px) rotate(-45deg);
+            }
+        }
+
+        /* Na velkém displeji je menu vždy klasicky v řádku a překryv se nezobrazuje */
+        @media (min-width: 993px) {
+            .main-nav {
+                position: static;
+                right: auto;
+                width: auto;
+                height: auto;
+                padding-top: 0;
+                box-shadow: none;
+                background-color: transparent;
+            }
+            .nav-overlay {
+                display: none;
             }
         }
         
@@ -1516,7 +1566,8 @@
             </a>
             
             <!-- HAMBURGER TLAČÍTKO -->
-            <button class="hamburger" id="hamburger-btn" aria-label="Otevřít menu">
+            <button type="button" class="hamburger" id="hamburger-btn"
+                    aria-label="Otevřít menu" aria-expanded="false" aria-controls="main-nav">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -1536,6 +1587,9 @@
                 </a>
             </div>
         </div>
+
+        <!-- Tmavý překryv pod vysunutým mobilním menu -->
+        <div class="nav-overlay" id="nav-overlay"></div>
     </header>
 
     <!-- =======================================================================
@@ -1986,8 +2040,12 @@
             });
 
             function setTheme(themeClass) {
+                // Zapamatujeme si, jestli je otevřené mobilní menu,
+                // aby ho přepnutí tématu nerozbilo
+                const menuOpen = document.body.classList.contains('menu-open');
                 document.body.className = '';
                 document.body.classList.add(themeClass);
+                if (menuOpen) document.body.classList.add('menu-open');
                 localStorage.setItem('autoskolaThemeElegant', themeClass);
 
                 themeButtons.forEach(btn => {
@@ -2061,27 +2119,72 @@
         document.addEventListener("DOMContentLoaded", function() {
             const hamburgerBtn = document.getElementById('hamburger-btn');
             const mainNav = document.getElementById('main-nav');
+            const navOverlay = document.getElementById('nav-overlay');
+
+            // Pojistka – kdyby některý prvek v HTML chyběl, skript nespadne
+            if (!hamburgerBtn || !mainNav) return;
+
             const navLinks = mainNav.querySelectorAll('a');
 
+            function openMenu() {
+                hamburgerBtn.classList.add('active');
+                mainNav.classList.add('active');
+                if (navOverlay) navOverlay.classList.add('active');
+                document.body.classList.add('menu-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'true');
+                hamburgerBtn.setAttribute('aria-label', 'Zavřít menu');
+            }
+
+            function closeMenu() {
+                hamburgerBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+                if (navOverlay) navOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                hamburgerBtn.setAttribute('aria-label', 'Otevřít menu');
+            }
+
             // Přepínání menu kliknutím na hamburger
-            hamburgerBtn.addEventListener('click', function() {
-                hamburgerBtn.classList.toggle('active');
-                mainNav.classList.toggle('active');
+            hamburgerBtn.addEventListener('click', function(event) {
+                event.stopPropagation();
+                if (mainNav.classList.contains('active')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
             });
 
             // Zavření menu po kliknutí na jakýkoliv odkaz
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburgerBtn.classList.remove('active');
-                    mainNav.classList.remove('active');
-                });
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', closeMenu);
             });
 
-            // Zavření menu při kliknutí mimo něj (volitelné)
+            // Zavření kliknutím na tmavý překryv
+            if (navOverlay) {
+                navOverlay.addEventListener('click', closeMenu);
+            }
+
+            // Zavření klávesou Esc
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && mainNav.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+
+            // Zavření při kliknutí kamkoliv mimo menu
             document.addEventListener('click', function(event) {
-                if (!mainNav.contains(event.target) && !hamburgerBtn.contains(event.target) && mainNav.classList.contains('active')) {
-                    hamburgerBtn.classList.remove('active');
-                    mainNav.classList.remove('active');
+                if (mainNav.classList.contains('active') &&
+                    !mainNav.contains(event.target) &&
+                    !hamburgerBtn.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+
+            // Po zvětšení okna nad mobilní rozlišení menu zavřeme,
+            // aby nezůstal viset zamčený scroll nebo překryv
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 992 && mainNav.classList.contains('active')) {
+                    closeMenu();
                 }
             });
         });
