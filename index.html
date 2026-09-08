@@ -62,7 +62,6 @@
     <style>
         /* ==========================================================================
            TÉMA 1: MODERNÍ MODRÁ (VÝCHOZÍ)
-           Klasická paleta, vzbuzuje jistotu a spolehlivost
            ========================================================================== */
         :root {
             --primary-color: #0056b3;
@@ -104,7 +103,6 @@
 
         /* ==========================================================================
            TÉMA 2: SMARAGDOVÁ (EMERALD)
-           Čistá, ekologická, velmi moderní barva (teal) s akcentem jantaru
            ========================================================================== */
         body.theme-emerald {
             --primary-color: #0f766e;
@@ -136,7 +134,6 @@
 
         /* ==========================================================================
            TÉMA 3: BŘIDLICOVÁ (SLATE)
-           Velmi elegantní korporátní styl. Tmavě šedá s oranžovým akcentem.
            ========================================================================== */
         body.theme-slate {
             --primary-color: #334155;
@@ -168,7 +165,6 @@
 
         /* ==========================================================================
            TÉMA 4: NÁMOŘNÍ (NAVY)
-           Hluboká modř kombinovaná s tlumenou korálově červenou. Dynamika.
            ========================================================================== */
         body.theme-navy {
             --primary-color: #1e3a8a;
@@ -200,7 +196,6 @@
 
         /* ==========================================================================
            TÉMA 5: MINIMALISTICKÁ (MINIMAL)
-           Založeno na čistých liniích, jemné šedé a velkém kontrastu.
            ========================================================================== */
         body.theme-minimal {
             --primary-color: #171717;
@@ -1262,7 +1257,7 @@
         }
 
         /* ==========================================================================
-           PŘÍVĚSNÝ VOZÍK (B96 / B+E) - přesunuto pod motorky
+           PŘÍVĚSNÝ VOZÍK (B96 / B+E) - přesunuto pod motorky s opraveným ořezem
            ========================================================================== */
         .trailer-wrapper {
             margin-top: 80px;
@@ -1312,23 +1307,28 @@
             box-shadow: var(--box-shadow-lg);
         }
 
+        /* ZDE JE OPRAVA PRO SPRÁVNÉ ZOBRAZENÍ VLEKU BEZ OŘEZU */
         .trailer-img {
             flex-grow: 1;
             flex-shrink: 1;
-            flex-basis: 0;
-            min-width: 350px;
+            flex-basis: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-highlight); /* Jemné pozadí za obrázkem */
         }
 
         .trailer-img img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain; /* Zabraní ořezu fotografie */
         }
 
         .trailer-content {
             flex-grow: 1;
             flex-shrink: 1;
-            flex-basis: 0;
+            flex-basis: 50%;
             padding-top: 40px;
             padding-bottom: 40px;
             padding-left: 40px;
@@ -1762,7 +1762,7 @@
         }
 
         /* ==========================================================================
-           PATIČKA
+           PATIČKA (OPRAVENO CENTROVÁNÍ)
            ========================================================================== */
         footer {
             background-color: #111827;
@@ -1788,6 +1788,14 @@
             margin-bottom: 50px;
             margin-left: 0;
             margin-right: 0;
+            justify-items: center; /* Zajišťuje centrování sloupců v gridu */
+            text-align: center; /* Zajišťuje centrování textu */
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Zajišťuje centrování obsahu v flexboxu */
         }
 
         .footer-col h4 {
@@ -2099,9 +2107,15 @@
             .trailer-card {
                 flex-direction: column;
             }
+            /* Úprava na mobilu pro fotku vleku */
             .trailer-img {
                 min-width: 100%;
                 height: 250px;
+                background-color: var(--bg-highlight);
+            }
+            .trailer-img img {
+                height: 100%;
+                object-fit: contain;
             }
         }
         
@@ -2136,6 +2150,10 @@
             }
             .l17-box {
                 padding: 20px;
+            }
+            .footer-col {
+                align-items: center;
+                text-align: center;
             }
         }
     </style>
@@ -2267,7 +2285,7 @@
     </header>
 
     <!-- =======================================================================
-         1. HERO SEKCE (S fotkou z Unsplash)
+         1. HERO SEKCE
          ======================================================================= -->
     <section class="hero">
         <div class="container">
@@ -2323,7 +2341,7 @@
     </section>
 
     <!-- =======================================================================
-         3. VOZOVÝ PARK AUTA A INFO L17
+         3. VOZOVÝ PARK, L17 A PŘÍVĚSNÝ VOZÍK
          ======================================================================= -->
     <section 
         id="vozy" 
@@ -2375,10 +2393,10 @@
                 <!-- Auto 2 (Golf V) -->
                 <div class="car-card">
                     <div class="car-img-wrapper">
-                        <!-- Nemáme dodané speciální jméno pro Golf V, zachován Unsplash / nebo použij default -->
                         <img 
-                            src="https://images.unsplash.com/photo-1541899481282-d53bffe3c350?q=80&w=600&auto=format&fit=crop" 
+                            src="autoskola-namest-golf-v.jpg" 
                             alt="Výcvikový vůz Volkswagen Golf V" 
+                            onerror="this.src='https://images.unsplash.com/photo-1541899481282-d53bffe3c350?q=80&w=600&auto=format&fit=crop'"
                         >
                     </div>
                     <div class="car-card-body">
@@ -2417,10 +2435,10 @@
                 <!-- Auto 4 (Yeti) -->
                 <div class="car-card">
                     <div class="car-img-wrapper">
-                        <!-- Nemáme dodané speciální jméno pro Yeti, zachován Unsplash / nebo použij default -->
                         <img 
-                            src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=600&auto=format&fit=crop" 
+                            src="autoskola-namest-vlek.jpg" 
                             alt="Výcvikový vůz Škoda Yeti" 
+                            onerror="this.src='https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=600&auto=format&fit=crop'"
                         >
                     </div>
                     <div class="car-card-body">
@@ -2550,12 +2568,12 @@
 
             </div>
 
-            <!-- PŘÍVĚSNÝ VOZÍK BANNER (PŘESUNUT POD MOTORKY) -->
+            <!-- PŘÍVĚSNÝ VOZÍK BANNER (S opraveným zobrazením fotky vleku na šířku) -->
             <div class="trailer-wrapper">
                 <div class="trailer-card">
                     <div class="trailer-img">
                         <img 
-                            src="autoskola-namest-vlek.jpg" 
+                            src="autoskola-namest-vlek-2.jpg" 
                             alt="Autoškola výcvik s přívěsným vozíkem karavanem"
                             onerror="this.src='https://images.unsplash.com/photo-1596766779410-b962768564e5?q=80&w=800&auto=format&fit=crop'"
                         >
@@ -2777,10 +2795,11 @@
                     >
                 </div>
                 <div class="gallery-item">
-                    <!-- Použit zástupný obrázek, dokud nebudou reálné fotky, pro zachování gridu -->
+                    <!-- Nová fotka přidána dle přání -->
                     <img 
-                        src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=crop" 
-                        alt="Vozový park autoškoly v Náměšti" 
+                        src="autoskola-namest-motorky.jpg" 
+                        alt="Motocykly v autoškole Náměšť" 
+                        onerror="this.src='https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=crop'"
                     >
                 </div>
                 <div class="gallery-item">
@@ -2806,7 +2825,7 @@
     </section>
 
     <!-- =======================================================================
-         PATIČKA
+         PATIČKA (OPRAVENO VYCENTROVÁNÍ)
          ======================================================================= -->
     <footer>
         <div class="container footer-grid">
