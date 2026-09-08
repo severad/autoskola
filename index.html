@@ -1,64 +1,27 @@
 <!DOCTYPE html>
-<html 
-    lang="cs"
->
+<html lang="cs">
 <head>
-    <meta 
-        charset="UTF-8"
-    >
-    <meta 
-        name="viewport" 
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Optimalizace a základní Meta Tagy -->
-    <title>
-        Autoškola Náměšť nad Oslavou | Autoškola Rousková
-    </title>
-    <meta 
-        name="description" 
-        content="Hledáte kvalitní autoškolu v Náměšti nad Oslavou? Autoškola Rousková nabízí profesionální a lidský přístup. 2. nejlepší autoškola na Vysočině."
-    >
-    <meta 
-        name="keywords" 
-        content="autoškola náměšť, autoškola náměšť nad oslavou, autoškola Rousková, řidičák Náměšť, autoškola automat, vozový park, přívěsný vozík, B96, B+E, L17, řidičák od 17"
-    >
-    <meta 
-        name="author" 
-        content="Autoškola Rousková"
-    >
-    <meta 
-        name="robots" 
-        content="index, follow"
-    >
+    <title>Autoškola Náměšť nad Oslavou | Autoškola Rousková</title>
+    <meta name="description" content="Hledáte kvalitní autoškolu v Náměšti nad Oslavou? Autoškola Rousková nabízí profesionální a lidský přístup. 2. nejlepší autoškola na Vysočině.">
+    <meta name="keywords" content="autoškola náměšť, autoškola náměšť nad oslavou, autoškola Rousková, řidičák Náměšť, autoškola automat, vozový park, přívěsný vozík, B96, B+E, L17, řidičák od 17">
+    <meta name="author" content="Autoškola Rousková">
+    <meta name="robots" content="index, follow">
 
     <!-- Google Fonts pro decentní moderní typografii -->
-    <link 
-        rel="preconnect" 
-        href="https://fonts.googleapis.com"
-    >
-    <link 
-        rel="preconnect" 
-        href="https://fonts.gstatic.com" 
-        crossorigin
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Font 1: Montserrat (Základní výchozí) -->
-    <link 
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" 
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font 2: Inter (Pro Emerald a Minimal) -->
-    <link 
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font 3: Poppins (Pro Navy) -->
-    <link 
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" 
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- ROBUSTNÍ CSS ARCHITEKTURA (PŘES 2400 ŘÁDKŮ) -->
+    <!-- ROBUSTNÍ CSS ARCHITEKTURA -->
     <style>
         /* ==========================================================================
            TÉMA 1: MODERNÍ MODRÁ (VÝCHOZÍ)
@@ -241,14 +204,8 @@
            ========================================================================== */
         * {
             box-sizing: border-box;
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 0;
-            padding-right: 0;
+            margin: 0;
+            padding: 0;
         }
 
         ::before,
@@ -303,17 +260,6 @@
             transition-timing-function: ease-in-out;
         }
 
-        hr {
-            box-sizing: content-box;
-            height: 0;
-            overflow: visible;
-        }
-
-        pre {
-            font-family: monospace, monospace;
-            font-size: 1em;
-        }
-
         a {
             background-color: transparent;
             color: var(--primary-color);
@@ -329,44 +275,6 @@
             color: var(--primary-hover);
         }
 
-        abbr[title] {
-            border-bottom-width: none;
-            text-decoration: underline;
-            text-decoration: underline dotted;
-        }
-
-        b,
-        strong {
-            font-weight: bolder;
-        }
-
-        code,
-        kbd,
-        samp {
-            font-family: monospace, monospace;
-            font-size: 1em;
-        }
-
-        small {
-            font-size: 80%;
-        }
-
-        sub,
-        sup {
-            font-size: 75%;
-            line-height: 0;
-            position: relative;
-            vertical-align: baseline;
-        }
-
-        sub {
-            bottom: -0.25em;
-        }
-
-        sup {
-            top: -0.5em;
-        }
-
         img {
             border-style: none;
             max-width: 100%;
@@ -375,16 +283,11 @@
 
         button,
         input,
-        optgroup,
-        select,
         textarea {
             font-family: inherit;
             font-size: 100%;
             line-height: 1.15;
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0;
         }
 
         button,
@@ -392,107 +295,21 @@
             overflow: visible;
         }
 
-        button,
-        select {
+        button {
             text-transform: none;
         }
 
         button,
         [type="button"],
-        [type="reset"],
         [type="submit"] {
             -webkit-appearance: button;
         }
 
         button::-moz-focus-inner,
         [type="button"]::-moz-focus-inner,
-        [type="reset"]::-moz-focus-inner,
         [type="submit"]::-moz-focus-inner {
             border-style: none;
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        button:-moz-focusring,
-        [type="button"]:-moz-focusring,
-        [type="reset"]:-moz-focusring,
-        [type="submit"]:-moz-focusring {
-            outline-width: 1px;
-            outline-style: dotted;
-            outline-color: ButtonText;
-        }
-
-        fieldset {
-            padding-top: 0.35em;
-            padding-bottom: 0.625em;
-            padding-left: 0.75em;
-            padding-right: 0.75em;
-        }
-
-        legend {
-            box-sizing: border-box;
-            color: inherit;
-            display: table;
-            max-width: 100%;
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 0;
-            padding-right: 0;
-            white-space: normal;
-        }
-
-        progress {
-            vertical-align: baseline;
-        }
-
-        textarea {
-            overflow: auto;
-        }
-
-        [type="checkbox"],
-        [type="radio"] {
-            box-sizing: border-box;
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        [type="number"]::-webkit-inner-spin-button,
-        [type="number"]::-webkit-outer-spin-button {
-            height: auto;
-        }
-
-        [type="search"] {
-            -webkit-appearance: textfield;
-            outline-offset: -2px;
-        }
-
-        [type="search"]::-webkit-search-decoration {
-            -webkit-appearance: none;
-        }
-
-        ::-webkit-file-upload-button {
-            -webkit-appearance: button;
-            font-family: inherit;
-        }
-
-        details {
-            display: block;
-        }
-
-        summary {
-            display: list-item;
-        }
-
-        template {
-            display: none;
-        }
-
-        [hidden] {
-            display: none;
+            padding: 0;
         }
 
         /* ==========================================================================
@@ -501,14 +318,8 @@
         .container {
             width: 100%;
             max-width: 1200px;
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: auto;
-            margin-right: auto;
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 20px;
-            padding-right: 20px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .bg-light {
@@ -531,9 +342,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom-width: var(--border-width);
-            border-bottom-style: var(--border-style);
-            border-bottom-color: var(--border-color);
+            border-bottom: var(--border-width) var(--border-style) var(--border-color);
             transition-property: background-color, box-shadow, border-color;
             transition-duration: var(--transition-speed);
             transition-timing-function: ease-in-out;
@@ -548,10 +357,7 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            padding-left: 0;
-            padding-right: 0;
+            padding: 15px 0;
             flex-wrap: wrap;
             gap: 20px;
         }
@@ -568,33 +374,14 @@
         .logo {
             width: 60px;
             height: 60px;
-            border-top-left-radius: var(--border-radius-sm);
-            border-top-right-radius: var(--border-radius-sm);
-            border-bottom-right-radius: var(--border-radius-sm);
-            border-bottom-left-radius: var(--border-radius-sm);
+            border-radius: var(--border-radius-sm);
             object-fit: cover;
-            border-top-width: 2px;
-            border-right-width: 2px;
-            border-bottom-width: 2px;
-            border-left-width: 2px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: transparent;
-            border-right-color: transparent;
-            border-bottom-color: transparent;
-            border-left-color: transparent;
-            transition-property: border-color;
-            transition-duration: var(--transition-speed);
-            transition-timing-function: ease-in-out;
+            border: 2px solid transparent;
+            transition: border-color var(--transition-speed) ease-in-out;
         }
 
         .logo-area h2 {
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0;
             line-height: 1.2;
             font-size: 1.4rem;
             letter-spacing: -0.5px;
@@ -611,17 +398,9 @@
             text-decoration: none;
             color: var(--text-color);
             font-size: 0.95rem;
-            padding-top: 6px;
-            padding-bottom: 6px;
-            padding-left: 12px;
-            padding-right: 12px;
-            border-top-left-radius: var(--border-radius-sm);
-            border-top-right-radius: var(--border-radius-sm);
-            border-bottom-right-radius: var(--border-radius-sm);
-            border-bottom-left-radius: var(--border-radius-sm);
-            transition-property: all;
-            transition-duration: var(--transition-speed);
-            transition-timing-function: ease-in-out;
+            padding: 6px 12px;
+            border-radius: var(--border-radius-sm);
+            transition: all var(--transition-speed) ease-in-out;
         }
 
         .main-nav a:hover {
@@ -635,10 +414,7 @@
         }
 
         .header-contacts p {
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0;
             font-size: 0.85rem;
             color: var(--text-light);
         }
@@ -659,28 +435,17 @@
             display: inline-block;
             background-color: var(--secondary-color);
             color: var(--black);
-            padding-top: 14px;
-            padding-bottom: 14px;
-            padding-left: 32px;
-            padding-right: 32px;
+            padding: 14px 32px;
             text-decoration: none;
             font-weight: 600;
-            border-top-left-radius: var(--border-radius-lg);
-            border-top-right-radius: var(--border-radius-lg);
-            border-bottom-right-radius: var(--border-radius-lg);
-            border-bottom-left-radius: var(--border-radius-lg);
-            border-top-width: 0;
-            border-right-width: 0;
-            border-bottom-width: 0;
-            border-left-width: 0;
+            border-radius: var(--border-radius-lg);
+            border: 0;
             box-shadow: var(--box-shadow-sm);
             font-family: inherit;
             font-size: 1rem;
             cursor: pointer;
             text-align: center;
-            transition-property: all;
-            transition-duration: var(--transition-speed);
-            transition-timing-function: ease-in-out;
+            transition: all var(--transition-speed) ease-in-out;
         }
 
         .btn:hover {
@@ -693,31 +458,12 @@
             display: inline-block;
             background-color: transparent;
             color: var(--primary-color);
-            padding-top: 12px;
-            padding-bottom: 12px;
-            padding-left: 24px;
-            padding-right: 24px;
+            padding: 12px 24px;
             text-decoration: none;
             font-weight: 600;
-            border-top-left-radius: var(--border-radius-sm);
-            border-top-right-radius: var(--border-radius-sm);
-            border-bottom-right-radius: var(--border-radius-sm);
-            border-bottom-left-radius: var(--border-radius-sm);
-            border-top-width: 2px;
-            border-right-width: 2px;
-            border-bottom-width: 2px;
-            border-left-width: 2px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: var(--primary-color);
-            border-right-color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
-            border-left-color: var(--primary-color);
-            transition-property: all;
-            transition-duration: var(--transition-speed);
-            transition-timing-function: ease-in-out;
+            border-radius: var(--border-radius-sm);
+            border: 2px solid var(--primary-color);
+            transition: all var(--transition-speed) ease-in-out;
         }
 
         .btn-outline:hover {
@@ -745,13 +491,8 @@
             background-repeat: no-repeat;
             color: #ffffff;
             text-align: center;
-            padding-top: 110px;
-            padding-bottom: 110px;
-            padding-left: 20px;
-            padding-right: 20px;
-            border-bottom-width: var(--border-width);
-            border-bottom-style: var(--border-style);
-            border-bottom-color: var(--border-color);
+            padding: 110px 20px;
+            border-bottom: var(--border-width) var(--border-style) var(--border-color);
         }
 
         body.theme-minimal .hero {
@@ -769,10 +510,7 @@
 
         .hero h1 {
             font-size: clamp(2.2rem, 5vw, 3.8rem);
-            margin-top: 0;
-            margin-bottom: 25px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 25px 0;
             color: #ffffff;
             letter-spacing: -1px;
             line-height: 1.2;
@@ -780,11 +518,8 @@
 
         .hero p {
             font-size: 1.15rem;
-            margin-top: 0;
-            margin-bottom: 45px;
+            margin: 0 auto 45px auto;
             max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
             color: #f1f5f9;
             font-weight: 400;
         }
@@ -797,59 +532,28 @@
            HODNOCENÍ / ÚSPĚCH
            ========================================================================== */
         .achievement-section {
-            padding-top: 70px;
-            padding-bottom: 70px;
-            padding-left: 0;
-            padding-right: 0;
+            padding: 70px 0;
         }
 
         .achievement {
             background-color: var(--bg-alt);
-            padding-top: 50px;
-            padding-bottom: 50px;
-            padding-left: 40px;
-            padding-right: 40px;
+            padding: 50px 40px;
             text-align: center;
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: auto;
-            margin-right: auto;
-            border-top-left-radius: var(--border-radius-md);
-            border-top-right-radius: var(--border-radius-md);
-            border-bottom-right-radius: var(--border-radius-md);
-            border-bottom-left-radius: var(--border-radius-md);
+            margin: 0 auto;
+            border-radius: var(--border-radius-md);
             box-shadow: var(--box-shadow-md);
             max-width: 950px;
-            border-top-width: var(--border-width);
-            border-right-width: var(--border-width);
-            border-bottom-width: var(--border-width);
-            border-left-width: var(--border-width);
-            border-top-style: var(--border-style);
-            border-right-style: var(--border-style);
-            border-bottom-style: var(--border-style);
-            border-left-style: var(--border-style);
-            border-top-color: var(--border-color);
-            border-right-color: var(--border-color);
-            border-bottom-color: var(--border-color);
-            border-left-color: var(--border-color);
-            transition-property: all;
-            transition-duration: var(--transition-speed);
-            transition-timing-function: ease-in-out;
+            border: var(--border-width) var(--border-style) var(--border-color);
+            transition: all var(--transition-speed) ease-in-out;
         }
         
         body.theme-minimal .achievement {
-            border-top-color: #e5e5e5;
-            border-right-color: #e5e5e5;
-            border-bottom-color: #e5e5e5;
-            border-left-color: #e5e5e5;
+            border-color: #e5e5e5;
         }
 
         .achievement h2 {
             font-size: 2.1rem;
-            margin-top: 0;
-            margin-bottom: 25px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 25px 0;
             letter-spacing: -0.5px;
         }
 
@@ -875,9 +579,7 @@
         
         .widget-link {
             display: inline-block;
-            transition-property: transform;
-            transition-duration: 0.3s;
-            transition-timing-function: ease;
+            transition: transform 0.3s ease;
         }
         
         .widget-link:hover {
@@ -895,39 +597,25 @@
            VOZOVÝ PARK
            ========================================================================== */
         .fleet-section {
-            padding-top: 90px;
-            padding-bottom: 90px;
-            padding-left: 0;
-            padding-right: 0;
+            padding: 90px 0;
             text-align: center;
         }
 
         .section-title {
             font-size: 2.4rem;
-            margin-top: 0;
-            margin-bottom: 25px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 25px 0;
             letter-spacing: -0.5px;
         }
 
         /* L17 INFO BANNER */
         .l17-box {
             background-color: #e0f2fe;
-            border-left-width: 5px;
-            border-left-style: solid;
-            border-left-color: var(--primary-color);
-            padding-top: 25px;
-            padding-bottom: 25px;
-            padding-left: 30px;
-            padding-right: 30px;
+            border-left: 5px solid var(--primary-color);
+            padding: 25px 30px;
             border-top-right-radius: var(--border-radius-sm);
             border-bottom-right-radius: var(--border-radius-sm);
             max-width: 900px;
-            margin-top: 0;
-            margin-bottom: 50px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 50px auto;
             text-align: left;
             box-shadow: var(--box-shadow-sm);
         }
@@ -940,19 +628,13 @@
         .l17-box h3 {
             color: var(--primary-color);
             font-size: 1.4rem;
-            margin-top: 0;
-            margin-bottom: 10px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 10px 0;
         }
 
         .l17-box p {
             font-size: 1.05rem;
             color: var(--text-color);
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0;
             line-height: 1.6;
         }
 
@@ -962,39 +644,20 @@
             grid-template-columns: repeat(4, 1fr);
             column-gap: 25px;
             row-gap: 35px;
-            margin-top: 0;
-            margin-bottom: 40px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 40px 0;
         }
 
         /* TŘÍDA PRO KARTU (Auta i Vlek) */
         .car-card {
             background-color: var(--bg-alt);
-            border-top-left-radius: var(--border-radius-md);
-            border-top-right-radius: var(--border-radius-md);
-            border-bottom-right-radius: var(--border-radius-md);
-            border-bottom-left-radius: var(--border-radius-md);
+            border-radius: var(--border-radius-md);
             overflow: hidden;
             box-shadow: var(--box-shadow-sm);
             display: flex;
             flex-direction: column;
             text-align: left;
-            border-top-width: var(--border-width);
-            border-right-width: var(--border-width);
-            border-bottom-width: var(--border-width);
-            border-left-width: var(--border-width);
-            border-top-style: var(--border-style);
-            border-right-style: var(--border-style);
-            border-bottom-style: var(--border-style);
-            border-left-style: var(--border-style);
-            border-top-color: var(--border-color);
-            border-right-color: var(--border-color);
-            border-bottom-color: var(--border-color);
-            border-left-color: var(--border-color);
-            transition-property: transform, box-shadow;
-            transition-duration: var(--transition-speed);
-            transition-timing-function: ease-in-out;
+            border: var(--border-width) var(--border-style) var(--border-color);
+            transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
             height: 100%;
         }
 
@@ -1007,9 +670,7 @@
             width: 100%;
             height: 190px;
             overflow: hidden;
-            border-bottom-width: 3px;
-            border-bottom-style: solid;
-            border-bottom-color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1019,9 +680,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition-property: transform;
-            transition-duration: 0.6s;
-            transition-timing-function: ease;
+            transition: transform 0.6s ease;
         }
 
         .car-card:hover img {
@@ -1029,10 +688,7 @@
         }
 
         .car-card-body {
-            padding-top: 25px;
-            padding-bottom: 25px;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding: 25px 20px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -1040,26 +696,15 @@
 
         .car-card-body h3 {
             font-size: 1.25rem;
-            margin-top: 0;
-            margin-bottom: 15px;
-            margin-left: 0;
-            margin-right: 0;
-            border-bottom-width: 1px;
-            border-bottom-style: solid;
-            border-bottom-color: var(--border-color);
+            margin: 0 0 15px 0;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 12px;
         }
 
         .car-card-body ul {
             list-style-type: none;
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 0;
-            padding-right: 0;
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
+            padding: 0;
+            margin: 0;
             flex-grow: 1;
         }
 
@@ -1085,14 +730,8 @@
             background-color: var(--primary-color);
             color: #ffffff;
             font-size: 0.75rem;
-            padding-top: 4px;
-            padding-bottom: 4px;
-            padding-left: 10px;
-            padding-right: 10px;
-            border-top-left-radius: var(--border-radius-lg);
-            border-top-right-radius: var(--border-radius-lg);
-            border-bottom-right-radius: var(--border-radius-lg);
-            border-bottom-left-radius: var(--border-radius-lg);
+            padding: 4px 10px;
+            border-radius: var(--border-radius-lg);
             margin-bottom: 15px;
             font-weight: 700;
             align-self: flex-start;
@@ -1105,29 +744,12 @@
            ========================================================================== */
         .moto-section {
             max-width: 900px;
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
             background-color: var(--bg-alt);
-            border-top-left-radius: var(--border-radius-md);
-            border-top-right-radius: var(--border-radius-md);
-            border-bottom-right-radius: var(--border-radius-md);
-            border-bottom-left-radius: var(--border-radius-md);
+            border-radius: var(--border-radius-md);
             box-shadow: var(--box-shadow-md);
             overflow: hidden;
-            border-top-width: var(--border-width);
-            border-right-width: var(--border-width);
-            border-bottom-width: var(--border-width);
-            border-left-width: var(--border-width);
-            border-top-style: var(--border-style);
-            border-right-style: var(--border-style);
-            border-bottom-style: var(--border-style);
-            border-left-style: var(--border-style);
-            border-top-color: var(--border-color);
-            border-right-color: var(--border-color);
-            border-bottom-color: var(--border-color);
-            border-left-color: var(--border-color);
+            border: var(--border-width) var(--border-style) var(--border-color);
         }
 
         .moto-tabs {
@@ -1135,58 +757,34 @@
             flex-direction: row;
             flex-wrap: wrap;
             background-color: var(--bg-highlight);
-            border-bottom-width: var(--border-width);
-            border-bottom-style: var(--border-style);
-            border-bottom-color: var(--border-color);
+            border-bottom: var(--border-width) var(--border-style) var(--border-color);
         }
 
         .moto-tab-btn {
-            flex-grow: 1;
-            flex-shrink: 1;
-            flex-basis: 0;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            padding-left: 10px;
-            padding-right: 10px;
-            border-top-width: 0;
-            border-left-width: 0;
-            border-bottom-width: 0;
-            border-right-width: 1px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: transparent;
-            border-right-color: var(--border-color);
-            border-bottom-color: transparent;
-            border-left-color: transparent;
+            flex: 1 1 0;
+            padding: 20px 10px;
+            border: 0;
+            border-right: 1px solid var(--border-color);
             background-color: transparent;
             cursor: pointer;
             font-weight: 600;
             font-family: inherit;
             color: var(--text-light);
-            transition-property: all;
-            transition-duration: 0.2s;
-            transition-timing-function: ease-in-out;
-            border-bottom-width: 3px;
-            border-bottom-style: solid;
-            border-bottom-color: transparent;
+            transition: all 0.2s ease-in-out;
+            border-bottom: 3px solid transparent;
             min-width: 140px;
             font-size: 0.95rem;
         }
         
         .moto-tab-btn:last-child {
-            border-right-width: 0;
+            border-right: 0;
         }
 
         .moto-tab-btn small {
             display: block;
             font-weight: 400;
             font-size: 0.8rem;
-            margin-top: 3px;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 3px 0 0 0;
             opacity: 0.8;
         }
 
@@ -1203,30 +801,18 @@
 
         .moto-content {
             display: none;
-            padding-top: 60px;
-            padding-bottom: 60px;
-            padding-left: 40px;
-            padding-right: 40px;
+            padding: 60px 40px;
             text-align: center;
         }
 
         .moto-content.active {
             display: block;
-            animation-name: fadeInContent;
-            animation-duration: 0.4s;
-            animation-timing-function: ease-out;
-            animation-fill-mode: forwards;
+            animation: fadeInContent 0.4s ease-out forwards;
         }
 
         @keyframes fadeInContent {
-            from { 
-                opacity: 0; 
-                transform: translateY(10px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .moto-content img {
@@ -1234,30 +820,21 @@
             max-width: 450px;
             height: 280px;
             object-fit: cover;
-            border-top-left-radius: var(--border-radius-sm);
-            border-top-right-radius: var(--border-radius-sm);
-            border-bottom-right-radius: var(--border-radius-sm);
-            border-bottom-left-radius: var(--border-radius-sm);
+            border-radius: var(--border-radius-sm);
             margin-bottom: 30px;
             box-shadow: var(--box-shadow-sm);
         }
 
         .moto-content h3 {
             font-size: 1.6rem;
-            margin-top: 0;
-            margin-bottom: 15px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 15px 0;
             color: var(--text-color);
         }
 
         .moto-content p {
             font-size: 1.05rem;
             max-width: 650px;
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
             color: var(--text-light);
         }
 
@@ -1265,50 +842,25 @@
            PŘIHLÁŠKA A KONTAKT (3 SLOUPCE)
            ========================================================================== */
         .apply-section {
-            padding-top: 90px;
-            padding-bottom: 90px;
-            padding-left: 0;
-            padding-right: 0;
+            padding: 90px 0;
         }
 
         .apply-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-top: 50px;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 50px 0 0 0;
         }
 
         .apply-card {
             background-color: var(--bg-alt);
-            padding-top: 40px;
-            padding-bottom: 40px;
-            padding-left: 35px;
-            padding-right: 35px;
-            border-top-left-radius: var(--border-radius-md);
-            border-top-right-radius: var(--border-radius-md);
-            border-bottom-right-radius: var(--border-radius-md);
-            border-bottom-left-radius: var(--border-radius-md);
+            padding: 40px 35px;
+            border-radius: var(--border-radius-md);
             box-shadow: var(--box-shadow-md);
             display: flex;
             flex-direction: column;
-            border-top-width: var(--border-width);
-            border-right-width: var(--border-width);
-            border-bottom-width: var(--border-width);
-            border-left-width: var(--border-width);
-            border-top-style: var(--border-style);
-            border-right-style: var(--border-style);
-            border-bottom-style: var(--border-style);
-            border-left-style: var(--border-style);
-            border-top-color: var(--border-color);
-            border-right-color: var(--border-color);
-            border-bottom-color: var(--border-color);
-            border-left-color: var(--border-color);
-            transition-property: transform, box-shadow;
-            transition-duration: var(--transition-speed);
-            transition-timing-function: ease-in-out;
+            border: var(--border-width) var(--border-style) var(--border-color);
+            transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
         }
 
         .apply-card:hover {
@@ -1318,21 +870,13 @@
 
         .apply-card h3 {
             font-size: 1.3rem;
-            border-bottom-width: 2px;
-            border-bottom-style: solid;
-            border-bottom-color: var(--bg-highlight);
+            border-bottom: 2px solid var(--bg-highlight);
             padding-bottom: 15px;
-            margin-top: 0;
-            margin-bottom: 25px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 25px 0;
         }
 
         .apply-card p {
-            margin-top: 0;
-            margin-bottom: 30px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 30px 0;
             color: var(--text-light);
             font-size: 0.95rem;
         }
@@ -1341,10 +885,7 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            margin-top: auto;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
+            margin: auto 0 0 0;
         }
 
         .phone-links a {
@@ -1353,98 +894,48 @@
             font-weight: 700;
             color: var(--primary-color);
             background-color: var(--bg-highlight);
-            padding-top: 18px;
-            padding-bottom: 18px;
-            padding-left: 20px;
-            padding-right: 20px;
-            border-top-left-radius: var(--border-radius-sm);
-            border-top-right-radius: var(--border-radius-sm);
-            border-bottom-right-radius: var(--border-radius-sm);
-            border-bottom-left-radius: var(--border-radius-sm);
+            padding: 18px 20px;
+            border-radius: var(--border-radius-sm);
             text-align: center;
-            border-top-width: 1px;
-            border-right-width: 1px;
-            border-bottom-width: 1px;
-            border-left-width: 1px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: transparent;
-            border-right-color: transparent;
-            border-bottom-color: transparent;
-            border-left-color: transparent;
-            transition-property: all;
-            transition-duration: 0.2s;
-            transition-timing-function: ease-in-out;
+            border: 1px solid transparent;
+            transition: all 0.2s ease-in-out;
         }
 
         .phone-links a:hover {
             background-color: var(--primary-color);
             color: var(--white);
-            border-top-color: var(--primary-color);
-            border-right-color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
-            border-left-color: var(--primary-color);
+            border-color: var(--primary-color);
         }
 
         /* Formulář */
         .form-group {
-            margin-top: 0;
-            margin-bottom: 20px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 20px 0;
             text-align: left;
         }
 
         .form-group label {
             display: block;
             font-size: 0.9rem;
-            margin-top: 0;
-            margin-bottom: 8px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 8px 0;
             font-weight: 600;
             color: var(--text-color);
         }
 
         .form-control {
             width: 100%;
-            padding-top: 12px;
-            padding-bottom: 12px;
-            padding-left: 15px;
-            padding-right: 15px;
-            border-top-width: 1px;
-            border-right-width: 1px;
-            border-bottom-width: 1px;
-            border-left-width: 1px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: #cbd5e1;
-            border-right-color: #cbd5e1;
-            border-bottom-color: #cbd5e1;
-            border-left-color: #cbd5e1;
-            border-top-left-radius: var(--border-radius-sm);
-            border-top-right-radius: var(--border-radius-sm);
-            border-bottom-right-radius: var(--border-radius-sm);
-            border-bottom-left-radius: var(--border-radius-sm);
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: var(--border-radius-sm);
             font-family: inherit;
             font-size: 0.95rem;
             background-color: var(--bg-alt);
             color: var(--text-color);
-            transition-property: border-color, box-shadow;
-            transition-duration: 0.2s;
-            transition-timing-function: ease-in-out;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
 
         .form-control:focus {
-            outline-width: 0;
-            border-top-color: var(--primary-color);
-            border-right-color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
-            border-left-color: var(--primary-color);
+            outline: 0;
+            border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
         }
 
@@ -1456,92 +947,43 @@
         .alert-success {
             background-color: #dcfce7;
             color: #166534;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            padding-left: 20px;
-            padding-right: 20px;
-            border-top-left-radius: var(--border-radius-sm);
-            border-top-right-radius: var(--border-radius-sm);
-            border-bottom-right-radius: var(--border-radius-sm);
-            border-bottom-left-radius: var(--border-radius-sm);
-            margin-top: 0;
-            margin-bottom: 30px;
-            margin-left: 0;
-            margin-right: 0;
+            padding: 15px 20px;
+            border-radius: var(--border-radius-sm);
+            margin: 0 0 30px 0;
             display: none;
             text-align: center;
             font-weight: 500;
             font-size: 1rem;
-            border-top-width: 1px;
-            border-right-width: 1px;
-            border-bottom-width: 1px;
-            border-left-width: 1px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: #bbf7d0;
-            border-right-color: #bbf7d0;
-            border-bottom-color: #bbf7d0;
-            border-left-color: #bbf7d0;
+            border: 1px solid #bbf7d0;
         }
 
         /* ==========================================================================
            DOKUMENTY KE STAŽENÍ
            ========================================================================== */
         .docs-section {
-            padding-top: 90px;
-            padding-bottom: 90px;
-            padding-left: 0;
-            padding-right: 0;
+            padding: 90px 0;
             text-align: center;
         }
 
         .highlight-box {
             background-color: var(--bg-alt);
-            border-top-width: 2px;
-            border-right-width: 2px;
-            border-bottom-width: 2px;
-            border-left-width: 2px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: var(--secondary-color);
-            border-right-color: var(--secondary-color);
-            border-bottom-color: var(--secondary-color);
-            border-left-color: var(--secondary-color);
-            padding-top: 45px;
-            padding-bottom: 45px;
-            padding-left: 40px;
-            padding-right: 40px;
-            border-top-left-radius: var(--border-radius-md);
-            border-top-right-radius: var(--border-radius-md);
-            border-bottom-right-radius: var(--border-radius-md);
-            border-bottom-left-radius: var(--border-radius-md);
+            border: 2px solid var(--secondary-color);
+            padding: 45px 40px;
+            border-radius: var(--border-radius-md);
             max-width: 850px;
-            margin-top: 0;
-            margin-bottom: 50px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 50px auto;
             box-shadow: var(--box-shadow-md);
         }
 
         .highlight-box h3 {
             color: var(--primary-color);
             font-size: 1.5rem;
-            margin-top: 0;
-            margin-bottom: 15px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 15px 0;
         }
 
         .highlight-box p {
             font-size: 1.05rem;
-            margin-top: 0;
-            margin-bottom: 25px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 25px 0;
             color: var(--text-light);
         }
 
@@ -1549,20 +991,11 @@
             font-size: 1.25rem;
             font-weight: 700;
             display: block;
-            margin-top: 0;
-            margin-bottom: 20px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 20px 0;
             color: var(--text-color);
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding: 10px 20px;
             background-color: var(--bg-highlight);
-            border-top-left-radius: var(--border-radius-sm);
-            border-top-right-radius: var(--border-radius-sm);
-            border-bottom-right-radius: var(--border-radius-sm);
-            border-bottom-left-radius: var(--border-radius-sm);
+            border-radius: var(--border-radius-sm);
         }
 
         .doc-buttons {
@@ -1577,10 +1010,7 @@
            GALERIE
            ========================================================================== */
         .gallery {
-            padding-top: 90px;
-            padding-bottom: 90px;
-            padding-left: 0;
-            padding-right: 0;
+            padding: 90px 0;
             text-align: center;
         }
 
@@ -1588,31 +1018,14 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
-            margin-top: 40px;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 40px 0 0 0;
         }
 
         .gallery-item {
             overflow: hidden;
-            border-top-left-radius: var(--border-radius-sm);
-            border-top-right-radius: var(--border-radius-sm);
-            border-bottom-right-radius: var(--border-radius-sm);
-            border-bottom-left-radius: var(--border-radius-sm);
+            border-radius: var(--border-radius-sm);
             box-shadow: var(--box-shadow-sm);
-            border-top-width: var(--border-width);
-            border-right-width: var(--border-width);
-            border-bottom-width: var(--border-width);
-            border-left-width: var(--border-width);
-            border-top-style: var(--border-style);
-            border-right-style: var(--border-style);
-            border-bottom-style: var(--border-style);
-            border-left-style: var(--border-style);
-            border-top-color: var(--border-color);
-            border-right-color: var(--border-color);
-            border-bottom-color: var(--border-color);
-            border-left-color: var(--border-color);
+            border: var(--border-width) var(--border-style) var(--border-color);
             background-color: var(--bg-alt);
         }
 
@@ -1621,9 +1034,7 @@
             height: 250px;
             object-fit: cover;
             display: block;
-            transition-property: transform;
-            transition-duration: 0.5s;
-            transition-timing-function: ease;
+            transition: transform 0.5s ease;
         }
 
         .gallery-grid img:hover {
@@ -1631,48 +1042,35 @@
         }
 
         /* ==========================================================================
-           PATIČKA (PLNĚ VYCENTROVANÁ PRO VŠECHNA ZAŘÍZENÍ)
+           PATIČKA
            ========================================================================== */
         footer {
             background-color: #111827;
             color: #f3f4f6;
-            padding-top: 70px;
-            padding-bottom: 30px;
-            padding-left: 0;
-            padding-right: 0;
-            margin-top: 50px;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
-            border-top-width: 4px;
-            border-top-style: solid;
-            border-top-color: var(--primary-color);
+            padding: 70px 0 30px 0;
+            margin: 50px 0 0 0;
+            border-top: 4px solid var(--primary-color);
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
-            margin-top: 0;
-            margin-bottom: 50px;
-   
-            justify-items: center; /* Centruje samotné bloky sloupců */
-            text-align: center; /* Centruje text uvnitř sloupců */
+            margin: 0 0 50px 0;
+            justify-items: center; 
+            text-align: center; 
         }
 
         .footer-col {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Drží prvky na středu pod sebou */
+            align-items: center; 
             width: 100%;
         }
 
         .footer-col h4 {
             color: var(--secondary-color);
-            margin-top: 0;
-            margin-bottom: 25px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 25px 0;
             text-transform: uppercase;
             font-size: 0.95rem;
             letter-spacing: 1px;
@@ -1680,10 +1078,7 @@
         }
 
         .footer-col p {
-            margin-top: 0;
-            margin-bottom: 15px;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 0 15px 0;
             color: #9ca3af;
             font-size: 0.95rem;
             text-align: center;
@@ -1692,9 +1087,7 @@
         .footer-col a {
             color: #f3f4f6;
             text-decoration: none;
-            transition-property: color;
-            transition-duration: 0.2s;
-            transition-timing-function: ease-in-out;
+            transition: color 0.2s ease-in-out;
             display: inline-block;
         }
 
@@ -1704,13 +1097,8 @@
 
         .copyright {
             text-align: center;
-            border-top-width: 1px;
-            border-top-style: solid;
-            border-top-color: rgba(255,255,255,0.1);
-            padding-top: 25px;
-            padding-bottom: 0;
-            padding-left: 0;
-            padding-right: 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 25px 0 0 0;
             font-size: 0.9rem;
             color: #6b7280;
         }
@@ -1726,10 +1114,7 @@
             height: 55px;
             background-color: var(--primary-color);
             color: var(--white);
-            border-top-left-radius: 50%;
-            border-top-right-radius: 50%;
-            border-bottom-right-radius: 50%;
-            border-bottom-left-radius: 50%;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1737,21 +1122,8 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             z-index: 9999;
-            border-top-width: 2px;
-            border-right-width: 2px;
-            border-bottom-width: 2px;
-            border-left-width: 2px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: var(--bg-alt);
-            border-right-color: var(--bg-alt);
-            border-bottom-color: var(--bg-alt);
-            border-left-color: var(--bg-alt);
-            transition-property: transform;
-            transition-duration: 0.3s;
-            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid var(--bg-alt);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .theme-switcher-btn:hover {
@@ -1764,34 +1136,15 @@
             right: 30px;
             width: 320px;
             background-color: var(--bg-alt);
-            border-top-left-radius: var(--border-radius-md);
-            border-top-right-radius: var(--border-radius-md);
-            border-bottom-right-radius: var(--border-radius-md);
-            border-bottom-left-radius: var(--border-radius-md);
+            border-radius: var(--border-radius-md);
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            padding-top: 25px;
-            padding-bottom: 25px;
-            padding-left: 25px;
-            padding-right: 25px;
+            padding: 25px;
             z-index: 9998;
-            border-top-width: 1px;
-            border-right-width: 1px;
-            border-bottom-width: 1px;
-            border-left-width: 1px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: var(--border-color);
-            border-right-color: var(--border-color);
-            border-bottom-color: var(--border-color);
-            border-left-color: var(--border-color);
+            border: 1px solid var(--border-color);
             transform: translateY(20px);
             opacity: 0;
             visibility: hidden;
-            transition-property: all;
-            transition-duration: 0.3s;
-            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .theme-panel.open {
@@ -1804,31 +1157,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 0;
-            margin-bottom: 20px;
-            margin-left: 0;
-            margin-right: 0;
-            border-bottom-width: 1px;
-            border-bottom-style: solid;
-            border-bottom-color: var(--border-color);
+            margin: 0 0 20px 0;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 15px;
         }
 
         .theme-panel-header h3 {
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0;
             font-size: 1.1rem;
             color: var(--text-color);
         }
 
         .theme-close {
             background-color: transparent;
-            border-top-width: 0;
-            border-right-width: 0;
-            border-bottom-width: 0;
-            border-left-width: 0;
+            border: 0;
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--text-light);
@@ -1845,51 +1187,26 @@
             align-items: center;
             gap: 15px;
             width: 100%;
-            padding-top: 12px;
-            padding-bottom: 12px;
-            padding-left: 15px;
-            padding-right: 15px;
-            border-top-width: 1px;
-            border-right-width: 1px;
-            border-bottom-width: 1px;
-            border-left-width: 1px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: var(--border-color);
-            border-right-color: var(--border-color);
-            border-bottom-color: var(--border-color);
-            border-left-color: var(--border-color);
-            border-top-left-radius: var(--border-radius-sm);
-            border-top-right-radius: var(--border-radius-sm);
-            border-bottom-right-radius: var(--border-radius-sm);
-            border-bottom-left-radius: var(--border-radius-sm);
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
             background-color: var(--bg-color);
             color: var(--text-color);
             font-weight: 500;
             font-size: 0.95rem;
             cursor: pointer;
-            transition-property: all;
-            transition-duration: 0.2s;
-            transition-timing-function: ease-in-out;
+            transition: all 0.2s ease-in-out;
             text-align: left;
             font-family: inherit;
         }
 
         .theme-btn:hover {
-            border-top-color: var(--primary-color);
-            border-right-color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
-            border-left-color: var(--primary-color);
+            border-color: var(--primary-color);
             background-color: var(--bg-highlight);
         }
 
         .theme-btn.active {
-            border-top-color: var(--primary-color);
-            border-right-color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
-            border-left-color: var(--primary-color);
+            border-color: var(--primary-color);
             background-color: var(--bg-highlight);
             box-shadow: inset 0 0 0 1px var(--primary-color);
             font-weight: 600;
@@ -1903,22 +1220,68 @@
         .circle {
             width: 18px;
             height: 18px;
-            border-top-left-radius: 50%;
-            border-top-right-radius: 50%;
-            border-bottom-right-radius: 50%;
-            border-bottom-left-radius: 50%;
-            border-top-width: 1px;
-            border-right-width: 1px;
-            border-bottom-width: 1px;
-            border-left-width: 1px;
-            border-top-style: solid;
-            border-right-style: solid;
-            border-bottom-style: solid;
-            border-left-style: solid;
-            border-top-color: rgba(0,0,0,0.1);
-            border-right-color: rgba(0,0,0,0.1);
-            border-bottom-color: rgba(0,0,0,0.1);
-            border-left-color: rgba(0,0,0,0.1);
+            border-radius: 50%;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* ==========================================================================
+           LIGHTBOX STYLY
+           ========================================================================== */
+        .lightbox {
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: var(--border-radius-sm);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            object-fit: contain;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox.active img {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color var(--transition-speed);
+            z-index: 100000;
+        }
+
+        .lightbox-close:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Kurzor pro klikatelné obrázky, aby uživatel věděl, že na ně může kliknout */
+        img.clickable-img {
+            cursor: pointer;
         }
 
         /* ==========================================================================
@@ -1936,9 +1299,7 @@
                 order: 3;
                 width: 100%;
                 justify-content: center;
-                border-top-width: 1px;
-                border-top-style: solid;
-                border-top-color: var(--border-color);
+                border-top: 1px solid var(--border-color);
                 padding-top: 15px;
             }
             .hero {
@@ -1984,9 +1345,7 @@
             .moto-tab-btn {
                 min-width: 100%;
                 border-right-width: 0;
-                border-bottom-width: 1px;
-                border-bottom-style: solid;
-                border-bottom-color: var(--border-color);
+                border-bottom: 1px solid var(--border-color);
             }
             .hero h1 {
                 font-size: 1.9rem;
@@ -2006,83 +1365,54 @@
         }
     </style>
 </head>
-<body 
-    class="theme-default"
->
+<body class="theme-default">
 
     <!-- =======================================================================
          NASTAVENÍ VZHLEDU (POP-UP)
          ======================================================================= -->
-    <div 
-        id="themeSwitcherBtn" 
-        class="theme-switcher-btn" 
-        title="Změnit vzhled webu"
-    >
+    <div id="themeSwitcherBtn" class="theme-switcher-btn" title="Změnit vzhled webu">
         ⚙️
     </div>
 
-    <div 
-        id="themePanel" 
-        class="theme-panel"
-    >
+    <div id="themePanel" class="theme-panel">
         <div class="theme-panel-header">
             <h3>🎨 Styl webu</h3>
-            <button 
-                id="closeThemePanel" 
-                class="theme-close"
-            >
-                ×
-            </button>
+            <button id="closeThemePanel" class="theme-close">×</button>
         </div>
         <p style="font-size: 0.85rem; margin-bottom: 15px; color: var(--text-light);">
             Vyberte si jeden z moderních a decentních stylů.
         </p>
         
         <div class="theme-options">
-            <button 
-                class="theme-btn active" 
-                data-theme="theme-default"
-            >
+            <button class="theme-btn active" data-theme="theme-default">
                 <div class="color-circles">
                     <div class="circle" style="background-color: #0056b3;"></div>
                     <div class="circle" style="background-color: #f8c146;"></div>
                 </div>
                 Moderní Modrá (Výchozí)
             </button>
-            <button 
-                class="theme-btn" 
-                data-theme="theme-emerald"
-            >
+            <button class="theme-btn" data-theme="theme-emerald">
                 <div class="color-circles">
                     <div class="circle" style="background-color: #0f766e;"></div>
                     <div class="circle" style="background-color: #f59e0b;"></div>
                 </div>
                 Smaragdová (Emerald)
             </button>
-            <button 
-                class="theme-btn" 
-                data-theme="theme-slate"
-            >
+            <button class="theme-btn" data-theme="theme-slate">
                 <div class="color-circles">
                     <div class="circle" style="background-color: #334155;"></div>
                     <div class="circle" style="background-color: #ea580c;"></div>
                 </div>
                 Břidlicová (Slate)
             </button>
-            <button 
-                class="theme-btn" 
-                data-theme="theme-navy"
-            >
+            <button class="theme-btn" data-theme="theme-navy">
                 <div class="color-circles">
                     <div class="circle" style="background-color: #1e3a8a;"></div>
                     <div class="circle" style="background-color: #e11d48;"></div>
                 </div>
                 Námořní (Navy & Coral)
             </button>
-            <button 
-                class="theme-btn" 
-                data-theme="theme-minimal"
-            >
+            <button class="theme-btn" data-theme="theme-minimal">
                 <div class="color-circles">
                     <div class="circle" style="background-color: #171717;"></div>
                     <div class="circle" style="background-color: #e5e5e5;"></div>
@@ -2097,16 +1427,8 @@
          ======================================================================= -->
     <header>
         <div class="container header-content">
-            <a 
-                href="#" 
-                class="logo-area"
-            >
-                <img 
-                    src="logo.png" 
-                    alt="Autoškola Rousková Logo" 
-                    class="logo" 
-                    onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'60\' height=\'60\' viewBox=\'0 0 60 60\'><rect width=\'60\' height=\'60\' fill=\'%230056b3\'/><text x=\'50%\' y=\'50%\' fill=\'white\' font-size=\'20\' font-family=\'Arial\' dominant-baseline=\'middle\' text-anchor=\'middle\'>AR</text></svg>'"
-                >
+            <a href="#" class="logo-area">
+                <img src="logo.png" alt="Autoškola Rousková Logo" class="logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'60\' height=\'60\' viewBox=\'0 0 60 60\'><rect width=\'60\' height=\'60\' fill=\'%230056b3\'/><text x=\'50%\' y=\'50%\' fill=\'white\' font-size=\'20\' font-family=\'Arial\' dominant-baseline=\'middle\' text-anchor=\'middle\'>AR</text></svg>'">
                 <h2>
                     Autoškola<br>Rousková
                 </h2>
@@ -2119,13 +1441,8 @@
                 <a href="#galerie">Galerie</a>
             </nav>
             <div class="header-contacts">
-                <p>
-                    Volejte kdykoliv:
-                </p>
-                <a 
-                    href="tel:+420607892209" 
-                    class="phone-primary"
-                >
+                <p>Volejte kdykoliv:</p>
+                <a href="tel:+420607892209" class="phone-primary">
                     +420 607 892 209
                 </a>
             </div>
@@ -2137,32 +1454,20 @@
          ======================================================================= -->
     <section class="hero">
         <div class="container">
-            <h1>
-                Autoškola Náměšť nad Oslavou
-            </h1>
+            <h1>Autoškola Náměšť nad Oslavou</h1>
             <p>
                 Lidský přístup, profesionální instruktoři a výcvik v pohodě. Naučíme vás řídit bezpečně a s jistotou.
             </p>
-            <a 
-                href="#prihlaska" 
-                class="btn"
-            >
-                Chci se přihlásit
-            </a>
+            <a href="#prihlaska" class="btn">Chci se přihlásit</a>
         </div>
     </section>
 
     <!-- =======================================================================
          2. HODNOCENÍ / ÚSPĚCH
          ======================================================================= -->
-    <section 
-        id="hodnoceni" 
-        class="achievement-section container"
-    >
+    <section id="hodnoceni" class="achievement-section container">
         <div class="achievement">
-            <h2>
-                2. nejlépe hodnocená autoškola na Vysočině!
-            </h2>
+            <h2>2. nejlépe hodnocená autoškola na Vysočině!</h2>
             <div class="achievement-content">
                 <div class="achievement-text">
                     <p>
@@ -2172,17 +1477,8 @@
                         <strong>Chystáte se na řidičák? U nás máte jistotu, že se učíte od těch nejlepších!</strong>
                     </p>
                 </div>
-                <a 
-                    href="https://www.firmy.cz/detail/448007-autoskola-zdenka-rouskova-namest-nad-oslavou.html#hodnoceni" 
-                    target="_blank" 
-                    rel="noopener" 
-                    class="widget-link"
-                >
-                    <img 
-                        src="https://www.firmy.cz/img-stars/light-448007.svg" 
-                        alt="Hodnocení Autoškola Zdeňka Rousková na Firmy.cz" 
-                        class="widget-img"
-                    >
+                <a href="https://www.firmy.cz/detail/448007-autoskola-zdenka-rouskova-namest-nad-oslavou.html#hodnoceni" target="_blank" rel="noopener" class="widget-link">
+                    <img src="https://www.firmy.cz/img-stars/light-448007.svg" alt="Hodnocení Autoškola Zdeňka Rousková na Firmy.cz" class="widget-img">
                 </a>
             </div>
         </div>
@@ -2191,20 +1487,13 @@
     <!-- =======================================================================
          3. VOZOVÝ PARK, L17 A PŘÍVĚSNÝ VOZÍK
          ======================================================================= -->
-    <section 
-        id="vozy" 
-        class="fleet-section bg-light"
-    >
+    <section id="vozy" class="fleet-section bg-light">
         <div class="container">
             
-            <h2 class="section-title">
-                Náš vozový park
-            </h2>
+            <h2 class="section-title">Náš vozový park</h2>
             
             <div class="l17-box">
-                <h3>
-                    🚗 Řidičák na auto už od 17 let (Režim L17)
-                </h3>
+                <h3>🚗 Řidičák na auto už od 17 let (Režim L17)</h3>
                 <p>
                     Věděli jste, že s výcvikem na skupinu B můžete začít ještě před 17. rokem? Na závěrečné zkoušky pak můžete vyrazit <strong>hned den po svých 17. narozeninách</strong>! Až do vašich 18 let budete moct legálně řídit za doprovodu registrovaného mentora (nejčastěji to bývá rodič), což je ideální způsob, jak získat jistotu v provozu.
                 </p>
@@ -2215,19 +1504,11 @@
                 <!-- Auto 1 (Karoq) -->
                 <div class="car-card">
                     <div class="car-img-wrapper">
-                        <img 
-                            src="autoskola-namest-rousek.jpg" 
-                            alt="Autoškola Náměšť vůz Škoda Karoq" 
-                            onerror="this.src='https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=600&auto=format&fit=crop'"
-                        >
+                        <img src="autoskola-namest-rousek.jpg" alt="Autoškola Náměšť vůz Škoda Karoq" onerror="this.src='https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=600&auto=format&fit=crop'">
                     </div>
                     <div class="car-card-body">
-                        <span class="tag-auto">
-                            AUTOMAT
-                        </span>
-                        <h3>
-                            Škoda Karoq
-                        </h3>
+                        <span class="tag-auto">AUTOMAT</span>
+                        <h3>Škoda Karoq</h3>
                         <ul>
                             <li>Automatická převodovka</li>
                             <li>Benzínový motor</li>
@@ -2239,16 +1520,10 @@
                 <!-- Auto 2 (Golf V) -->
                 <div class="car-card">
                     <div class="car-img-wrapper">
-                        <img 
-                            src="autoskola-namest-golf-v.jpg" 
-                            alt="Výcvikový vůz Volkswagen Golf V" 
-                            onerror="this.src='https://images.unsplash.com/photo-1541899481282-d53bffe3c350?q=80&w=600&auto=format&fit=crop'"
-                        >
+                        <img src="autoskola-namest-golf-v.jpg" alt="Výcvikový vůz Volkswagen Golf V" onerror="this.src='https://images.unsplash.com/photo-1541899481282-d53bffe3c350?q=80&w=600&auto=format&fit=crop'">
                     </div>
                     <div class="car-card-body">
-                        <h3>
-                            Volkswagen Golf V
-                        </h3>
+                        <h3>Volkswagen Golf V</h3>
                         <ul>
                             <li>Manuální převodovka</li>
                             <li>Naftový motor</li>
@@ -2260,16 +1535,10 @@
                 <!-- Auto 3 (Golf VII) -->
                 <div class="car-card">
                     <div class="car-img-wrapper">
-                        <img 
-                            src="autoskola-namest-golf-vii.jpg" 
-                            alt="Výcvikový vůz Volkswagen Golf VII" 
-                            onerror="this.src='https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600&auto=format&fit=crop'"
-                        >
+                        <img src="autoskola-namest-golf-vii.jpg" alt="Výcvikový vůz Volkswagen Golf VII" onerror="this.src='https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600&auto=format&fit=crop'">
                     </div>
                     <div class="car-card-body">
-                        <h3>
-                            Volkswagen Golf VII
-                        </h3>
+                        <h3>Volkswagen Golf VII</h3>
                         <ul>
                             <li>Manuální převodovka</li>
                             <li>Naftový motor</li>
@@ -2281,16 +1550,10 @@
                 <!-- Auto 4 (Yeti) -->
                 <div class="car-card">
                     <div class="car-img-wrapper">
-                        <img 
-                            src="autoskola-namest-vlek.jpg" 
-                            alt="Výcvikový vůz Škoda Yeti" 
-                            onerror="this.src='https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=600&auto=format&fit=crop'"
-                        >
+                        <img src="autoskola-namest-vlek.jpg" alt="Výcvikový vůz Škoda Yeti" onerror="this.src='https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=600&auto=format&fit=crop'">
                     </div>
                     <div class="car-card-body">
-                        <h3>
-                            Škoda Yeti
-                        </h3>
+                        <h3>Škoda Yeti</h3>
                         <ul>
                             <li>Manuální převodovka</li>
                             <li>Naftový motor</li>
@@ -2301,24 +1564,17 @@
 
             </div>
 
-            <!-- OPRAVA: PŘÍVĚSNÝ VOZÍK (STEJNÁ VELIKOST KARTY JAKO U AUT) -->
+            <!-- PŘÍVĚSNÝ VOZÍK -->
             <div style="display: flex; justify-content: center; margin-top: -10px; margin-bottom: 60px;">
                 <div class="car-card" style="max-width: 285px; width: 100%;">
                     <div class="car-img-wrapper" style="background-color: var(--bg-highlight);">
-                        <img 
-                            src="autoskola-namest-vlek-2.jpg" 
-                            alt="Výcvik s přívěsným vozíkem B96 a B+E"
-                            style="object-fit: contain;"
-                            onerror="this.src='https://images.unsplash.com/photo-1596766779410-b962768564e5?q=80&w=800&auto=format&fit=crop'"
-                        >
+                        <img src="autoskola-namest-vlek-2.jpg" alt="Výcvik s přívěsným vozíkem B96 a B+E" style="object-fit: contain;" onerror="this.src='https://images.unsplash.com/photo-1596766779410-b962768564e5?q=80&w=800&auto=format&fit=crop'">
                     </div>
                     <div class="car-card-body">
                         <span class="tag-auto" style="background-color: var(--secondary-color); color: var(--black);">
                             B96 / B+E
                         </span>
-                        <h3>
-                            Přívěsný vozík
-                        </h3>
+                        <h3>Přívěsný vozík</h3>
                         <ul>
                             <li>Těžší přívěsy a karavany</li>
                             <li>Nácvik bezpečného couvání</li>
@@ -2329,107 +1585,57 @@
             </div>
 
             <!-- Motorky -->
-            <h2 
-                class="section-title" 
-                style="margin-top: 60px;"
-            >
+            <h2 class="section-title" style="margin-top: 60px;">
                 Výcvik na motocyklech (Skupina A)
             </h2>
             <div class="moto-section">
                 
                 <div class="moto-tabs">
-                    <button 
-                        class="moto-tab-btn active" 
-                        onclick="showMoto(event, 'moto1')"
-                    >
+                    <button class="moto-tab-btn active" onclick="showMoto(event, 'moto1')">
                         Skupina AM
                         <small>(od 15 let)</small>
                     </button>
-                    <button 
-                        class="moto-tab-btn" 
-                        onclick="showMoto(event, 'moto2')"
-                    >
+                    <button class="moto-tab-btn" onclick="showMoto(event, 'moto2')">
                         Skupina A1
                         <small>(od 16 let)</small>
                     </button>
-                    <button 
-                        class="moto-tab-btn" 
-                        onclick="showMoto(event, 'moto3')"
-                    >
+                    <button class="moto-tab-btn" onclick="showMoto(event, 'moto3')">
                         Skupina A2
                         <small>(od 18 let)</small>
                     </button>
-                    <button 
-                        class="moto-tab-btn" 
-                        onclick="showMoto(event, 'moto4')"
-                    >
+                    <button class="moto-tab-btn" onclick="showMoto(event, 'moto4')">
                         Skupina A
                         <small>(od 20/24 let)</small>
                     </button>
                 </div>
 
-                <div 
-                    id="moto1" 
-                    class="moto-content active"
-                >
-                    <img 
-                        src="autoskola-rousek-motorka-125.jpg" 
-                        alt="Červená motorka skupiny AM v autoškole Náměšť" 
-                        onerror="this.src='https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=600&auto=format&fit=crop'"
-                    >
-                    <h3>
-                        Skupina AM (do 50 ccm)
-                    </h3>
+                <div id="moto1" class="moto-content active">
+                    <img src="autoskola-rousek-motorka-125.jpg" alt="Červená motorka skupiny AM v autoškole Náměšť" onerror="this.src='https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=600&auto=format&fit=crop'">
+                    <h3>Skupina AM (do 50 ccm)</h3>
                     <p>
                         Výcvik pro ty úplně nejmladší, dostupný již <strong>od 15 let</strong>. U nás se budete učit na bezpečné <strong>červené motorce (125 ccm)</strong>, která je velmi přátelská do ruky i pro úplné začátečníky.
                     </p>
                 </div>
 
-                <div 
-                    id="moto2" 
-                    class="moto-content"
-                >
-                    <img 
-                        src="autoskola-rousek-motorka-125.jpg" 
-                        alt="Červená motorka skupiny A1 v autoškole Rousková" 
-                        onerror="this.src='https://images.unsplash.com/photo-1558980663-3685c1d673c4?q=80&w=600&auto=format&fit=crop'"
-                    >
-                    <h3>
-                        Skupina A1 (do 125 ccm)
-                    </h3>
+                <div id="moto2" class="moto-content">
+                    <img src="autoskola-rousek-motorka-125.jpg" alt="Červená motorka skupiny A1 v autoškole Rousková" onerror="this.src='https://images.unsplash.com/photo-1558980663-3685c1d673c4?q=80&w=600&auto=format&fit=crop'">
+                    <h3>Skupina A1 (do 125 ccm)</h3>
                     <p>
                         Pokud je vám <strong>16 let</strong>, je toto ta správná volba. Výcvik probíhá na naší skvěle ovladatelné <strong>červené motorce (125 ccm)</strong>, která odpustí začátečnické chyby a naučí vás správné návyky v provozu.
                     </p>
                 </div>
 
-                <div 
-                    id="moto3" 
-                    class="moto-content"
-                >
-                    <img 
-                        src="autoskola-namest-a2.jpg" 
-                        alt="Modrá motorka skupiny A2 v Náměšti nad Oslavou" 
-                        onerror="this.src='https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=600&auto=format&fit=crop'"
-                    >
-                    <h3>
-                        Skupina A2 (do 35 kW)
-                    </h3>
+                <div id="moto3" class="moto-content">
+                    <img src="autoskola-namest-a2.jpg" alt="Modrá motorka skupiny A2 v Náměšti nad Oslavou" onerror="this.src='https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=600&auto=format&fit=crop'">
+                    <h3>Skupina A2 (do 35 kW)</h3>
                     <p>
                         Možnost získat řidičák na středně silný motocykl <strong>od 18 let</strong>. Naučíme vás plynulé průjezdy zatáčkami a bezpečné ovládání dospělejšího a těžšího stroje. Výcvik probíhá na naší <strong>modré motorce</strong>.
                     </p>
                 </div>
 
-                <div 
-                    id="moto4" 
-                    class="moto-content"
-                >
-                    <img 
-                        src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=600&auto=format&fit=crop" 
-                        alt="Velký motocykl skupiny A Autoškola Rousková" 
-                    >
-                    <h3>
-                        Skupina A (Neomezená)
-                    </h3>
+                <div id="moto4" class="moto-content">
+                    <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=600&auto=format&fit=crop" alt="Velký motocykl skupiny A Autoškola Rousková">
+                    <h3>Skupina A (Neomezená)</h3>
                     <p>
                         Plnohodnotný řidičák na silné stroje. Tento kurz můžete absolvovat <strong>již od 20 let</strong> (pokud jste minimálně 2 roky držitelem skupiny A2), nebo <strong>od 24 let</strong>, pokud žádáte o velkou motorku rovnou bez předchozích zkušeností.
                     </p>
@@ -2443,122 +1649,63 @@
     <!-- =======================================================================
          4. JAK SE PŘIHLÁSIT
          ======================================================================= -->
-    <section 
-        id="prihlaska" 
-        class="apply-section container"
-    >
-        <h2 
-            class="section-title" 
-            style="text-align: center;"
-        >
+    <section id="prihlaska" class="apply-section container">
+        <h2 class="section-title" style="text-align: center;">
             Jak se k nám přihlásit?
         </h2>
         
-        <div 
-            id="successMessage" 
-            class="alert-success"
-        >
+        <div id="successMessage" class="alert-success">
             Vaše zpráva byla úspěšně odeslána! Brzy se Vám ozveme.
         </div>
 
         <div class="apply-grid">
             
             <div class="apply-card">
-                <h3>
-                    1. Prostě nám zavolejte
-                </h3>
+                <h3>1. Prostě nám zavolejte</h3>
                 <p>
                     Rádi s Vámi vše vyřešíme obratem po telefonu. Neváhejte se na cokoliv zeptat, poradíme s výběrem kurzu i s dokumenty.
                 </p>
                 <div class="phone-links">
-                    <a href="tel:+420607892209">
-                        +420 607 892 209
-                    </a>
-                    <a href="tel:+420607782211">
-                        +420 607 782 211
-                    </a>
+                    <a href="tel:+420607892209">+420 607 892 209</a>
+                    <a href="tel:+420607782211">+420 607 782 211</a>
                 </div>
             </div>
 
             <div class="apply-card">
-                <h3>
-                    2. Napište nám zprávu
-                </h3>
+                <h3>2. Napište nám zprávu</h3>
                 <p>
                     Zanechte nám na sebe kontakt a my se Vám ozveme zpět hned, jak to bude možné.
                 </p>
-                <form 
-                    action="odeslat.php" 
-                    method="POST"
-                >
+                <form action="odeslat.php" method="POST">
                     <div class="form-group">
-                        <label>
-                            Jméno a příjmení
-                        </label>
-                        <input 
-                            type="text" 
-                            name="jmeno" 
-                            class="form-control" 
-                            required
-                        >
+                        <label>Jméno a příjmení</label>
+                        <input type="text" name="jmeno" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>
-                            Váš E-mail
-                        </label>
-                        <input 
-                            type="email" 
-                            name="email" 
-                            class="form-control" 
-                            required
-                        >
+                        <label>Váš E-mail</label>
+                        <input type="email" name="email" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>
-                            Telefonní číslo
-                        </label>
-                        <input 
-                            type="tel" 
-                            name="telefon" 
-                            class="form-control" 
-                            required
-                        >
+                        <label>Telefonní číslo</label>
+                        <input type="tel" name="telefon" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>
-                            Dotaz / Poznámka
-                        </label>
-                        <textarea 
-                            name="zprava" 
-                            class="form-control" 
-                            placeholder="Dobrý den, měl bych zájem o řidičák na osobní auto..."
-                        ></textarea>
+                        <label>Dotaz / Poznámka</label>
+                        <textarea name="zprava" class="form-control" placeholder="Dobrý den, měl bych zájem o řidičák na osobní auto..."></textarea>
                     </div>
-                    <button 
-                        type="submit" 
-                        class="btn" 
-                        style="width: 100%; margin-top: 10px;"
-                    >
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">
                         Odeslat zprávu
                     </button>
                 </form>
             </div>
 
             <div class="apply-card">
-                <h3>
-                    3. Online přihláška
-                </h3>
+                <h3>3. Online přihláška</h3>
                 <p>
                     Chcete mít papírování vyřešené hned a kompletně digitálně? Můžete využít oficiální portál pro online přihlášení do autoškoly. Ušetříte tak cestu.
                 </p>
                 <div style="margin-top: auto;">
-                    <a 
-                        href="https://www.prihlaska-do-autoskoly.cz/" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        class="btn-outline" 
-                        style="width: 100%; text-align: center; border-width: 2px;"
-                    >
+                    <a href="https://www.prihlaska-do-autoskoly.cz/" target="_blank" rel="noopener noreferrer" class="btn-outline" style="width: 100%; text-align: center; border-width: 2px;">
                         Přejít na online přihlášku
                     </a>
                 </div>
@@ -2570,19 +1717,12 @@
     <!-- =======================================================================
          5. DOKUMENTY KE STAŽENÍ
          ======================================================================= -->
-    <section 
-        id="dokumenty" 
-        class="docs-section bg-light"
-    >
+    <section id="dokumenty" class="docs-section bg-light">
         <div class="container">
-            <h2 class="section-title">
-                Dokumenty ke stažení
-            </h2>
+            <h2 class="section-title">Dokumenty ke stažení</h2>
             
             <div class="highlight-box">
-                <h3>
-                    Věděli jste, že posudek nemusíte nosit osobně?
-                </h3>
+                <h3>Věděli jste, že posudek nemusíte nosit osobně?</h3>
                 <span class="emphasis">
                     LÉKAŘSKÝ POSUDEK MŮŽETE DOLOŽIT ZCELA ELEKTRONICKOU CESTOU!
                 </span>
@@ -2592,18 +1732,10 @@
             </div>
 
             <div class="doc-buttons">
-                <a 
-                    href="lekarsky-posudek.docx" 
-                    class="btn" 
-                    download
-                >
+                <a href="lekarsky-posudek.docx" class="btn" download>
                     🩺 Stáhnout lékařský posudek (Word)
                 </a>
-                <a 
-                    href="prihlaska.docx" 
-                    class="btn-outline" 
-                    download
-                >
+                <a href="prihlaska.docx" class="btn-outline" download>
                     📝 Stáhnout žádost do autoškoly (Word)
                 </a>
             </div>
@@ -2613,92 +1745,49 @@
     <!-- =======================================================================
          6. GALERIE
          ======================================================================= -->
-    <section 
-        id="galerie" 
-        class="gallery"
-    >
+    <section id="galerie" class="gallery">
         <div class="container">
-            <h2 class="section-title">
-                Nahlédněte k nám
-            </h2>
+            <h2 class="section-title">Nahlédněte k nám</h2>
             
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img 
-                        src="autoskola-namest-nad-oslavou.jpg" 
-                        alt="Výuka jízdy v Autoškole Náměšť nad Oslavou" 
-                        onerror="this.src='https://images.unsplash.com/photo-1600320254374-ce2d293c324e?q=80&w=600&auto=format&fit=crop'"
-                    >
+                    <img src="autoskola-namest-nad-oslavou.jpg" alt="Výuka jízdy v Autoškole Náměšť nad Oslavou" onerror="this.src='https://images.unsplash.com/photo-1600320254374-ce2d293c324e?q=80&w=600&auto=format&fit=crop'">
                 </div>
                 <div class="gallery-item">
-                    <img 
-                        src="autoskola-rousek-namest.jpg" 
-                        alt="Instruktor Autoškoly Rousková" 
-                        onerror="this.src='https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=600&auto=format&fit=crop'"
-                    >
+                    <img src="autoskola-rousek-namest.jpg" alt="Instruktor Autoškoly Rousková" onerror="this.src='https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=600&auto=format&fit=crop'">
                 </div>
                 <div class="gallery-item">
-                    <img 
-                        src="autoskola-namest-motorky.jpg" 
-                        alt="Motocykly v autoškole Náměšť" 
-                        onerror="this.src='https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=crop'"
-                    >
-                </div>
-                <!-- Fotka z nového zadání bezpečně uložena v galerii -->
-                <div class="gallery-item">
-                    <img 
-                        src="autoskola-namest-galerie-1.jpg" 
-                        alt="Zázemí autoškoly" 
-                        onerror="this.src='https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=600&auto=format&fit=crop'"
-                    >
+                    <img src="autoskola-namest-motorky.jpg" alt="Motocykly v autoškole Náměšť" onerror="this.src='https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=crop'">
                 </div>
                 <div class="gallery-item">
-                    <img 
-                        src="autoskola-namest-motorka.jpg" 
-                        alt="vesta" 
-                    >
+                    <img src="autoskola-namest-galerie-1.jpg" alt="Zázemí autoškoly" onerror="this.src='https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=600&auto=format&fit=crop'">
                 </div>
                 <div class="gallery-item">
-                    <img 
-                        src="auto-skola-namest.jpg" 
-                        alt="prebirani-automobilu" 
-                    >
+                    <img src="autoskola-namest-motorka.jpg" alt="vesta">
+                </div>
+                <div class="gallery-item">
+                    <img src="auto-skola-namest.jpg" alt="prebirani-automobilu">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- =======================================================================
-         PATIČKA (Krásně vycentrovaná pro všechna zařízení)
+         PATIČKA 
          ======================================================================= -->
     <footer>
         <div class="container footer-grid">
             
             <div class="footer-col">
-                <h4>
-                    Kontaktujte nás
-                </h4>
-                <p>
-                    Telefon: 
-                    <a href="tel:+420607892209">+420 607 892 209</a>
-                </p>
-                <p>
-                    Telefon: 
-                    <a href="tel:+420607782211">+420 607 782 211</a>
-                </p>
+                <h4>Kontaktujte nás</h4>
+                <p>Telefon: <a href="tel:+420607892209">+420 607 892 209</a></p>
+                <p>Telefon: <a href="tel:+420607782211">+420 607 782 211</a></p>
                 <br>
-                <p>
-                    E-mail: <br>
-                    <a href="mailto:autoskola-rouskova@seznam.cz">
-                        autoskola-rouskova@seznam.cz
-                    </a>
-                </p>
+                <p>E-mail: <br><a href="mailto:autoskola-rouskova@seznam.cz">autoskola-rouskova@seznam.cz</a></p>
             </div>
             
             <div class="footer-col">
-                <h4>
-                    Kde nás najdete
-                </h4>
+                <h4>Kde nás najdete</h4>
                 <p>Lípová 342</p>
                 <p>Náměšť nad Oslavou</p>
                 <p>PSČ 675 71</p>
@@ -2706,31 +1795,25 @@
             </div>
 
             <div class="footer-col">
-                <h4>
-                    Sledujte nás
-                </h4>
-                <p>
-                    Buďte s námi v kontaktu a sledujte úspěchy našich žáků na sociálních sítích.
-                </p>
+                <h4>Sledujte nás</h4>
+                <p>Buďte s námi v kontaktu a sledujte úspěchy našich žáků na sociálních sítích.</p>
                 <br>
-                <p>
-                    <a 
-                        href="https://www.facebook.com/profile.php?id=100054462280610" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        Náš oficiální Facebook profil
-                    </a>
-                </p>
+                <p><a href="https://www.facebook.com/profile.php?id=100054462280610" target="_blank" rel="noopener noreferrer">Náš oficiální Facebook profil</a></p>
             </div>
 
         </div>
         <div class="container copyright">
-            <p>
-                &copy; 2026 Autoškola Rousková - Náměšť nad Oslavou. Všechna práva vyhrazena.
-            </p>
+            <p>&copy; 2026 Autoškola Rousková - Náměšť nad Oslavou. Všechna práva vyhrazena.</p>
         </div>
     </footer>
+
+    <!-- =======================================================================
+         LIGHTBOX (Prostředí pro zvětšené fotky)
+         ======================================================================= -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Zvětšený obrázek">
+    </div>
 
     <!-- =======================================================================
          JAVASCRIPT
@@ -2825,6 +1908,61 @@
                     }
                 });
             }
+        });
+
+        /**
+         * 4. LIGHTBOX PRO ZVĚTŠENÍ OBRÁZKŮ
+         */
+        document.addEventListener("DOMContentLoaded", function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = document.querySelector('.lightbox-close');
+            
+            // Vybereme všechny obrázky, ale vyloučíme logo a odkaz na firmy.cz
+            const images = document.querySelectorAll('img:not(.logo):not(.widget-img)');
+            
+            images.forEach(img => {
+                // Přidáme kurzor ručičky pro indikaci klikatelnosti
+                img.classList.add('clickable-img');
+                
+                img.addEventListener('click', function(e) {
+                    // Pokud je obrázek omylem zabalen v odkazu, nic nedělej a nechej odkaz fungovat
+                    if (this.parentElement.tagName.toLowerCase() === 'a') return;
+                    
+                    let src = this.src;
+                    
+                    // Vylepšení pro Unsplash placeholder obrázky
+                    if (src.includes('unsplash.com')) {
+                        src = src.replace(/&w=\d+/, '&w=1920');
+                    }
+                    
+                    lightboxImg.src = src;
+                    lightbox.classList.add('active');
+                    e.stopPropagation();
+                });
+            });
+
+            // Funkce pro zavření lightboxu
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+            }
+
+            // Zavření kliknutím na křížek
+            lightboxClose.addEventListener('click', closeLightbox);
+
+            // Zavření kliknutím kamkoliv do tmavého pozadí vedle obrázku
+            lightbox.addEventListener('click', function(e) {
+                if (e.target !== lightboxImg) {
+                    closeLightbox();
+                }
+            });
+
+            // Zavření pomocí klávesy ESC na klávesnici
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape" && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
         });
     </script>
 </body>
