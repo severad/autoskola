@@ -1298,12 +1298,18 @@
             z-index: 1010;
         }
 
-        .hamburger-line {
-            width: 100%;
-            height: 3px;
-            background-color: var(--primary-color);
-            border-radius: 10px;
-            transition: all 0.3s ease-in-out;
+    .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 32px;
+            height: 22px;
+            background: transparent;
+            border: none;
+            padding: 0; /* Zabrání vytékání způsobenému výchozím odsazením prohlížeče */
+            cursor: pointer;
+            z-index: 1010;
+            flex-shrink: 0; /* Zabrání deformaci, pokud je text loga moc široký */
         }
 
         /* ==========================================================================
@@ -1394,7 +1400,7 @@
             }
         }
         
-        @media (max-width: 550px) {
+     @media (max-width: 550px) {
             .cars-grid {
                 grid-template-columns: 1fr;
             }
@@ -1417,6 +1423,15 @@
             }
             .l17-box {
                 padding: 20px;
+            }
+            
+            /* -- NOVÉ PŘIDANÉ ŘÁDKY -- */
+            .logo-area h2 {
+                font-size: 1.15rem; /* Zmenší text, aby zbylo dost místa pro hamburger */
+            }
+            .logo {
+                width: 48px;
+                height: 48px;
             }
         }
     </style>
