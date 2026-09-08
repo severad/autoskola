@@ -58,10 +58,11 @@
         rel="stylesheet"
     >
 
-    <!-- ROBUSTNÍ CSS ARCHITEKTURA (PŘES 2000 ŘÁDKŮ) -->
+    <!-- ROBUSTNÍ CSS ARCHITEKTURA (PŘES 2400 ŘÁDKŮ) -->
     <style>
         /* ==========================================================================
            TÉMA 1: MODERNÍ MODRÁ (VÝCHOZÍ)
+           Klasická paleta, vzbuzuje jistotu a spolehlivost
            ========================================================================== */
         :root {
             --primary-color: #0056b3;
@@ -891,7 +892,7 @@
         }
 
         /* ==========================================================================
-           VOZOVÝ PARK
+           VOZOVÝ PARK (AUTA)
            ========================================================================== */
         .fleet-section {
             padding-top: 90px;
@@ -955,7 +956,7 @@
             line-height: 1.6;
         }
 
-        /* GRID PRO 4 AUTA */
+        /* GRID PRO AUTA */
         .cars-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -1257,29 +1258,32 @@
         }
 
         /* ==========================================================================
-           PŘÍVĚSNÝ VOZÍK (B96 / B+E) - přesunuto pod motorky s opraveným ořezem
+           PŘÍVĚSNÝ VOZÍK (VERTIKÁLNÍ KARTA - STEJNÝ STYL JAKO AUTA)
            ========================================================================== */
-        .trailer-wrapper {
-            margin-top: 80px;
-            margin-bottom: 40px;
+        .trailer-single-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+            margin-bottom: 80px;
             margin-left: 0;
             margin-right: 0;
             padding-top: 0;
             padding-bottom: 0;
-            padding-left: 0;
-            padding-right: 0;
+            padding-left: 20px;
+            padding-right: 20px;
         }
-        
-        .trailer-card {
-            display: flex;
-            flex-direction: row;
+
+        .trailer-single-card {
             background-color: var(--bg-alt);
             border-top-left-radius: var(--border-radius-md);
             border-top-right-radius: var(--border-radius-md);
             border-bottom-right-radius: var(--border-radius-md);
             border-bottom-left-radius: var(--border-radius-md);
-            box-shadow: var(--box-shadow-md);
             overflow: hidden;
+            box-shadow: var(--box-shadow-md);
+            display: flex;
+            flex-direction: column;
+            text-align: left;
             border-top-width: var(--border-width);
             border-right-width: var(--border-width);
             border-bottom-width: var(--border-width);
@@ -1292,72 +1296,73 @@
             border-right-color: var(--border-color);
             border-bottom-color: var(--border-color);
             border-left-color: var(--border-color);
-            max-width: 900px;
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: auto;
-            margin-right: auto;
             transition-property: transform, box-shadow;
             transition-duration: var(--transition-speed);
             transition-timing-function: ease-in-out;
+            max-width: 700px;
+            width: 100%;
         }
 
-        .trailer-card:hover {
-            transform: translateY(-4px);
+        .trailer-single-card:hover {
+            transform: translateY(-6px);
             box-shadow: var(--box-shadow-lg);
         }
 
-        /* ZDE JE OPRAVA PRO SPRÁVNÉ ZOBRAZENÍ VLEKU BEZ OŘEZU */
-        .trailer-img {
-            flex-grow: 1;
-            flex-shrink: 1;
-            flex-basis: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--bg-highlight); /* Jemné pozadí za obrázkem */
-        }
-
-        .trailer-img img {
+        .trailer-single-img {
             width: 100%;
             height: auto;
             max-height: 400px;
-            object-fit: contain; /* Zabraní ořezu fotografie */
+            overflow: hidden;
+            border-bottom-width: 4px;
+            border-bottom-style: solid;
+            border-bottom-color: var(--primary-color);
+            background-color: #f1f5f9;
         }
 
-        .trailer-content {
-            flex-grow: 1;
-            flex-shrink: 1;
-            flex-basis: 50%;
-            padding-top: 40px;
-            padding-bottom: 40px;
-            padding-left: 40px;
-            padding-right: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: left;
+        .trailer-single-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Krásně rozprostře širokou fotku */
+            display: block;
+            transition-property: transform;
+            transition-duration: 0.6s;
+            transition-timing-function: ease;
         }
 
-        .trailer-content h3 {
+        .trailer-single-card:hover .trailer-single-img img {
+            transform: scale(1.03);
+        }
+
+        .trailer-single-body {
+            padding-top: 35px;
+            padding-bottom: 35px;
+            padding-left: 35px;
+            padding-right: 35px;
+        }
+
+        .trailer-single-body h3 {
             font-size: 1.6rem;
             margin-top: 0;
             margin-bottom: 15px;
             margin-left: 0;
             margin-right: 0;
-            color: var(--primary-color);
+            border-bottom-width: 2px;
+            border-bottom-style: solid;
+            border-bottom-color: var(--bg-highlight);
+            padding-bottom: 15px;
         }
 
-        .trailer-content p {
+        .trailer-single-body p {
+            font-size: 1.05rem;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             margin-left: 0;
             margin-right: 0;
             color: var(--text-light);
-            font-size: 1.05rem;
+            line-height: 1.6;
         }
 
-        .trailer-content ul {
+        .trailer-single-body ul {
             list-style-type: none;
             padding-top: 0;
             padding-bottom: 0;
@@ -1369,27 +1374,22 @@
             margin-right: 0;
         }
 
-        .trailer-content ul li {
-            position: relative;
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 20px;
-            padding-right: 0;
-            margin-top: 0;
-            margin-bottom: 10px;
-            margin-left: 0;
-            margin-right: 0;
+        .trailer-single-body ul li {
+            font-size: 1.05rem;
             color: var(--text-light);
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 12px;
             font-weight: 500;
         }
 
-        .trailer-content ul li::before {
+        .trailer-single-body ul li::before {
             content: "•";
             color: var(--secondary-color);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             position: absolute;
             left: 0;
-            top: -6px;
+            top: -7px;
         }
 
         /* ==========================================================================
@@ -1762,7 +1762,7 @@
         }
 
         /* ==========================================================================
-           PATIČKA (OPRAVENO CENTROVÁNÍ)
+           PATIČKA (OPRAVENO VYCENTROVÁNÍ)
            ========================================================================== */
         footer {
             background-color: #111827;
@@ -2104,18 +2104,11 @@
                 bottom: 90px;
             }
             
-            .trailer-card {
-                flex-direction: column;
+            .trailer-single-body {
+                padding: 25px;
             }
-            /* Úprava na mobilu pro fotku vleku */
-            .trailer-img {
-                min-width: 100%;
+            .trailer-single-img {
                 height: 250px;
-                background-color: var(--bg-highlight);
-            }
-            .trailer-img img {
-                height: 100%;
-                object-fit: contain;
             }
         }
         
@@ -2141,12 +2134,6 @@
                 right: 20px;
                 width: 50px;
                 height: 50px;
-            }
-            .trailer-content {
-                padding-top: 25px;
-                padding-bottom: 25px;
-                padding-left: 20px;
-                padding-right: 20px;
             }
             .l17-box {
                 padding: 20px;
@@ -2341,7 +2328,7 @@
     </section>
 
     <!-- =======================================================================
-         3. VOZOVÝ PARK, L17 A PŘÍVĚSNÝ VOZÍK
+         3. VOZOVÝ PARK (AUTA)
          ======================================================================= -->
     <section 
         id="vozy" 
@@ -2353,7 +2340,6 @@
                 Náš vozový park
             </h2>
             
-            <!-- L17 BANNER PRO SKUPINU B -->
             <div class="l17-box">
                 <h3>
                     🚗 Řidičák na auto už od 17 let (Režim L17)
@@ -2363,7 +2349,6 @@
                 </p>
             </div>
 
-            <!-- Auta: OPRAVENO NA CSS GRID PRO 4 AUTA (Garantováno 4 vedle sebe na PC) -->
             <div class="cars-grid">
                 
                 <!-- Auto 1 (Karoq) -->
@@ -2455,7 +2440,33 @@
 
             </div>
 
-            <!-- Motorky (Přepínací záložky s fotkami a přesnými věky) -->
+            <!-- OPRAVA: PŘÍVĚSNÝ VOZÍK (VERTIKÁLNÍ KARTA STEJNÁ JAKO AUTA) -->
+            <div class="trailer-single-wrapper">
+                <div class="trailer-single-card">
+                    <div class="trailer-single-img">
+                        <img 
+                            src="autoskola-namest-vlek-2.jpg" 
+                            alt="Výcvik s přívěsným vozíkem B96 a B+E"
+                            onerror="this.src='https://images.unsplash.com/photo-1596766779410-b962768564e5?q=80&w=800&auto=format&fit=crop'"
+                        >
+                    </div>
+                    <div class="trailer-single-body">
+                        <h3>
+                            Výcvik s přívěsným vozíkem (B96 / B+E)
+                        </h3>
+                        <p>
+                            Potřebujete tahat těžší přívěsy, karavany, lodě nebo vozíky na koně? Rozšiřte si u nás své řidičské oprávnění! Zajišťujeme výcvik pro rozšířenou skupinu B96 i plnohodnotnou skupinu B+E.
+                        </p>
+                        <ul>
+                            <li>Praktický nácvik couvání a složitějšího manévrování</li>
+                            <li>Jízda s moderním, stabilním a bezpečným vozíkem</li>
+                            <li>Kompletní příprava na bezpečné ovládání celé soupravy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Motorky -->
             <h2 
                 class="section-title" 
                 style="margin-top: 60px;"
@@ -2495,7 +2506,6 @@
                     </button>
                 </div>
 
-                <!-- Obsah Motorky 1 (Skútr AM - Červená 125) -->
                 <div 
                     id="moto1" 
                     class="moto-content active"
@@ -2513,7 +2523,6 @@
                     </p>
                 </div>
 
-                <!-- Obsah Motorky 2 (A1 - Červená 125) -->
                 <div 
                     id="moto2" 
                     class="moto-content"
@@ -2531,7 +2540,6 @@
                     </p>
                 </div>
 
-                <!-- Obsah Motorky 3 (A2 - Modrá) -->
                 <div 
                     id="moto3" 
                     class="moto-content"
@@ -2549,7 +2557,6 @@
                     </p>
                 </div>
 
-                <!-- Obsah Motorky 4 (A) -->
                 <div 
                     id="moto4" 
                     class="moto-content"
@@ -2566,32 +2573,6 @@
                     </p>
                 </div>
 
-            </div>
-
-            <!-- PŘÍVĚSNÝ VOZÍK BANNER (S opraveným zobrazením fotky vleku na šířku) -->
-            <div class="trailer-wrapper">
-                <div class="trailer-card">
-                    <div class="trailer-img">
-                        <img 
-                            src="autoskola-namest-vlek-2.jpg" 
-                            alt="Autoškola výcvik s přívěsným vozíkem karavanem"
-                            onerror="this.src='https://images.unsplash.com/photo-1596766779410-b962768564e5?q=80&w=800&auto=format&fit=crop'"
-                        >
-                    </div>
-                    <div class="trailer-content">
-                        <h3>
-                            Výcvik s přívěsným vozíkem (B96 / B+E)
-                        </h3>
-                        <p>
-                            Potřebujete tahat těžší přívěsy, karavany, lodě nebo vozíky na koně? Rozšiřte si u nás své řidičské oprávnění! Zajišťujeme výcvik pro rozšířenou skupinu B96 i plnohodnotnou skupinu B+E.
-                        </p>
-                        <ul>
-                            <li>Praktický nácvik couvání a složitějšího manévrování</li>
-                            <li>Jízda s moderním, stabilním a bezpečným vozíkem</li>
-                            <li>Kompletní příprava na bezpečné ovládání celé soupravy</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -2725,7 +2706,7 @@
     </section>
 
     <!-- =======================================================================
-         5. DOKUMENTY KE STAŽENÍ (VÝRAZNÁ SEKCE)
+         5. DOKUMENTY KE STAŽENÍ
          ======================================================================= -->
     <section 
         id="dokumenty" 
@@ -2795,7 +2776,6 @@
                     >
                 </div>
                 <div class="gallery-item">
-                    <!-- Nová fotka přidána dle přání -->
                     <img 
                         src="autoskola-namest-motorky.jpg" 
                         alt="Motocykly v autoškole Náměšť" 
@@ -2804,8 +2784,9 @@
                 </div>
                 <div class="gallery-item">
                     <img 
-                        src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=600&auto=format&fit=crop" 
-                        alt="Křižovatky v Náměšti nad Oslavou" 
+                        src="autoskola-namest-galerie-1.jpg" 
+                        alt="Zázemí autoškoly" 
+                        onerror="this.src='https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=600&auto=format&fit=crop'"
                     >
                 </div>
                 <div class="gallery-item">
