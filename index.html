@@ -18,7 +18,7 @@
     <!-- Open Graph Tagy -->
     <meta property="og:title" content="Autoškola Rousková v Náměšti nad Oslavou">
     <meta property="og:description" content="Naučíme vás řídit auta i motorky, bezpečně a s jistotou. Ne každá autoškola umí motorky.">
-    <meta property="og:image" content="https://www.autoskola-rouskova.cz/og-image.jpg"> <!-- Změňte na reálnou URL fotky -->
+    <meta property="og:image" content="https://www.autoskola-rouskova.cz/og-image.jpg">
     <meta property="og:url" content="https://www.autoskola-rouskova.cz">
     <meta property="og:type" content="website">
 
@@ -210,7 +210,7 @@
         .logo-area { display: flex; margin-left: 10px; flex-direction: row; align-items: center; gap: 15px; text-decoration: none; color: var(--primary-color); }
         .logo { width: 60px; height: 60px; border-radius: var(--border-radius-sm); object-fit: cover; border: 2px solid transparent; }
         .logo-area h2 { margin: 0; line-height: 1.2; font-size: 1.4rem; letter-spacing: -0.5px; }
-        .main-nav { display: flex; flex-direction: row; gap: 25px; font-weight: 600; }
+        .main-nav { display: flex; flex-direction: row; gap: 20px; font-weight: 600; }
         .main-nav a { text-decoration: none; color: var(--text-color); font-size: 0.95rem; padding: 6px 12px; border-radius: var(--border-radius-sm); transition: all var(--transition-speed); }
         .main-nav a:hover { color: var(--primary-color); background-color: var(--bg-highlight); }
         .header-contacts { text-align: right; font-weight: 600; }
@@ -224,23 +224,37 @@
         .btn-outline:hover { background-color: var(--primary-color); color: var(--white); transform: translateY(-2px); box-shadow: var(--box-shadow-sm); }
         body.theme-slate .btn, body.theme-navy .btn { color: #ffffff; }
 
-        /* HERO SEKCE */
-        .hero { background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://cdn.pixabay.com/photo/2026/07/23/12/43/12-43-56-724_1280.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: #ffffff; text-align: center; padding: 110px 20px; border-bottom: var(--border-width) var(--border-style) var(--border-color); }
+        /* HERO SEKCE - zesvětleno o 10% (0.65 -> 0.55) */
+        .hero { background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://cdn.pixabay.com/photo/2026/07/23/12/43/12-43-56-724_1280.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: #ffffff; text-align: center; padding: 110px 20px; border-bottom: var(--border-width) var(--border-style) var(--border-color); }
         body.theme-minimal .hero { background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1920&auto=format&fit=crop'); color: #111111; border-bottom-color: #e5e5e5; }
         body.theme-minimal .hero h1 { color: #111111; }
         .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); margin: 0 0 25px 0; color: #ffffff; letter-spacing: -1px; line-height: 1.2; }
         .hero p { font-size: 1.15rem; margin: 0 auto 45px auto; max-width: 750px; color: #f1f5f9; font-weight: 400; }
         body.theme-minimal .hero p { color: #555555; }
 
-        /* HODNOCENÍ */
-        .achievement-section { padding: 70px 0; }
-        .achievement { background-color: var(--bg-alt); padding: 50px 40px; text-align: center; margin: 0 auto; border-radius: var(--border-radius-md); box-shadow: var(--box-shadow-md); max-width: 950px; border: var(--border-width) var(--border-style) var(--border-color); transition: all var(--transition-speed); }
+        /* CO VŠE NABÍZÍME */
+        .offer-section { padding: 80px 0 30px 0; }
+        .offer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 40px; }
+        .offer-item { display: flex; align-items: center; gap: 15px; background-color: var(--bg-alt); padding: 20px 25px; border-radius: var(--border-radius-md); box-shadow: var(--box-shadow-sm); border: var(--border-width) var(--border-style) var(--border-color); border-left: 4px solid var(--primary-color); transition: transform 0.2s, box-shadow 0.2s; }
+        .offer-item:hover { transform: translateY(-3px); box-shadow: var(--box-shadow-md); }
+        .offer-icon { display: flex; align-items: center; justify-content: center; color: var(--primary-color); flex-shrink: 0; }
+        .offer-text { font-weight: 600; color: var(--text-color); font-size: 1rem; line-height: 1.3; }
+
+        /* HODNOCENÍ & MAPA */
+        .achievement-section { padding: 60px 0 70px 0; }
+        .achievement { background-color: var(--bg-alt); padding: 50px 40px; text-align: center; margin: 0 auto; border-radius: var(--border-radius-md); box-shadow: var(--box-shadow-md); max-width: 1050px; border: var(--border-width) var(--border-style) var(--border-color); transition: all var(--transition-speed); }
         body.theme-minimal .achievement { border-color: #e5e5e5; }
-        .achievement h2 { font-size: 2.1rem; margin: 0 0 25px 0; letter-spacing: -0.5px; }
-        .achievement-content { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 50px; flex-wrap: wrap; }
-        .achievement-text { max-width: 500px; text-align: left; font-size: 1.05rem; color: var(--text-light); }
+        .achievement h2 { font-size: 2.1rem; margin: 0 0 35px 0; letter-spacing: -0.5px; }
+        .achievement-content { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .achievement-left { flex: 1; min-width: 300px; text-align: left; display: flex; flex-direction: column; gap: 15px; }
+        .achievement-text { font-size: 1.05rem; color: var(--text-light); }
         .achievement-text strong { color: var(--text-color); }
-        .widget-link { display: inline-block; transition: transform 0.3s ease; }
+        .achievement-right { flex: 1; min-width: 300px; max-width: 450px; position: relative; height: 260px; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--box-shadow-sm); border: 2px solid var(--border-color); }
+        
+        #gmap { width: 100%; height: 100%; z-index: 1; }
+        .map-overlay-link { position: absolute; inset: 0; z-index: 10; cursor: pointer; display: block; }
+        
+        .widget-link { display: inline-block; transition: transform 0.3s ease; margin-top: 15px; }
         .widget-link:hover { transform: translateY(-3px); }
         .widget-img { max-width: 260px; width: 100%; height: auto; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06)); }
 
@@ -311,23 +325,6 @@
         .gallery-grid img { width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.5s ease; }
         .gallery-grid img:hover { transform: scale(1.05); }
 
-        /* KÓD MAPY A PATIČKA */
-        .map-section { position: relative; width: 100%; margin-top: 50px; border-top: 4px solid var(--primary-color); }
-        .map-container { width: 100%; height: 445px; background: #eee; }
-       .map-buttons { 
-    position: absolute; 
-    top: 15px; 
-    right: 15px; /* Přesunuto zleva doprava */
-    z-index: 1000; 
-    background: rgba(255, 255, 255, 0.95); 
-    padding: 10px; 
-    border-radius: var(--border-radius-sm); 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
-}
-        .map-buttons a { display: inline-block; padding: 6px 15px; font-weight: bold; background: var(--text-color); color: #fff; text-decoration: none; border-radius: 4px; margin-right: 5px; font-size: 0.9rem; }
-        .map-buttons a:hover { background: var(--primary-color); }
-        .map-icon .marker-ico img { width: 34px; height: 46px; }
-
         footer { background-color: #111827; color: #f3f4f6; padding: 60px 0 30px 0; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; justify-items: center; text-align: center; }
         .footer-col { display: flex; flex-direction: column; align-items: center; width: 100%; }
@@ -384,7 +381,7 @@
             #hamburger-btn { display: flex !important; padding: 0 !important; flex-shrink: 0 !important; }
         }
         @media (min-width: 993px) { .main-nav { position: static; right: auto; width: auto; height: auto; padding-top: 0; box-shadow: none; background-color: transparent; } .nav-overlay { display: none; } }
-        @media (max-width: 768px) { .achievement-content { flex-direction: column; gap: 30px; } .achievement-text { text-align: center; } .moto-tab-btn { min-width: 50%; } .theme-panel { width: calc(100% - 40px); right: 20px; bottom: 90px; } }
+        @media (max-width: 768px) { .achievement-content { flex-direction: column; gap: 30px; } .achievement-left, .achievement-text { text-align: center; } .achievement-right { max-width: 100%; height: 300px; } .moto-tab-btn { min-width: 50%; } .theme-panel { width: calc(100% - 40px); right: 20px; bottom: 90px; } }
         @media (max-width: 550px) { .cars-grid { grid-template-columns: 1fr; } .moto-tab-btn { min-width: 100%; border-right-width: 0; border-bottom: 1px solid var(--border-color); } .hero h1 { font-size: 1.9rem; } .section-title { font-size: 1.8rem; } .theme-switcher-btn { bottom: 20px; right: 20px; width: 50px; height: 50px; } .l17-box { padding: 20px; } .logo-area h2 { font-size: 1.15rem; } .logo { width: 48px; height: 48px; } }
     </style>
 </head>
@@ -437,6 +434,7 @@
             </button>
 
             <nav class="main-nav" id="main-nav">
+                <a href="#nabidka">Nabídka</a>
                 <a href="#hodnoceni">Hodnocení</a>
                 <a href="#vozy">Vozový park</a>
                 <a href="#prihlaska">Jak se přihlásit</a>
@@ -454,7 +452,6 @@
     <!-- HERO SEKCE -->
     <section class="hero">
         <div class="container">
-            <!-- 1. ZMĚNA HLAVNÍHO NADPISU -->
             <h1>Autoškola Rousková <br/> v Náměšti nad Oslavou</h1>
             <p>
                 Naučíme vás řídit auta i motorky, bezpečně a s jistotou.<br>
@@ -464,18 +461,65 @@
         </div>
     </section>
 
-    <!-- HODNOCENÍ -->
+    <!-- CO VŠE NABÍZÍME -->
+    <section id="nabidka" class="offer-section container">
+        <h2 class="section-title text-center">Co vše nabízíme</h2>
+        <div class="offer-grid">
+            <div class="offer-item">
+                <div class="offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div class="offer-text">Osobní automobil</div>
+            </div>
+            <div class="offer-item">
+                <div class="offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div class="offer-text">Motocykl</div>
+            </div>
+            <div class="offer-item">
+                <div class="offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div class="offer-text">Přívěs za osobní automobil</div>
+            </div>
+            <div class="offer-item">
+                <div class="offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div class="offer-text">Školení referentů</div>
+            </div>
+            <div class="offer-item">
+                <div class="offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div class="offer-text">Kondiční jízdy</div>
+            </div>
+            <div class="offer-item">
+                <div class="offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div class="offer-text">Individuální výcvik</div>
+            </div>
+            <div class="offer-item">
+                <div class="offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div class="offer-text">Možnost rychlokurzů</div>
+            </div>
+            <div class="offer-item">
+                <div class="offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div class="offer-text">Profesní školení řidičů - možnost získaní profesního osvědčení</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HODNOCENÍ A LOKALITA -->
     <section id="hodnoceni" class="achievement-section container">
         <div class="achievement">
             <h2>2. nejlépe hodnocená autoškola na Vysočině!</h2>
             <div class="achievement-content">
-                <div class="achievement-text">
-                    <p>Tento stříbrný úspěch není náhoda – stojí za ním stovky spokojených řidičů, trpěliví a profesionální instruktoři a naše snaha dělat kurzy bezpečně a kvalitně. Děkujeme za projevenou důvěru!</p>
-                    <p style="margin-top: 15px;"><strong>Chystáte se na řidičák? U nás máte jistotu, že se učíte od těch nejlepších!</strong></p>
+                <div class="achievement-left">
+                    <div class="achievement-text">
+                        <p>Tento stříbrný úspěch není náhoda – stojí za ním stovky spokojených řidičů, trpěliví a profesionální instruktoři a naše snaha dělat kurzy bezpečně a kvalitně. Děkujeme za projevenou důvěru!</p>
+                        <p style="margin-top: 15px;"><strong>Chystáte se na řidičák? U nás máte jistotu, že se učíte od těch nejlepších!</strong></p>
+                    </div>
+                    <a href="https://www.firmy.cz/detail/448007-autoskola-zdenka-rouskova-namest-nad-oslavou.html#hodnoceni" target="_blank" rel="noopener" class="widget-link">
+                        <img src="https://www.firmy.cz/img-stars/light-448007.svg" alt="Hodnocení Autoškola Zdeňka Rousková na Firmy.cz" class="widget-img">
+                    </a>
                 </div>
-                <a href="https://www.firmy.cz/detail/448007-autoskola-zdenka-rouskova-namest-nad-oslavou.html#hodnoceni" target="_blank" rel="noopener" class="widget-link">
-                    <img src="https://www.firmy.cz/img-stars/light-448007.svg" alt="Hodnocení Autoškola Zdeňka Rousková na Firmy.cz" class="widget-img">
-                </a>
+                
+                <!-- ZAKOMPONOVANÁ MAPA SLOUŽÍCÍ JAKO ODKAZ -->
+                <div class="achievement-right" title="Klikněte pro zobrazení profilu na Firmy.cz">
+                    <div id="gmap"></div>
+                    <a href="https://www.firmy.cz/detail/448007-autoskola-zdenka-rouskova-namest-nad-oslavou.html" target="_blank" rel="noopener" class="map-overlay-link" aria-label="Profil na Firmy.cz"></a>
+                </div>
             </div>
         </div>
     </section>
@@ -634,15 +678,6 @@
         </div>
     </section>
 
-    <!-- ČISTÁ MAPA LEAFLET -->
-    <section class="map-section">
-        <div class="map-buttons">
-            <a href="https://www.google.com/maps/place/Lipov%C3%A1+342%2C+675+71+N%C3%A1m%C4%9B%C5%A1%C5%A5+nad+Oslavou/@49.206561,16.153603,17z" target="_blank">Zvětšit mapu</a>
-            <a href="https://www.google.com/maps/dir//Lipov%C3%A1+342%2C+675+71+N%C3%A1m%C4%9B%C5%A1%C5%A5+nad+Oslavou/@49.206561,16.153603,14z" target="_blank">Navigovat</a>
-        </div>
-        <div id="gmap" class="map-container"></div>
-    </section>
-
     <!-- PATIČKA -->
     <footer>
         <div class="container footer-grid">
@@ -655,13 +690,11 @@
             </div>
             <div class="footer-col">
                 <h4>Kde nás najdete</h4>
-                <!-- OPRAVENÝ NÁZEV ULICE LÍPOVÁ -> LIPOVÁ -->
                 <p>Lipová 342</p>
                 <p>Náměšť nad Oslavou</p>
                 <p>PSČ 675 71</p>
                 <p>Kraj Vysočina</p>
                 <br>
-                <!-- PŘIDANÉ OTEVÍRACÍ HODINY -->
                 <h4>Úřední hodiny</h4>
                 <p>Navštivte nás osobně každý pátek<br><strong>15:00 - 17:30</strong> v učebně.</p>
             </div>
@@ -673,7 +706,6 @@
             </div>
         </div>
         
-        <!-- PŘIDANÉ ZÁKONNÉ ÚDAJE (§ 435 občanského zákoníku) -->
         <div class="container copyright">
             <p><strong>Subjekt:</strong> Zdeňka Rousková | <strong>IČO:</strong> 72507900 | FÚ Územní pracoviště v Třebíči <br> Zapsána v Živnostenském rejstříku, společnost vznikla 1. 1. 2003.</p>
             <p>&copy; 2026 Autoškola Rousková - Náměšť nad Oslavou. Všechna práva vyhrazena.</p>
@@ -688,28 +720,34 @@
     <!-- JAVASCRIPT -->
     <script>
         // --- 1. Inicializace Mapy Leaflet ---
-// --- 1. Inicializace Mapy Leaflet ---
-document.addEventListener("DOMContentLoaded", function() {
-    var map = L.map('gmap').setView([49.206561, 16.153603], 17);
-    
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+        document.addEventListener("DOMContentLoaded", function() {
+            // Vypnuto zoomování/táhnutí mapy, jelikož nad ní je odkaz na Seznam profil
+            var map = L.map('gmap', {
+                zoomControl: false,
+                dragging: false,
+                scrollWheelZoom: false,
+                doubleClickZoom: false,
+                boxZoom: false,
+                keyboard: false
+            }).setView([49.206561, 16.153603], 15);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
 
-    // Oprava: Použití standardního a čistého mapového pinu
-    var standardIcon = L.icon({
-        iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-        shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41]
-    });
+            var standardIcon = L.icon({
+                iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+                shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            });
 
-    L.marker([49.206561, 16.153603], {icon: standardIcon})
-        .addTo(map)
-        .bindPopup("<strong>Autoškola Rousková</strong><br>Lipová 342, Náměšť nad Oslavou");
-});
+            L.marker([49.206561, 16.153603], {icon: standardIcon})
+                .addTo(map)
+                .bindPopup("<strong>Autoškola Rousková</strong><br>Lipová 342, Náměšť nad Oslavou");
+        });
 
         // --- Původní JS kód webu ---
         function showMoto(evt, motoId) {
