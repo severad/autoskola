@@ -251,7 +251,8 @@
         .achievement-section { padding: 60px 0 70px 0; }
         .achievement { background-color: var(--bg-alt); padding: 50px 40px; text-align: center; margin: 0 auto; border-radius: var(--border-radius-md); box-shadow: var(--box-shadow-md); max-width: 1050px; border: var(--border-width) var(--border-style) var(--border-color); transition: all var(--transition-speed); }
         body.theme-minimal .achievement { border-color: #e5e5e5; }
-        .achievement h2 { font-size: 2.1rem; margin: 0 0 35px 0; letter-spacing: -0.5px; }
+        .achievement h2 { font-size: 2.1rem; margin: 0 0 20px 0; letter-spacing: -0.5px; }
+        .achievement-logo { display: block; margin: 0 auto 35px auto; max-height: 140px; width: auto; object-fit: contain; }
         .achievement-content { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
         .achievement-left { flex: 1; min-width: 300px; text-align: left; display: flex; flex-direction: column; gap: 15px; }
         .achievement-text { font-size: 1.05rem; color: var(--text-light); }
@@ -261,7 +262,8 @@
         #gmap { width: 100%; height: 100%; z-index: 1; }
         .map-overlay-link { position: absolute; inset: 0; z-index: 10; cursor: pointer; display: block; }
         
-        .widget-link { display: inline-block; transition: transform 0.3s ease; margin-top: 15px; }
+        /* Odkaz pro Firmy.cz widget */
+        .widget-link { display: inline-block; align-self: center; transition: transform 0.3s ease; margin: 20px auto 0 auto; }
         .widget-link:hover { transform: translateY(-3px); }
         .widget-img { max-width: 260px; width: 100%; height: auto; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06)); }
 
@@ -519,12 +521,16 @@
     <section id="hodnoceni" class="achievement-section container">
         <div class="achievement">
             <h2>2. nejlépe hodnocená autoškola na Vysočině!</h2>
+            <!-- Logo vložené pod nadpis -->
+            <img src="logo.png" alt="Logo Autoškoly Rousková" class="achievement-logo">
+            
             <div class="achievement-content">
                 <div class="achievement-left">
                     <div class="achievement-text">
                         <p>Tento stříbrný úspěch není náhoda – stojí za ním stovky spokojených řidičů, trpěliví a profesionální instruktoři a naše snaha dělat kurzy bezpečně a kvalitně. Děkujeme za projevenou důvěru!</p>
                         <p style="margin-top: 15px;"><strong>Chystáte se na řidičák? U nás máte jistotu, že se učíte od těch nejlepších!</strong></p>
                     </div>
+                    <!-- Vycentrované hodnocení Firmy.cz -->
                     <a href="https://www.firmy.cz/detail/448007-autoskola-zdenka-rouskova-namest-nad-oslavou.html#hodnoceni" target="_blank" rel="noopener" class="widget-link">
                         <img src="https://www.firmy.cz/img-stars/light-448007.svg" alt="Hodnocení Autoškola Zdeňka Rousková na Firmy.cz" class="widget-img">
                     </a>
@@ -619,7 +625,6 @@
                 <div id="moto3" class="moto-content">
                     <div class="moto-images-wrapper">
                         <img src="autoskola-namest-a2.jpg" alt="Modrá motorka skupiny A2 v Náměšti nad Oslavou" onerror="this.src='https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=600&auto=format&fit=crop'">
-                        <!-- Zde je přidaná druhá požadovaná fotka -->
                         <img src="motoa2.jpg" alt="Druhá motorka skupiny A2" onerror="this.src='https://images.unsplash.com/photo-1558981033-0f0309284409?q=80&w=600&auto=format&fit=crop'">
                     </div>
                     <h3>Skupina A2 (do 35 kW)</h3>
@@ -823,7 +828,7 @@
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             const lightboxClose = document.querySelector('.lightbox-close');
-            const images = document.querySelectorAll('img:not(.logo):not(.widget-img)');
+            const images = document.querySelectorAll('img:not(.logo):not(.widget-img):not(.achievement-logo)');
             
             images.forEach(img => {
                 img.classList.add('clickable-img');
