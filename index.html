@@ -208,7 +208,7 @@
         body.theme-minimal header { box-shadow: none; }
         .header-content { display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 15px 0; flex-wrap: wrap; gap: 20px; }
         .logo-area { display: flex; margin-left: 10px; flex-direction: row; align-items: center; gap: 15px; text-decoration: none; color: var(--primary-color); }
-        .logo { width: 60px; height: 60px; border-radius: var(--border-radius-sm); object-fit: cover; border: 2px solid transparent; }
+        .logo { width: auto; height: 60px; max-width: 200px; object-fit: contain; background: transparent; }
         .logo-area h2 { margin: 0; line-height: 1.2; font-size: 1.4rem; letter-spacing: -0.5px; }
         .main-nav { display: flex; flex-direction: row; gap: 20px; font-weight: 600; }
         .main-nav a { text-decoration: none; color: var(--text-color); font-size: 0.95rem; padding: 6px 12px; border-radius: var(--border-radius-sm); transition: all var(--transition-speed); }
@@ -224,13 +224,20 @@
         .btn-outline:hover { background-color: var(--primary-color); color: var(--white); transform: translateY(-2px); box-shadow: var(--box-shadow-sm); }
         body.theme-slate .btn, body.theme-navy .btn { color: #ffffff; }
 
-        /* HERO SEKCE - zesvětleno o 10% (0.65 -> 0.55) */
-        .hero { background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://cdn.pixabay.com/photo/2026/07/23/12/43/12-43-56-724_1280.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: #ffffff; text-align: center; padding: 110px 20px; border-bottom: var(--border-width) var(--border-style) var(--border-color); }
+        /* HERO SEKCE */
+        .hero { background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://cdn.pixabay.com/photo/2026/07/23/12/43/12-43-56-724_1280.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: #ffffff; text-align: center; padding: 110px 20px; border-bottom: var(--border-width) var(--border-style) var(--border-color); }
         body.theme-minimal .hero { background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1920&auto=format&fit=crop'); color: #111111; border-bottom-color: #e5e5e5; }
         body.theme-minimal .hero h1 { color: #111111; }
-        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); margin: 0 0 25px 0; color: #ffffff; letter-spacing: -1px; line-height: 1.2; }
-        .hero p { font-size: 1.15rem; margin: 0 auto 45px auto; max-width: 750px; color: #f1f5f9; font-weight: 400; }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); margin: 0 0 10px 0; color: #ffffff; letter-spacing: -1px; line-height: 1.2; }
+        .hero h2.subtitle { color: #f8c146; font-size: clamp(1.2rem, 3vw, 1.8rem); margin: 0 0 25px 0; font-weight: 600; text-shadow: 1px 1px 4px rgba(0,0,0,0.6); }
+        body.theme-emerald .hero h2.subtitle { color: #f59e0b; }
+        body.theme-navy .hero h2.subtitle { color: #e11d48; }
+        body.theme-minimal .hero h2.subtitle { color: #111111; text-shadow: none; }
+        
+        .hero p { font-size: 1.15rem; margin: 0 auto 35px auto; max-width: 750px; color: #f1f5f9; font-weight: 400; }
         body.theme-minimal .hero p { color: #555555; }
+        .gift-voucher-badge { display: inline-block; background-color: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(4px); padding: 10px 20px; border-radius: 50px; font-weight: 600; font-size: 1.05rem; margin-top: 30px; }
+        body.theme-minimal .gift-voucher-badge { background-color: #f9fafb; border-color: #e5e5e5; color: #111; }
 
         /* CO VŠE NABÍZÍME */
         .offer-section { padding: 80px 0 30px 0; }
@@ -279,17 +286,19 @@
         .tag-auto { display: inline-block; background-color: var(--primary-color); color: #ffffff; font-size: 0.75rem; padding: 4px 10px; border-radius: var(--border-radius-lg); margin-bottom: 15px; font-weight: 700; align-self: flex-start; text-transform: uppercase; letter-spacing: 0.5px; }
 
         /* MOTORKY */
-        .moto-section { max-width: 900px; margin: 0 auto; background-color: var(--bg-alt); border-radius: var(--border-radius-md); box-shadow: var(--box-shadow-md); overflow: hidden; border: var(--border-width) var(--border-style) var(--border-color); }
+        .moto-section { max-width: 950px; margin: 0 auto; background-color: var(--bg-alt); border-radius: var(--border-radius-md); box-shadow: var(--box-shadow-md); overflow: hidden; border: var(--border-width) var(--border-style) var(--border-color); }
         .moto-tabs { display: flex; flex-direction: row; flex-wrap: wrap; background-color: var(--bg-highlight); border-bottom: var(--border-width) var(--border-style) var(--border-color); }
         .moto-tab-btn { flex: 1 1 0; padding: 20px 10px; border: 0; border-right: 1px solid var(--border-color); background-color: transparent; cursor: pointer; font-weight: 600; font-family: inherit; color: var(--text-light); transition: all 0.2s ease-in-out; border-bottom: 3px solid transparent; min-width: 140px; font-size: 0.95rem; }
         .moto-tab-btn:last-child { border-right: 0; }
         .moto-tab-btn small { display: block; font-weight: 400; font-size: 0.8rem; margin: 3px 0 0 0; opacity: 0.8; }
         .moto-tab-btn:hover { background-color: rgba(0,0,0,0.02); color: var(--primary-color); }
         .moto-tab-btn.active { background-color: var(--bg-alt); color: var(--primary-color); border-bottom-color: var(--primary-color); }
-        .moto-content { display: none; padding: 60px 40px; text-align: center; }
+        .moto-content { display: none; padding: 50px 30px; text-align: center; }
         .moto-content.active { display: block; animation: fadeInContent 0.4s ease-out forwards; }
         @keyframes fadeInContent { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .moto-content img { width: 100%; max-width: 450px; height: 280px; object-fit: cover; border-radius: var(--border-radius-sm); margin-bottom: 30px; box-shadow: var(--box-shadow-sm); }
+        
+        .moto-images-wrapper { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+        .moto-images-wrapper img { flex: 1; min-width: 250px; max-width: 450px; height: 280px; object-fit: cover; border-radius: var(--border-radius-sm); box-shadow: var(--box-shadow-sm); }
         .moto-content h3 { font-size: 1.6rem; margin: 0 0 15px 0; color: var(--text-color); }
         .moto-content p { font-size: 1.05rem; max-width: 650px; margin: 0 auto; color: var(--text-light); }
 
@@ -382,7 +391,7 @@
         }
         @media (min-width: 993px) { .main-nav { position: static; right: auto; width: auto; height: auto; padding-top: 0; box-shadow: none; background-color: transparent; } .nav-overlay { display: none; } }
         @media (max-width: 768px) { .achievement-content { flex-direction: column; gap: 30px; } .achievement-left, .achievement-text { text-align: center; } .achievement-right { max-width: 100%; height: 300px; } .moto-tab-btn { min-width: 50%; } .theme-panel { width: calc(100% - 40px); right: 20px; bottom: 90px; } }
-        @media (max-width: 550px) { .cars-grid { grid-template-columns: 1fr; } .moto-tab-btn { min-width: 100%; border-right-width: 0; border-bottom: 1px solid var(--border-color); } .hero h1 { font-size: 1.9rem; } .section-title { font-size: 1.8rem; } .theme-switcher-btn { bottom: 20px; right: 20px; width: 50px; height: 50px; } .l17-box { padding: 20px; } .logo-area h2 { font-size: 1.15rem; } .logo { width: 48px; height: 48px; } }
+        @media (max-width: 550px) { .cars-grid { grid-template-columns: 1fr; } .moto-tab-btn { min-width: 100%; border-right-width: 0; border-bottom: 1px solid var(--border-color); } .hero h1 { font-size: 1.9rem; } .section-title { font-size: 1.8rem; } .theme-switcher-btn { bottom: 20px; right: 20px; width: 50px; height: 50px; } .l17-box { padding: 20px; } .logo-area h2 { font-size: 1.15rem; } }
     </style>
 </head>
 <body class="theme-default">
@@ -423,7 +432,7 @@
     <header>
         <div class="container header-content">
             <a href="#" class="logo-area">
-                <img src="logo.png" alt="Autoškola Rousková Logo" class="logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'60\' height=\'60\' viewBox=\'0 0 60 60\'><rect width=\'60\' height=\'60\' fill=\'%230056b3\'/><text x=\'50%\' y=\'50%\' fill=\'white\' font-size=\'20\' font-family=\'Arial\' dominant-baseline=\'middle\' text-anchor=\'middle\'>AR</text></svg>'">
+                <img src="logo.png" alt="Autoškola Rousková Logo" class="logo">
                 <h2>Autoškola<br>Rousková</h2>
             </a>
             
@@ -453,11 +462,17 @@
     <section class="hero">
         <div class="container">
             <h1>Autoškola Rousková <br/> v Náměšti nad Oslavou</h1>
+            <h2 class="subtitle">2. nejlépe hodnocená autoškola na Vysočině</h2>
             <p>
                 Naučíme vás řídit auta i motorky, bezpečně a s jistotou.<br>
                 Ne každá autoškola umí motorky.
             </p>
             <a href="#prihlaska" class="btn">Chci se přihlásit</a>
+            
+            <br>
+            <div class="gift-voucher-badge">
+                🎁 Nabízíme dárkové poukazy pro každou příležitost
+            </div>
         </div>
     </section>
 
@@ -588,22 +603,32 @@
                     <button class="moto-tab-btn" onclick="showMoto(event, 'moto4')">Skupina A<small>(od 20/24 let)</small></button>
                 </div>
                 <div id="moto1" class="moto-content active">
-                    <img src="autoskola-rousek-motorka-125.jpg" alt="Červená motorka skupiny AM Autoškola Rousková" onerror="this.src='https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=600&auto=format&fit=crop'">
+                    <div class="moto-images-wrapper">
+                        <img src="autoskola-rousek-motorka-125.jpg" alt="Červená motorka skupiny AM Autoškola Rousková" onerror="this.src='https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=600&auto=format&fit=crop'">
+                    </div>
                     <h3>Skupina AM (do 50 ccm)</h3>
                     <p>Výcvik pro ty úplně nejmladší, dostupný již <strong>od 15 let</strong>. U nás se budete učit na bezpečné <strong>červené motorce (125 ccm)</strong>, která je velmi přátelská do ruky i pro úplné začátečníky.</p>
                 </div>
                 <div id="moto2" class="moto-content">
-                    <img src="autoskola-rousek-motorka-125.jpg" alt="Červená motorka skupiny A1 v Autoškole Rousková" onerror="this.src='https://images.unsplash.com/photo-1558980663-3685c1d673c4?q=80&w=600&auto=format&fit=crop'">
+                    <div class="moto-images-wrapper">
+                        <img src="autoskola-rousek-motorka-125.jpg" alt="Červená motorka skupiny A1 v Autoškole Rousková" onerror="this.src='https://images.unsplash.com/photo-1558980663-3685c1d673c4?q=80&w=600&auto=format&fit=crop'">
+                    </div>
                     <h3>Skupina A1 (do 125 ccm)</h3>
                     <p>Pokud je vám <strong>16 let</strong>, je toto ta správná volba. Výcvik probíhá na naší skvěle ovladatelné <strong>červené motorce (125 ccm)</strong>, která odpustí začátečnické chyby a naučí vás správné návyky v provozu.</p>
                 </div>
                 <div id="moto3" class="moto-content">
-                    <img src="autoskola-namest-a2.jpg" alt="Modrá motorka skupiny A2 v Náměšti nad Oslavou" onerror="this.src='https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=600&auto=format&fit=crop'">
+                    <div class="moto-images-wrapper">
+                        <img src="autoskola-namest-a2.jpg" alt="Modrá motorka skupiny A2 v Náměšti nad Oslavou" onerror="this.src='https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=600&auto=format&fit=crop'">
+                        <!-- Zde je přidaná druhá požadovaná fotka -->
+                        <img src="motoa2.jpg" alt="Druhá motorka skupiny A2" onerror="this.src='https://images.unsplash.com/photo-1558981033-0f0309284409?q=80&w=600&auto=format&fit=crop'">
+                    </div>
                     <h3>Skupina A2 (do 35 kW)</h3>
                     <p>Možnost získat řidičák na středně silný motocykl <strong>od 18 let</strong>. Naučíme vás plynulé průjezdy zatáčkami a bezpečné ovládání dospělejšího a těžšího stroje. Výcvik probíhá na naší <strong>modré motorce</strong>.</p>
                 </div>
                 <div id="moto4" class="moto-content">
-                    <img src="moto4.jpg" alt="Velký motocykl skupiny A Autoškola Rousková">
+                    <div class="moto-images-wrapper">
+                        <img src="moto4.jpg" alt="Velký motocykl skupiny A Autoškola Rousková">
+                    </div>
                     <h3>Skupina A (Neomezená)</h3>
                     <p>Plnohodnotný řidičák na silné stroje. Tento kurz můžete absolvovat <strong>již od 20 let</strong> (pokud jste minimálně 2 roky držitelem skupiny A2), nebo <strong>od 24 let</strong>, pokud žádáte o velkou motorku rovnou bez předchozích zkušeností.</p>
                 </div>
@@ -721,7 +746,6 @@
     <script>
         // --- 1. Inicializace Mapy Leaflet ---
         document.addEventListener("DOMContentLoaded", function() {
-            // Vypnuto zoomování/táhnutí mapy, jelikož nad ní je odkaz na Seznam profil
             var map = L.map('gmap', {
                 zoomControl: false,
                 dragging: false,
