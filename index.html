@@ -281,8 +281,9 @@
         /* MEDIA QUERIES */
         @media (max-width: 1400px) { .cars-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 992px) {
-            .hero-logos { display: none; }
-            .hero { padding-top: 70px; padding-bottom: 70px; }
+            .hero-container { flex-direction: column; gap: 25px; }
+            .hero-logos { display: block; max-width: 160px; width: 100%; }
+            .hero { padding-top: 50px; padding-bottom: 50px; }
             .hamburger { display: flex; }
             .header-content { flex-wrap: nowrap; }
             .header-contacts { display: none; }
